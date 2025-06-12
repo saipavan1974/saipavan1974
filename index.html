@@ -14,13 +14,14 @@
     .hero { padding: 2em; text-align: center; background: #f4f4f4; }
     .services, .contact, .about, .privacy { padding: 2em; max-width: 900px; margin: auto; }
     table { width: 100%; border-collapse: collapse; margin-top: 1em; }
-    th, td { border: 1px solid #ccc; padding: 0.8em; text-align: left; }
+    th, td { border: 1px solid #ccc; padding: 0.8em; text-align: left; vertical-align: middle; }
     th { background: #003366; color: white; }
     .cta { display: block; margin: 1.5em auto; background: #0073e6; color: white; padding: 1em 2em; text-align: center; width: fit-content; text-decoration: none; border-radius: 5px; }
     .logo-title { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
-    .logo-title img { height: 90px; }
+    .logo-title img { height: 60px; }
     .logo-title h1 { margin: 0; }
     .contact-info img { height: 16px; width: 16px; vertical-align: middle; margin-right: 6px; }
+    .service-icon { width: 20px; height: 20px; margin-right: 8px; vertical-align: middle; }
   </style>
 </head>
 <body>
@@ -48,12 +49,12 @@
   <h2>Our Services</h2>
   <table>
     <tr><th>Service</th><th>Description</th><th>Price (from)</th></tr>
-    <tr><td>Windows OS Installation</td><td>Clean install of Windows 10 or 11 (with drivers and updates)</td><td>£60</td></tr>
-    <tr><td>RAM Upgrade</td><td>RAM installation (we or customer supply RAM) + compatibility check (excluding RAM price)</td><td>£30</td></tr>
-    <tr><td>SSD Upgrade</td><td>SSD installation with OS clone or fresh install (customer provides SSD)</td><td>£60</td></tr>
-    <tr><td>Antivirus Removal</td><td>Virus/malware scan, removal, and patching</td><td>£35</td></tr>
-    <tr><td>Data Backup & Transfer</td><td>Backup to customer-supplied external device</td><td>£40</td></tr>
-    <tr><td><strong>Combo Offer</strong></td><td>OS Installation + Antivirus Removal</td><td><strong>£95</strong></td></tr>
+    <tr><td><img src="https://cdn-icons-png.flaticon.com/128/833/833472.png" alt="Windows Icon" class="service-icon">Windows OS Installation</td><td>Clean install of Windows 10 or 11 (with drivers and updates)</td><td>£60</td></tr>
+    <tr><td><img src="https://cdn-icons-png.flaticon.com/128/3665/3665923.png" alt="RAM Icon" class="service-icon">RAM Upgrade</td><td>RAM installation (we or customer supply RAM) + compatibility check (excluding RAM price)</td><td>£30</td></tr>
+    <tr><td><img src="https://cdn-icons-png.flaticon.com/128/3314/3314510.png" alt="SSD Icon" class="service-icon">SSD Upgrade</td><td>SSD installation with OS clone or fresh install (customer provides SSD)</td><td>£60</td></tr>
+    <tr><td><img src="https://cdn-icons-png.flaticon.com/128/565/565547.png" alt="Antivirus Icon" class="service-icon">Antivirus Removal</td><td>Virus/malware scan, removal, and patching</td><td>£35</td></tr>
+    <tr><td><img src="https://cdn-icons-png.flaticon.com/128/1484/1484825.png" alt="Backup Icon" class="service-icon">Data Backup & Transfer</td><td>Backup to customer-supplied external device</td><td>£40</td></tr>
+    <tr><td><strong><img src="https://cdn-icons-png.flaticon.com/128/1828/1828884.png" alt="Combo Icon" class="service-icon">Combo Offer</strong></td><td>OS Installation + Antivirus Removal</td><td><strong>£95</strong></td></tr>
   </table>
 </section>
 
