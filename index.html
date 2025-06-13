@@ -108,9 +108,37 @@
 
 <!-- Slideshow Starts Here -->
 <div class="slideshow-container">
-  <img class="slide" src="laptop-ram-upgrade-image-shows-technician-installing-process-seemingly-simple-requires-precision-detailed-384320981.webp" alt="RAM Upgrade">
-  <img class="slide" src="stock-photo-microchip-assembling.jpeg" alt="Microchip Assembly">
+  
+  <div class="slide">
+    <img src="images/service-desktop.jpg" style="width:100%" alt="Desktop service">
+  </div>
+  <div class="slide">
+    <img src="images/ram-upgrade.jpg" style="width:100%" alt="RAM upgrade">
+  </div>
+  <div class="slide">
+    <img src="images/laptop-repair.jpg" style="width:100%" alt="Laptop motherboard repair">
+  </div>
+  <div class="slide">
+    <img src="images/front-repair.jpg" style="width:100%" alt="Computer repair work">
+  </div>
 </div>
+
+<style>
+.slide { display: none; }
+</style>
+
+<script>
+let slideIndex = 0;
+function showSlides() {
+  const slides = document.getElementsByClassName("slide");
+  for (let s of slides) s.style.display = "none";
+  slideIndex = (slideIndex + 1) % slides.length;
+  slides[slideIndex].style.display = "block";
+  setTimeout(showSlides, 4000);
+}
+showSlides();
+</script>
+
 <!-- Slideshow Ends Here -->
 
 <div class="cta-wrapper">
