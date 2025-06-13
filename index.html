@@ -12,31 +12,37 @@
     header, footer { background: #003366; color: white; padding: 1em; text-align: center; }
     nav a { margin: 0 1em; color: white; text-decoration: none; }
     .hero {
-      height: 100vh;
-      color: white;
       text-align: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      color: white;
+      position: relative;
+      height: 60vh;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
       background-size: cover;
       background-position: center;
-      background-repeat: no-repeat;
-      animation: backgroundSlide 30s infinite;
+      animation: slideShow 30s infinite;
+      z-index: -1;
+      opacity: 0.7;
     }
-
-    @keyframes backgroundSlide {
-      0% { background-image: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1600&q=80'); }
-      33% { background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80'); }
-      66% { background-image: url('https://images.unsplash.com/photo-1555617989-9129b2f243c0?auto=format&fit=crop&w=1600&q=80'); }
-      100% { background-image: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1600&q=80'); }
+    @keyframes slideShow {
+      0% { background-image: url('https://source.unsplash.com/featured/?computer-repair'); }
+      33% { background-image: url('https://source.unsplash.com/featured/?laptop-service'); }
+      66% { background-image: url('https://source.unsplash.com/featured/?tech-support'); }
     }
-
-    .services, .contact, .about, .privacy {
-      padding: 2em;
-      max-width: 900px;
-      margin: auto;
+    .hero-content {
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      padding: 1em;
+      background-color: rgba(0, 0, 0, 0.4);
+      border-radius: 10px;
+      display: inline-block;
     }
+    .services, .contact, .about, .privacy { padding: 2em; max-width: 900px; margin: auto; }
     table { width: 100%; border-collapse: collapse; margin-top: 1em; }
     th, td { border: 1px solid #ccc; padding: 0.8em; text-align: left; vertical-align: middle; }
     th { background: #003366; color: white; }
@@ -63,9 +69,11 @@
 </header>
 
 <section class="hero">
-  <h2>Reliable & Affordable Computer Repairs in the UK</h2>
-  <p>Fast, expert repairs and upgrades for your desktop or laptop. Free consultation and doorstep pickup available!</p>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" class="cta" target="_blank">Book a Service</a>
+  <div class="hero-content">
+    <h2>Reliable & Affordable Computer Repairs in the UK</h2>
+    <p>Fast, expert repairs and upgrades for your desktop or laptop. Free consultation and doorstep pickup available!</p>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" class="cta" target="_blank">Book a Service</a>
+  </div>
 </section>
 
 <section class="services" id="services">
