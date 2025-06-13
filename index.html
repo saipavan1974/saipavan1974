@@ -4,90 +4,47 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Reliable and affordable desktop & laptop repairs, upgrades, and servicing in the UK by BPK Computer Repair and Services.">
-  <meta name="keywords" content="computer repair UK, laptop service, Windows installation, SSD upgrade, RAM upgrade, antivirus removal, data backup, Preston computer repair">
+  <meta name="keywords" content="computer repair UK, laptop service, Windows installation, SSD upgrade, RAM upgrade, antivirus removal, data backup">
   <meta name="author" content="BPK Computer Repair and Services">
   <title>BPK Computer Repair and Services</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-    }
-    header, footer {
-      background: #003366;
-      color: white;
-      padding: 1em;
-      text-align: center;
-    }
-    nav a {
-      margin: 0 1em;
-      color: white;
-      text-decoration: none;
-    }
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header, footer { background: #003366; color: white; padding: 1em; text-align: center; }
+    nav a { margin: 0 1em; color: white; text-decoration: none; }
     .hero {
-      padding: 4em 2em;
+      height: 100vh;
+      color: white;
       text-align: center;
-      background-image: url('https://images.unsplash.com/photo-1581090700227-4c4a1c24fbb6?auto=format&fit=crop&w=1600&q=80');
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       background-size: cover;
       background-position: center;
-      color: white;
-      text-shadow: 1px 1px 2px #000;
+      background-repeat: no-repeat;
+      animation: backgroundSlide 30s infinite;
     }
+
+    @keyframes backgroundSlide {
+      0% { background-image: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1600&q=80'); }
+      33% { background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1600&q=80'); }
+      66% { background-image: url('https://images.unsplash.com/photo-1555617989-9129b2f243c0?auto=format&fit=crop&w=1600&q=80'); }
+      100% { background-image: url('https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?auto=format&fit=crop&w=1600&q=80'); }
+    }
+
     .services, .contact, .about, .privacy {
       padding: 2em;
       max-width: 900px;
       margin: auto;
-      background: white;
-      border-radius: 8px;
-      margin-top: 1em;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1em;
-    }
-    th, td {
-      border: 1px solid #ccc;
-      padding: 0.8em;
-      text-align: left;
-      vertical-align: middle;
-    }
-    th {
-      background: #003366;
-      color: white;
-    }
-    .cta {
-      display: block;
-      margin: 1.5em auto;
-      background: #0073e6;
-      color: white;
-      padding: 1em 2em;
-      text-align: center;
-      width: fit-content;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .logo-title {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-    .logo-title img {
-      height: 60px;
-    }
-    .logo-title h1 {
-      margin: 0;
-    }
-    .contact-info img {
-      height: 16px;
-      width: 16px;
-      vertical-align: middle;
-      margin-right: 6px;
-    }
+    table { width: 100%; border-collapse: collapse; margin-top: 1em; }
+    th, td { border: 1px solid #ccc; padding: 0.8em; text-align: left; vertical-align: middle; }
+    th { background: #003366; color: white; }
+    .cta { display: block; margin: 1.5em auto; background: #0073e6; color: white; padding: 1em 2em; text-align: center; width: fit-content; text-decoration: none; border-radius: 5px; }
+    .logo-title { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .logo-title img { height: 60px; }
+    .logo-title h1 { margin: 0; }
+    .contact-info img { height: 16px; width: 16px; vertical-align: middle; margin-right: 6px; }
   </style>
 </head>
 <body>
