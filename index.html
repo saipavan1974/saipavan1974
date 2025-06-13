@@ -23,7 +23,7 @@
       background-position: center;
       background-size: cover;
       opacity: 0;
-      transition: opacity 1s ease-in-out;
+      transition: opacity 0.5s ease-in-out;
     }
     .slide.active { opacity: 1; }
     .hero::after {
@@ -81,10 +81,10 @@
 </header>
 
 <section class="hero">
-  <!-- Working slideshow images -->
-  <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1612831455546-f5f7e9f7f5a1');"></div>
-  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1600195077074-d98c1e9a5c8e');"></div>
-  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1573497491208-6b1acb260507');"></div>
+  <!-- Professional repair-related slideshow images -->
+  <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1581091012184-7f1f11a7c7b3');"></div>
+  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1581091870622-8eec3c92a8e5');"></div>
+  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1610120187395-daf79e1ec6cf');"></div>
 
   <div class="hero-content">
     <h2>Reliable & Affordable Computer Repairs in the UK</h2>
@@ -121,10 +121,10 @@
   <p>BPK Computer Repair and Services brings years of experience in desktop and laptop servicing...</p>
 </section>
 
-<section class="contact" id="contact">
+  <section class="contact" id="contact">
   <h2>Contact Us</h2>
   <div class="contact-info">
-    <p><img src="https://cdn-icons-png.flaticon.com/128/732/732200.png" alt="Email icon"> Email: bpk@bpkcomputer.com</p>
+    <p><img src="https://cdn-icons-png.flaticon.com/128/732/732200.png" alt="Email icon"> Email: <a href="mailto:bpk@bpkcomputer.com">bpk@bpkcomputer.com</a></p>
     <p><img src="https://cdn-icons-png.flaticon.com/128/597/597177.png" alt="Phone icon"> Phone: 07818955500</p>
   </div>
   <p>Available in Preston | Mon–Sat | 9 AM–6 PM</p>
@@ -146,7 +146,7 @@
     slides[current].classList.remove('active');
     current = (current + 1) % slides.length;
     slides[current].classList.add('active');
-  }, 5000);
+  }, 4000); // 4 seconds between slides
 </script>
 
 </body>
