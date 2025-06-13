@@ -12,58 +12,57 @@
     header, footer { background: #003366; color: white; padding: 1em; text-align: center; }
     nav a { margin: 0 1em; color: white; text-decoration: none; }
     .hero {
+      text-align: center;
+      color: white;
       position: relative;
       height: 60vh;
       overflow: hidden;
+      background: gray;
     }
-    .slideshow {
-      width: 100%;
-      height: 100%;
+    .slideshow-container {
       position: absolute;
       top: 0; left: 0;
+      width: 100%; height: 100%;
+      z-index: 0;
     }
-    .slideshow img {
-      width: 100%;
-      height: 100%;
+    .slide-image {
+      width: 100%; height: 100%;
       object-fit: cover;
       position: absolute;
+      top: 0; left: 0;
       opacity: 0;
-      transition: opacity 2s ease-in-out;
+      transition: opacity 1s ease-in-out;
     }
-    .slideshow img.active {
+    .slide-image.active {
       opacity: 0.7;
+      z-index: 1;
     }
     .hero-content {
       position: relative;
-      text-align: center;
-      color: white;
       top: 50%;
       transform: translateY(-50%);
       padding: 1em;
       background-color: rgba(0, 0, 0, 0.4);
       border-radius: 10px;
-      max-width: 90%;
-      margin: auto;
-    }
-    .cta-container {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 1em;
-      margin-top: 1.5em;
-    }
-    .cta {
-      background: #0073e6;
-      color: white;
-      padding: 1em 2em;
-      text-align: center;
-      text-decoration: none;
-      border-radius: 5px;
+      display: inline-block;
+      z-index: 2;
     }
     .services, .contact, .about, .privacy { padding: 2em; max-width: 900px; margin: auto; }
     table { width: 100%; border-collapse: collapse; margin-top: 1em; }
     th, td { border: 1px solid #ccc; padding: 0.8em; text-align: left; vertical-align: middle; }
     th { background: #003366; color: white; }
+    .cta-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      margin-top: 2em;
+    }
+    .cta {
+      background: #0073e6; color: white;
+      padding: 1em 2em; text-align: center;
+      text-decoration: none; border-radius: 5px;
+      font-weight: bold;
+    }
     .logo-title { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
     .logo-title img { height: 60px; }
     .logo-title h1 { margin: 0; }
@@ -86,18 +85,14 @@
 </header>
 
 <section class="hero">
-  <div class="slideshow">
-    <a href="#services"><img src="https://source.unsplash.com/1600x900/?computer-service" class="active" alt="Slide 1"></a>
-    <a href="#services"><img src="https://source.unsplash.com/1600x900/?laptop-repair" alt="Slide 2"></a>
-    <a href="#services"><img src="https://source.unsplash.com/1600x900/?it-support" alt="Slide 3"></a>
+  <div class="slideshow-container">
+    <img src="https://source.unsplash.com/1600x900/?computer-repair" class="slide-image active" alt="Slide 1">
+    <img src="https://source.unsplash.com/1600x900/?laptop-service" class="slide-image" alt="Slide 2">
+    <img src="https://source.unsplash.com/1600x900/?tech-support" class="slide-image" alt="Slide 3">
   </div>
   <div class="hero-content">
     <h2>Reliable & Affordable Computer Repairs in the UK</h2>
     <p>Fast, expert repairs and upgrades for your desktop or laptop. Free consultation and doorstep pickup available!</p>
-    <div class="cta-container">
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" class="cta" target="_blank">Book a Service</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" class="cta" target="_blank">Get a Free Quote</a>
-    </div>
   </div>
 </section>
 
@@ -133,18 +128,23 @@
   <p>Your privacy is important to us. We collect only the necessary information for service purposes and do not share your data with third parties. All data collected through our Google Forms is stored securely and used solely for communication and service delivery.</p>
 </section>
 
+<div class="cta-wrapper">
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" class="cta" target="_blank">Book a Service</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" class="cta" target="_blank">Get a Free Quote</a>
+</div>
+
 <footer>
   <p>&copy; 2025 BPK Computer Repair and Services. All rights reserved.</p>
 </footer>
 
 <script>
-  const slides = document.querySelectorAll('.slideshow img');
-  let currentSlide = 0;
+  let slideIndex = 0;
+  const slides = document.querySelectorAll(".slide-image");
   setInterval(() => {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
-  }, 6000); // Change every 6 seconds
+    slides[slideIndex].classList.remove("active");
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].classList.add("active");
+  }, 6000);
 </script>
 
 </body>
