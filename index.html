@@ -71,25 +71,16 @@
       animation: fade 1s ease-in-out;
     }
 
+    .slide img {
+      width: 100%;
+      display: block;
+    }
+
     @keyframes fade {
       from {opacity: .4}
       to {opacity: 1}
     }
   </style>
-  <script>
-    let slideIndex = 0;
-    function showSlides() {
-      let slides = document.getElementsByClassName("slide");
-      for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
-      }
-      slideIndex++;
-      if (slideIndex > slides.length) {slideIndex = 1}    
-      slides[slideIndex-1].style.display = "block";  
-      setTimeout(showSlides, 3000);
-    }
-    document.addEventListener("DOMContentLoaded", showSlides);
-  </script>
 </head>
 <body>
 
@@ -108,38 +99,32 @@
 
 <!-- Slideshow Starts Here -->
 <div class="slideshow-container">
-  
   <div class="slide">
-    <img src="images/service-desktop.jpg" style="width:100%" alt="Desktop service">
+    <img src="images/service-desktop.jpg" alt="Desktop service">
   </div>
   <div class="slide">
-    <img src="images/ram-upgrade.jpg" style="width:100%" alt="RAM upgrade">
+    <img src="images/ram-upgrade.jpg" alt="RAM upgrade">
   </div>
   <div class="slide">
-    <img src="images/laptop-repair.jpg" style="width:100%" alt="Laptop motherboard repair">
+    <img src="images/laptop-repair.jpg" alt="Laptop motherboard repair">
   </div>
   <div class="slide">
-    <img src="images/front-repair.jpg" style="width:100%" alt="Computer repair work">
+    <img src="images/front-repair.jpg" alt="Computer repair work">
   </div>
 </div>
-
-<style>
-.slide { display: none; }
-</style>
+<!-- Slideshow Ends Here -->
 
 <script>
-let slideIndex = 0;
-function showSlides() {
-  const slides = document.getElementsByClassName("slide");
-  for (let s of slides) s.style.display = "none";
-  slideIndex = (slideIndex + 1) % slides.length;
-  slides[slideIndex].style.display = "block";
-  setTimeout(showSlides, 4000);
-}
-showSlides();
+  let slideIndex = 0;
+  function showSlides() {
+    const slides = document.getElementsByClassName("slide");
+    for (let s of slides) s.style.display = "none";
+    slideIndex = (slideIndex + 1) % slides.length;
+    slides[slideIndex].style.display = "block";
+    setTimeout(showSlides, 4000);
+  }
+  document.addEventListener("DOMContentLoaded", showSlides);
 </script>
-
-<!-- Slideshow Ends Here -->
 
 <div class="cta-wrapper">
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" class="cta" target="_blank">Book a Service</a>
