@@ -55,7 +55,7 @@
       .cta-wrapper { flex-direction: column; }
     }
 
-    /* Slideshow Styles */
+    /* New Slideshow Styles */
     .slideshow-container {
       max-width: 800px;
       position: relative;
@@ -65,19 +65,16 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
 
-    .slide {
+    .mySlides {
       display: none;
-      width: 100%;
-      animation: fade 1s ease-in-out;
     }
 
-    .slide img {
-      width: 100%;
-      display: block;
+    .fade {
+      animation: fadeEffect 1.5s;
     }
 
-    @keyframes fade {
-      from {opacity: .4}
+    @keyframes fadeEffect {
+      from {opacity: 0.4}
       to {opacity: 1}
     }
   </style>
@@ -97,34 +94,37 @@
   </nav>
 </header>
 
-<!-- Slideshow Starts Here -->
+<!-- Updated Slideshow Starts Here -->
 <div class="slideshow-container">
-  <div class="slide">
-    <img src="images/service-desktop.jpg" alt="Desktop service">
+  <div class="mySlides fade">
+    <img src="computer_repair_technician.jpg" style="width:100%" alt="Computer Repair Technician">
   </div>
-  <div class="slide">
-    <img src="images/ram-upgrade.jpg" alt="RAM upgrade">
+  <div class="mySlides fade">
+    <img src="difference-computer-repair-and-support-1.jpg" style="width:100%" alt="Repair Support">
   </div>
-  <div class="slide">
-    <img src="images/laptop-repair.jpg" alt="Laptop motherboard repair">
+  <div class="mySlides fade">
+    <img src="laptop-repair-box-1.jpg" style="width:100%" alt="Laptop Repair">
   </div>
-  <div class="slide">
-    <img src="images/front-repair.jpg" alt="Computer repair work">
+  <div class="mySlides fade">
+    <img src="Professional-Computer-Repair-Technician.png" style="width:100%" alt="Technician Image">
   </div>
 </div>
-<!-- Slideshow Ends Here -->
 
 <script>
   let slideIndex = 0;
   function showSlides() {
-    const slides = document.getElementsByClassName("slide");
-    for (let s of slides) s.style.display = "none";
-    slideIndex = (slideIndex + 1) % slides.length;
-    slides[slideIndex].style.display = "block";
-    setTimeout(showSlides, 4000);
+    const slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 4000); // 4-second interval
   }
   document.addEventListener("DOMContentLoaded", showSlides);
 </script>
+<!-- Updated Slideshow Ends Here -->
 
 <div class="cta-wrapper">
   <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" class="cta" target="_blank">Book a Service</a>
@@ -155,7 +155,7 @@
     <p><img src="https://cdn-icons-png.flaticon.com/128/732/732200.png" alt="Email Icon"> Email: bpk@bpkcomputer.com</p>
     <p><img src="https://cdn-icons-png.flaticon.com/128/597/597177.png" alt="Phone Icon"> Phone: 07818955500</p>
   </div>
-  <p>Available in Preston | Mon–Sat | 9 AM – 6 PM</p>
+  <p>Available in Preston | Mon–Sat | 10 AM – 10:30 PM</p>
 </section>
 
 <section class="privacy" id="privacy">
