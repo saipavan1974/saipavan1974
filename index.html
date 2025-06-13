@@ -2,48 +2,36 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Reliable and affordable desktop & laptop repairs..." />
-  <meta name="keywords" content="computer repair UK, laptop service, Windows installation..." />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Reliable and affordable desktop & laptop repairs, upgrades, and servicing in the UK by BPK Computer Repair and Services." />
+  <meta name="keywords" content="computer repair UK, laptop service, Windows installation, SSD upgrade, RAM upgrade, antivirus removal, data backup" />
   <meta name="author" content="BPK Computer Repair and Services" />
   <title>BPK Computer Repair and Services</title>
   <style>
     body { margin: 0; font-family: Arial, sans-serif; }
     header, footer { background: #003366; color: #fff; padding: 1rem; text-align: center; }
     nav a { margin: 0 1rem; color: #fff; text-decoration: none; }
-    .hero {
-      position: relative;
-      height: 60vh;
-      overflow: hidden;
+    .hero { position: relative; height: 60vh; overflow: hidden; }
+    .slide-container, .slide { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+    .slide { background-position: center; background-size: cover; opacity: 0; animation: fade 12s infinite; }
+    .slide:nth-child(1) { background-image: url('https://images.unsplash.com/photo-1587825140408-f4c27f51dd23?auto=format&fit=crop&w=1600&q=80'); animation-delay: 0s; }
+    .slide:nth-child(2) { background-image: url('https://images.unsplash.com/photo-1581093658408-5eccd0427eb3?auto=format&fit=crop&w=1600&q=80'); animation-delay: 4s; }
+    .slide:nth-child(3) { background-image: url('https://images.unsplash.com/photo-1593642532400-2682810df593?auto=format&fit=crop&w=1600&q=80'); animation-delay: 8s; }
+    @keyframes fade {
+      0% { opacity: 0; }
+      8% { opacity: 1; }
+      33% { opacity: 1; }
+      41% { opacity: 0; }
+      100% { opacity: 0; }
     }
-    .slide {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-position: center;
-      background-size: cover;
-      opacity: 0;
-      transition: opacity 0.5s ease-in-out;
-    }
-    .slide.active { opacity: 1; }
     .hero::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.6);
-      z-index: 1;
+      content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6); z-index: 1;
     }
     .hero-content {
-      position: relative;
-      z-index: 2;
-      top: 50%; transform: translateY(-50%);
-      text-align: center;
-      color: #fff;
-      background: rgba(0,0,0,0.4);
-      padding: 1.5rem;
-      border-radius: 8px;
-      max-width: 90%; margin: 0 auto;
+      position: relative; z-index: 2; top: 50%; transform: translateY(-50%);
+      text-align: center; color: #fff; background: rgba(0,0,0,0.4);
+      padding: 1.5rem; border-radius: 8px; max-width: 90%; margin: 0 auto;
     }
     .cta-wrapper, .services, .about, .contact, .privacy { padding: 2rem; max-width: 900px; margin: auto; }
     table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
@@ -54,11 +42,6 @@
     .logo-title { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
     .logo-title img { height: 60px; }
     .contact-info img { vertical-align: middle; margin-right: 8px; width: 16px; height: 16px; }
-    .service-images { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 2rem 0; }
-    .service-images a { flex: 1 1 200px; max-width: 300px; transition: transform .3s; }
-    .service-images a:hover { transform: scale(1.05); }
-    .service-images img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
-
     @media (max-width: 768px) {
       .hero-content { padding: 1rem; font-size: 0.9rem; }
       .cta-wrapper { flex-direction: column; }
@@ -69,7 +52,7 @@
 
 <header>
   <div class="logo-title">
-    <img src="LOGO.png" alt="BPK Logo" />
+    <img src="LOGO.png" alt="BPK Logo">
     <h1>BPK Computer Repair and Services</h1>
   </div>
   <nav>
@@ -81,10 +64,9 @@
 </header>
 
 <section class="hero">
-  <!-- Professional repair-related slideshow images -->
-  <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1581091012184-7f1f11a7c7b3');"></div>
-  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1581091870622-8eec3c92a8e5');"></div>
-  <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1610120187395-daf79e1ec6cf');"></div>
+  <div class="slide"></div>
+  <div class="slide"></div>
+  <div class="slide"></div>
 
   <div class="hero-content">
     <h2>Reliable & Affordable Computer Repairs in the UK</h2>
@@ -101,63 +83,37 @@
   <h2>Our Services</h2>
   <table>
     <tr><th>Service</th><th>Description</th><th>Price (from)</th></tr>
-    <tr><td>Windows OS Installation</td><td>Clean install of Windows 10 or 11 (with drivers & updates)</td><td>£60</td></tr>
-    <tr><td>RAM Upgrade</td><td>RAM installation + compatibility check (excl. RAM cost)</td><td>£30</td></tr>
-    <tr><td>SSD Upgrade</td><td>SSD install with OS clone or fresh install (customer provides SSD)</td><td>£60</td></tr>
-    <tr><td>Antivirus Removal</td><td>Virus/malware scan, removal & patching</td><td>£35</td></tr>
+    <tr><td>Windows OS Installation</td><td>Clean install of Windows 10 or 11</td><td>£60</td></tr>
+    <tr><td>RAM Upgrade</td><td>RAM install + compatibility check</td><td>£30</td></tr>
+    <tr><td>SSD Upgrade</td><td>SSD clone or fresh install</td><td>£60</td></tr>
+    <tr><td>Antivirus Removal</td><td>Virus/malware scan & patching</td><td>£35</td></tr>
     <tr><td>Data Backup & Transfer</td><td>Backup to customer‑supplied drive</td><td>£40</td></tr>
-    <tr><td><strong>Combo Offer</strong></td><td>OS Installation + Antivirus Removal</td><td><strong>£95</strong></td></tr>
+    <tr><td><strong>Combo Offer</strong></td><td>OS Install + Antivirus Removal</td><td><strong>£95</strong></td></tr>
   </table>
-  <div class="service-images">
-    <a href="#services"><img src="https://images.unsplash.com/photo-1555435021-1804ecf58e05" alt="Motherboard"></a>
-    <a href="#services"><img src="https://images.unsplash.com/photo-1617351157303-782eb69c8f0e" alt="RAM"></a>
-    <a href="#services"><img src="https://images.unsplash.com/photo-1580910051070-d4a01c38e1b8" alt="SSD"></a>
-    <a href="#services"><img src="https://images.unsplash.com/photo-1612552153704-931d2b46df7c" alt="PC Repair"></a>
-  </div>
 </section>
 
 <section class="about" id="about">
   <h2>About Us</h2>
-  <p>BPK Computer Repair and Services brings years of experience in desktop and laptop servicing...</p>
+  <p>BPK Computer Repair and Services brings years of experience in desktop and laptop servicing... You're in safe hands.</p>
 </section>
 
-  <section class="contact" id="contact">
+<section class="contact" id="contact">
   <h2>Contact Us</h2>
   <div class="contact-info">
-    <p><img src="https://cdn-icons-png.flaticon.com/128/732/732200.png" alt="Email icon"> Email: <a href="mailto:bpk@bpkcomputer.com">bpk@bpkcomputer.com</a></p>
+    <p><img src="https://cdn-icons-png.flaticon.com/128/732/732200.png" alt="Email icon"> Email: bpk.bpkcomputer.com</p>
     <p><img src="https://cdn-icons-png.flaticon.com/128/597/597177.png" alt="Phone icon"> Phone: 07818955500</p>
   </div>
   <p>Available in Preston | Mon–Sat | 9 AM–6 PM</p>
+</section>
 
-<section class="privacy-policy" id="privacy">
+<section class="privacy" id="privacy">
   <h2>Privacy Policy</h2>
-  <p>
-    At BPK Computer Services, we value your privacy and are committed to complying with the UK General Data Protection Regulation (UK GDPR).
-    Any personal information you provide (such as name, phone number, or email) will be used solely to respond to your inquiries or process service requests.
-  </p>
-  <p>
-    We do not share your data with third parties, and we ensure it is stored securely. If you contact us via forms or email, your information will only be used for the intended communication and will not be retained longer than necessary.
-  </p>
-  <p>
-    You have the right to access, correct, or delete your personal data at any time. To do so, please contact us at <a href="mailto:bpk@bpkcomputer.com">bpk@bpkcomputer.com</a>.
-  </p>
-  <p>
-   
+  <p>Your privacy is important to us...</p>
 </section>
 
 <footer>
   <p>&copy; 2025 BPK Computer Repair and Services. All rights reserved.</p>
 </footer>
-
-<script>
-  const slides = document.querySelectorAll('.slide');
-  let current = 0;
-  setInterval(() => {
-    slides[current].classList.remove('active');
-    current = (current + 1) % slides.length;
-    slides[current].classList.add('active');
-  }, 4000); // 4 seconds between slides
-</script>
 
 </body>
 </html>
