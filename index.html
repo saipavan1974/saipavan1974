@@ -1,84 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Reliable and affordable desktop & laptop repairs, upgrades, and servicing in the UK by BPK Computer Repair and Services.">
-  <meta name="keywords" content="computer repair UK, laptop service, Windows installation, SSD upgrade, RAM upgrade, antivirus removal, data backup">
-  <meta name="author" content="BPK Computer Repair and Services">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Reliable and affordable desktop & laptop repairs..." />
+  <meta name="keywords" content="computer repair UK, laptop service, Windows installation..." />
+  <meta name="author" content="BPK Computer Repair and Services" />
   <title>BPK Computer Repair and Services</title>
   <style>
-    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
-    header, footer { background: #003366; color: white; padding: 1em; text-align: center; }
-    nav a { margin: 0 1em; color: white; text-decoration: none; }
+    body { margin: 0; font-family: Arial, sans-serif; }
+    header, footer { background: #003366; color: #fff; padding: 1rem; text-align: center; }
+    nav a { margin: 0 1rem; color: #fff; text-decoration: none; }
     .hero {
-      text-align: center;
-      color: white;
       position: relative;
       height: 60vh;
       overflow: hidden;
-      background: url('https://source.unsplash.com/1600x900/?computer-motherboard') center/cover no-repeat;
     }
-    .hero::after {
-      content: "";
-      background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6));
+    .slide {
       position: absolute;
-      top: 0; left: 0; width: 100%; height: 100%;
-      z-index: 0;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-position: center;
+      background-size: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+    }
+    .slide.active { opacity: 1; }
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.6);
+      z-index: 1;
     }
     .hero-content {
       position: relative;
-      z-index: 1;
-      top: 50%;
-      transform: translateY(-50%);
-      padding: 1em;
-      background-color: rgba(0, 0, 0, 0.4);
-      border-radius: 10px;
-      display: inline-block;
+      z-index: 2;
+      top: 50%; transform: translateY(-50%);
+      text-align: center;
+      color: #fff;
+      background: rgba(0,0,0,0.4);
+      padding: 1.5rem;
+      border-radius: 8px;
+      max-width: 90%; margin: 0 auto;
     }
-    .services, .contact, .about, .privacy { padding: 2em; max-width: 900px; margin: auto; }
-    table { width: 100%; border-collapse: collapse; margin-top: 1em; }
-    th, td { border: 1px solid #ccc; padding: 0.8em; text-align: left; vertical-align: middle; }
-    th { background: #003366; color: white; }
-    .cta-wrapper {
-      display: flex;
-      justify-content: center;
-      gap: 1em;
-      margin: 2em auto;
-    }
-    .cta {
-      background: #0073e6; color: white;
-      padding: 1em 2em; text-align: center;
-      text-decoration: none; border-radius: 5px;
-      font-weight: bold;
-    }
-    .logo-title { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .cta-wrapper, .services, .about, .contact, .privacy { padding: 2rem; max-width: 900px; margin: auto; }
+    table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+    th, td { border: 1px solid #ccc; padding: 0.8rem; text-align: left; }
+    th { background: #003366; color: #fff; }
+    .cta-wrapper { display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
+    .cta { background: #0073e6; color: #fff; padding: 1rem 2rem; text-decoration: none; border-radius: 5px; font-weight: bold; }
+    .logo-title { display: flex; align-items: center; justify-content: center; gap: 1rem; flex-wrap: wrap; }
     .logo-title img { height: 60px; }
-    .logo-title h1 { margin: 0; }
-    .contact-info img { height: 16px; width: 16px; vertical-align: middle; margin-right: 6px; }
+    .contact-info img { vertical-align: middle; margin-right: 8px; width: 16px; height: 16px; }
+    .service-images { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin: 2rem 0; }
+    .service-images a { flex: 1 1 200px; max-width: 300px; transition: transform .3s; }
+    .service-images a:hover { transform: scale(1.05); }
+    .service-images img { width: 100%; height: auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.3); }
 
-    .service-images {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1em;
-      margin: 2em auto;
-    }
-    .service-images a {
-      flex: 1 1 200px;
-      max-width: 300px;
-      transition: transform 0.4s ease;
-    }
-    .service-images a:hover {
-      transform: scale(1.05);
-    }
-    .service-images img {
-      width: 100%; height: auto;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
     @media (max-width: 768px) {
-      .hero-content { padding: 1em; font-size: 0.9em; }
+      .hero-content { padding: 1rem; font-size: 0.9rem; }
       .cta-wrapper { flex-direction: column; }
     }
   </style>
@@ -87,7 +69,7 @@
 
 <header>
   <div class="logo-title">
-    <img src="LOGO.png" alt="BPK Logo">
+    <img src="LOGO.png" alt="BPK Logo" />
     <h1>BPK Computer Repair and Services</h1>
   </div>
   <nav>
@@ -99,6 +81,11 @@
 </header>
 
 <section class="hero">
+  <!-- Slideshow backgrounds -->
+  <div class="slide active" style="background-image: url('https://source.unsplash.com/1600x900/?computer-motherboard');"></div>
+  <div class="slide" style="background-image: url('https://source.unsplash.com/1600x900/?laptop-repair');"></div>
+  <div class="slide" style="background-image: url('https://source.unsplash.com/1600x900/?ssd-upgrade');"></div>
+
   <div class="hero-content">
     <h2>Reliable & Affordable Computer Repairs in the UK</h2>
     <p>Fast, expert repairs and upgrades for your desktop or laptop. Free consultation and doorstep pickup available!</p>
@@ -106,51 +93,61 @@
 </section>
 
 <div class="cta-wrapper">
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" class="cta" target="_blank">Book a Service</a>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" class="cta" target="_blank">Get a Free Quote</a>
+  <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" target="_blank">Book a Service</a>
+  <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank">Get a Free Quote</a>
 </div>
 
 <section class="services" id="services">
   <h2>Our Services</h2>
   <table>
     <tr><th>Service</th><th>Description</th><th>Price (from)</th></tr>
-    <tr><td>Windows OS Installation</td><td>Clean install of Windows 10 or 11 (with drivers and updates)</td><td>£60</td></tr>
-    <tr><td>RAM Upgrade</td><td>RAM installation (we or customer supply RAM) + compatibility check (excluding RAM price)</td><td>£30</td></tr>
-    <tr><td>SSD Upgrade</td><td>SSD installation with OS clone or fresh install (customer provides SSD)</td><td>£60</td></tr>
-    <tr><td>Antivirus Removal</td><td>Virus/malware scan, removal, and patching</td><td>£35</td></tr>
-    <tr><td>Data Backup & Transfer</td><td>Backup to customer-supplied external device</td><td>£40</td></tr>
+    <tr><td>Windows OS Installation</td><td>Clean install of Windows 10 or 11 (with drivers & updates)</td><td>£60</td></tr>
+    <tr><td>RAM Upgrade</td><td>RAM installation + compatibility check (excl. RAM cost)</td><td>£30</td></tr>
+    <tr><td>SSD Upgrade</td><td>SSD install with OS clone or fresh install (customer provides SSD)</td><td>£60</td></tr>
+    <tr><td>Antivirus Removal</td><td>Virus/malware scan, removal & patching</td><td>£35</td></tr>
+    <tr><td>Data Backup & Transfer</td><td>Backup to customer‑supplied drive</td><td>£40</td></tr>
     <tr><td><strong>Combo Offer</strong></td><td>OS Installation + Antivirus Removal</td><td><strong>£95</strong></td></tr>
   </table>
   <div class="service-images">
     <a href="#services"><img src="https://source.unsplash.com/400x300/?motherboard" alt="Motherboard"></a>
     <a href="#services"><img src="https://source.unsplash.com/400x300/?computer-ram" alt="RAM"></a>
     <a href="#services"><img src="https://source.unsplash.com/400x300/?ssd" alt="SSD"></a>
-    <a href="#services"><img src="https://source.unsplash.com/400x300/?pc-repair" alt="Computer Repair"></a>
+    <a href="#services"><img src="https://source.unsplash.com/400x300/?pc-repair" alt="PC Repair"></a>
   </div>
 </section>
 
 <section class="about" id="about">
   <h2>About Us</h2>
-  <p>BPK Computer Repair and Services brings years of experience in desktop and laptop servicing. We provide expert repairs, upgrades, and support tailored to your needs. Whether it’s a simple OS install or a complete performance upgrade, you’re in safe hands.</p>
+  <p>BPK Computer Repair and Services brings years of experience in desktop and laptop servicing...</p>
 </section>
 
 <section class="contact" id="contact">
   <h2>Contact Us</h2>
   <div class="contact-info">
-    <p><img src="https://cdn-icons-png.flaticon.com/128/732/732200.png" alt="Email Icon"> Email: seshasaikanithi@gmail.com</p>
-    <p><img src="https://cdn-icons-png.flaticon.com/128/597/597177.png" alt="Phone Icon"> Phone: 07818955500</p>
+    <p><img src="https://cdn-icons-png.flaticon.com/128/732/732200.png" alt="Email icon"> Email: seshasaikanithi@gmail.com</p>
+    <p><img src="https://cdn-icons-png.flaticon.com/128/597/597177.png" alt="Phone icon"> Phone: 07818955500</p>
   </div>
-  <p>Available in Preston | Mon–Sat | 9 AM – 6 PM</p>
+  <p>Available in Preston | Mon–Sat | 9 AM–6 PM</p>
 </section>
 
 <section class="privacy" id="privacy">
   <h2>Privacy Policy</h2>
-  <p>Your privacy is important to us. We collect only the necessary information for service purposes and do not share your data with third parties. All data collected through our Google Forms is stored securely and used solely for communication and service delivery.</p>
+  <p>Your privacy is important to us...</p>
 </section>
 
 <footer>
   <p>&copy; 2025 BPK Computer Repair and Services. All rights reserved.</p>
 </footer>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  let current = 0;
+  setInterval(() => {
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 5000);
+</script>
 
 </body>
 </html>
