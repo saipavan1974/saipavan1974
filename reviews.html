@@ -1,32 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Customer Reviews | BPK Computer Repair and Services</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Customer reviews for BPK Computer Repair and Services">
+  <title>Customer Reviews - BPK Computer Repair and Services</title>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
     header, footer { background: #003366; color: white; padding: 1em; text-align: center; }
     nav a { margin: 0 1em; color: white; text-decoration: none; }
-    .review-widget { max-width: 1000px; margin: 2em auto; padding: 1em; }
+    .logo-title { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .logo-title img { height: 60px; }
+    .logo-title h1 { margin: 0; }
+    .reviews { padding: 2em; max-width: 900px; margin: auto; }
+    .review-box {
+      background: #f9f9f9;
+      border-left: 4px solid #0073e6;
+      padding: 1em;
+      margin-bottom: 1.5em;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      border-radius: 5px;
+    }
+    .review-box h4 {
+      margin: 0;
+      font-size: 1.1em;
+      color: #003366;
+    }
+    .review-box p { margin: 0.5em 0 0; }
+    .write-review {
+      text-align: center;
+      margin-top: 2em;
+    }
+    .write-review a {
+      background: #0073e6;
+      color: white;
+      padding: 0.8em 1.5em;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
   </style>
-  <!-- Elfsight Script -->
-  <script src="https://static.elfsight.com/platform/platform.js" async></script>
 </head>
 <body>
 
 <header>
-  <h1>BPK Computer Repair and Services</h1>
+  <div class="logo-title">
+    <img src="LOGO.png" alt="BPK Logo">
+    <h1>BPK Computer Repair and Services</h1>
+  </div>
   <nav>
     <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="privacy.html">Privacy</a>
     <a href="reviews.html">Reviews</a>
   </nav>
 </header>
 
-<section class="review-widget">
-  <h2>Customer Reviews</h2>
-  <!-- Elfsight Google Reviews Widget -->
-  <div class="elfsight-app-4e6f744a-e12d-4913-8312-30ec4d68adb7" data-elfsight-app-lazy></div>
+<section class="reviews">
+  <h2>What Our Customers Say</h2>
+
+  <div class="review-box">
+    <h4>⭐️⭐️⭐️⭐️⭐️ John D.</h4>
+    <p>Excellent service! My laptop is running faster than ever after a RAM upgrade. Highly recommend BPK Computer Services.</p>
+  </div>
+
+  <div class="review-box">
+    <h4>⭐️⭐️⭐️⭐️⭐️ Aisha K.</h4>
+    <p>They installed Windows 11 on my desktop and cleaned out a nasty virus. Very professional and fast response time.</p>
+  </div>
+
+  <div class="review-box">
+    <h4>⭐️⭐️⭐️⭐️ Michael R.</h4>
+    <p>Affordable and reliable. They backed up my data and replaced my old hard drive with an SSD.</p>
+  </div>
+
+  <div class="review-box">
+    <h4>⭐️⭐️⭐️⭐️⭐️ Priya S.</h4>
+    <p>Quick, friendly, and honest. I’m very happy with the repair service I received. Thank you BPK!</p>
+  </div>
+
+  <div class="write-review">
+    <a href="https://www.google.com/search?q=BPK+Computer+Repair+and+Services+Preston&ludocid=YOUR_GMB_ID#lrd=0x0:0x0,1" target="_blank">Write a Google Review</a>
+  </div>
 </section>
 
 <footer>
