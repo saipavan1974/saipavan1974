@@ -151,4 +151,132 @@
 </head>
 <body>
   <header>
-    <div><strong>BPK</strong> Computer Repair and Serv
+    <div><strong>BPK</strong> Computer Repair and Services</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact" class="cta">Request a Quote</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Laptop Virus Removal</h1>
+    <p>Professional virus and malware removal services to safeguard your laptop.</p>
+    <div>
+      <a href="tel:0781895500">Call Us: 0781895500</a>
+      <a href="#contact">Book Online</a>
+    </div>
+  </section>
+
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="grid">
+      <div class="card">
+        <i class="fas fa-shield-virus"></i>
+        <h3>Virus & Malware Removal</h3>
+        <p>Thorough removal of viruses, malware, and spyware.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-database"></i>
+        <h3>Data Recovery</h3>
+        <p>Recovery of lost or corrupted data from your laptop.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-memory"></i>
+        <h3>RAM Upgrades</h3>
+        <p>Upgrading your laptop’s memory for better performance.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-hdd"></i>
+        <h3>SSD Installations</h3>
+        <p>Installation and configuration of fast and reliable SSDs.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="services" id="pricing">
+    <h2>Pricing</h2>
+    <table id="pricing-table">
+      <thead>
+        <tr><th>Service</th><th>Description</th><th>Price</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Windows OS Installation</td><td>Clean install of Windows 10 or 11 (with drivers and updates)</td><td>£60</td></tr>
+        <tr><td>RAM Upgrade</td><td>RAM installation + compatibility check (excluding RAM price)</td><td>£30</td></tr>
+        <tr><td>SSD Upgrade</td><td>SSD installation with OS clone or fresh install (with customer provided SSD)</td><td>£60</td></tr>
+        <tr><td>Antivirus Removal</td><td>Virus/malware scan and removal</td><td>£35</td></tr>
+        <tr><td>Data Backup & Transfer</td><td>Backup to customer-supplied external device</td><td>£40</td></tr>
+        <tr><td>Home Service Visit</td><td>Home services for repairing your Desktop or Laptop within 10 miles. First hour charge is included.</td><td>£65</td></tr>
+        <tr><td>Combo Offer</td><td>OS Installation + Antivirus Removal + Drivers & Updates</td><td>£95</td></tr>
+      </tbody>
+    </table>
+    <button id="export-pdf">Download as PDF</button>
+  </section>
+
+  <section id="contact" style="padding:60px 20px; background:#eef2f7;">
+    <h2>Contact Us</h2>
+    <form id="contact-form">
+      <label>Name *</label><br/>
+      <input type="text" name="user_name" required><br/>
+      <label>Email *</label><br/>
+      <input type="email" name="user_email" required><br/>
+      <label>Message *</label><br/>
+      <textarea name="message" rows="5" required></textarea><br/>
+      <button type="submit">Send Message</button>
+    </form>
+    <p id="form-status"></p>
+    <h3>Book an Appointment</h3>
+    <div id="calendly-schedule" style="min-height:700px;"></div>
+  </section>
+
+  <section class="testimonials">
+    <h2>Customer Testimonials</h2>
+    <div class="testimonial">"Fantastic service! They fixed my laptop in just one visit." – John D.</div>
+    <div class="testimonial">"Affordable and quick. Highly recommend BPK Computer Repair." – Aisha K.</div>
+    <div class="testimonial">"Clear communication and reliable home service. Great experience." – Rajesh M.</div>
+  </section>
+
+  <footer class="footer">
+    &copy; 2025 BPK Computer Repair and Services. All rights reserved.
+    <div class="gdpr">We comply with GDPR and handle your data responsibly.</div>
+  </footer>
+
+  <script src="https://cdn.emailjs.com/sdk/3.2.0/email.min.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      emailjs.init("UqNoFUPuYONbTDKzx");
+
+      document.getElementById('contact-form').addEventListener('submit', function(e){
+        e.preventDefault();
+        emailjs.sendForm('service_cl2xmbi','template_nunvslg', this)
+          .then(() => {
+            document.getElementById('form-status').textContent = "Sent! We’ll be in touch soon.";
+          }, (err) => {
+            document.getElementById('form-status').textContent = "Oops, something went wrong.";
+            console.error(err);
+          });
+      });
+    });
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.5.28/dist/jspdf.plugin.autotable.min.js"></script>
+  <script>
+    document.getElementById('export-pdf').addEventListener('click', () => {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+      doc.text("BPK Computer Repair Price List", 10, 10);
+      doc.autoTable({ html: '#pricing-table' });
+      doc.save('BPK_Pricing.pdf');
+    });
+  </script>
+  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript"></script>
+  <script>
+    Calendly.initInlineWidget({
+      url: 'https://calendly.com/bpk-computers/30min',
+      parentElement: document.getElementById('calendly-schedule'),
+      prefill: {},
+      utm: {}
+    });
+  </script>
+</body>
+</html>
