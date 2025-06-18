@@ -94,6 +94,42 @@
     .card:hover {
       transform: translateY(-5px);
     }
+
+    .pricing {
+      background: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .pricing h2 {
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+    table {
+      margin: 0 auto;
+      width: 90%;
+      max-width: 900px;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 15px;
+      border: 1px solid #ccc;
+      text-align: left;
+    }
+    th {
+      background-color: #0a3d62;
+      color: #fff;
+    }
+    .pricing-actions a {
+      margin: 10px;
+      display: inline-block;
+      background: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+
     .testimonials {
       background: #fff;
       padding: 60px 20px;
@@ -107,6 +143,7 @@
       margin: 10px auto;
       max-width: 800px;
     }
+
     .footer {
       background-color: #0a3d62;
       color: white;
@@ -126,7 +163,7 @@
     <div><strong>BPK</strong> Computer Repair and Services</div>
     <nav>
       <a href="#services">Services</a>
-      <a href="pricing.html">Pricing</a>
+      <a href="#pricing">Pricing</a>
       <a href="#contact" class="cta">Request a Quote</a>
     </nav>
   </header>
@@ -164,8 +201,56 @@
         <p>Installation and configuration of fast and reliable SSDs.</p>
       </div>
     </div>
-    <div style="margin-top: 40px;">
-      <a href="pricing.html" class="cta">View Detailed Pricing</a>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <h2>Pricing</h2>
+    <table>
+      <tr>
+        <th>Service</th>
+        <th>Description</th>
+        <th>Price</th>
+      </tr>
+      <tr>
+        <td>Windows OS Installation</td>
+        <td>Clean install of Windows 10 or 11 (with drivers and updates)</td>
+        <td>£60</td>
+      </tr>
+      <tr>
+        <td>RAM Upgrade</td>
+        <td>RAM installation + compatibility check (excluding RAM price)</td>
+        <td>£30</td>
+      </tr>
+      <tr>
+        <td>SSD Upgrade</td>
+        <td>SSD installation with OS clone or fresh install (with customer-provided SSD)</td>
+        <td>£60</td>
+      </tr>
+      <tr>
+        <td>Antivirus Removal</td>
+        <td>Virus/malware scan and removal</td>
+        <td>£35</td>
+      </tr>
+      <tr>
+        <td>Data Backup & Transfer</td>
+        <td>Backup to customer-supplied external device</td>
+        <td>£40</td>
+      </tr>
+      <tr>
+        <td>Home Service Visit</td>
+        <td>Home repair within 10 miles (includes first hour)</td>
+        <td>£65</td>
+      </tr>
+      <tr>
+        <td>Combo Offer</td>
+        <td>OS Installation + Antivirus Removal + Drivers & Updates</td>
+        <td>£95</td>
+      </tr>
+    </table>
+    <div class="pricing-actions">
+      <a href="files/BPK_Pricing.pdf" download>Download as PDF</a>
+      <a href="#contact">Contact Form</a>
+      <a href="#contact">Book Service</a>
     </div>
   </section>
 
