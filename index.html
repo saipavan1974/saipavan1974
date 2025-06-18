@@ -6,6 +6,7 @@
   <title>BPK Computer Repair and Services</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
   <style>
     * {
       margin: 0;
@@ -94,42 +95,6 @@
     .card:hover {
       transform: translateY(-5px);
     }
-
-    .pricing {
-      background: #fff;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .pricing h2 {
-      font-size: 2em;
-      margin-bottom: 30px;
-    }
-    table {
-      margin: 0 auto;
-      width: 90%;
-      max-width: 900px;
-      border-collapse: collapse;
-      margin-bottom: 20px;
-    }
-    th, td {
-      padding: 15px;
-      border: 1px solid #ccc;
-      text-align: left;
-    }
-    th {
-      background-color: #0a3d62;
-      color: #fff;
-    }
-    .pricing-actions a {
-      margin: 10px;
-      display: inline-block;
-      background: #3498db;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
-    }
-
     .testimonials {
       background: #fff;
       padding: 60px 20px;
@@ -143,7 +108,6 @@
       margin: 10px auto;
       max-width: 800px;
     }
-
     .footer {
       background-color: #0a3d62;
       color: white;
@@ -156,114 +120,35 @@
       font-size: 0.8em;
       color: #ddd;
     }
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    form button {
+      background-color: #0a3d62;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 40px;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div><strong>BPK</strong> Computer Repair and Services</div>
-    <nav>
-      <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact" class="cta">Request a Quote</a>
-    </nav>
-  </header>
-
-  <section class="hero">
-    <h1>Laptop Virus Removal</h1>
-    <p>Professional virus and malware removal services to safeguard your laptop.</p>
-    <div>
-      <a href="tel:0781895500">Call Us: 0781895500</a>
-      <a href="#contact">Book Online</a>
-    </div>
-  </section>
-
-  <section class="services" id="services">
-    <h2>Our Services</h2>
-    <div class="grid">
-      <div class="card">
-        <i class="fas fa-shield-virus"></i>
-        <h3>Virus & Malware Removal</h3>
-        <p>Thorough removal of viruses, malware, and spyware.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-database"></i>
-        <h3>Data Recovery</h3>
-        <p>Recovery of lost or corrupted data from your laptop.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-memory"></i>
-        <h3>RAM Upgrades</h3>
-        <p>Upgrading your laptop’s memory for better performance.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-hdd"></i>
-        <h3>SSD Installations</h3>
-        <p>Installation and configuration of fast and reliable SSDs.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="pricing" id="pricing">
-    <h2>Pricing</h2>
-    <table>
-      <tr>
-        <th>Service</th>
-        <th>Description</th>
-        <th>Price</th>
-      </tr>
-      <tr>
-        <td>Windows OS Installation</td>
-        <td>Clean install of Windows 10 or 11 (with drivers and updates)</td>
-        <td>£60</td>
-      </tr>
-      <tr>
-        <td>RAM Upgrade</td>
-        <td>RAM installation + compatibility check (excluding RAM price)</td>
-        <td>£30</td>
-      </tr>
-      <tr>
-        <td>SSD Upgrade</td>
-        <td>SSD installation with OS clone or fresh install (with customer-provided SSD)</td>
-        <td>£60</td>
-      </tr>
-      <tr>
-        <td>Antivirus Removal</td>
-        <td>Virus/malware scan and removal</td>
-        <td>£35</td>
-      </tr>
-      <tr>
-        <td>Data Backup & Transfer</td>
-        <td>Backup to customer-supplied external device</td>
-        <td>£40</td>
-      </tr>
-      <tr>
-        <td>Home Service Visit</td>
-        <td>Home repair within 10 miles (includes first hour)</td>
-        <td>£65</td>
-      </tr>
-      <tr>
-        <td>Combo Offer</td>
-        <td>OS Installation + Antivirus Removal + Drivers & Updates</td>
-        <td>£95</td>
-      </tr>
-    </table>
-    <div class="pricing-actions">
-      <a href="files/BPK_Pricing.pdf" download>Download as PDF</a>
-      <a href="#contact">Contact Form</a>
-      <a href="#contact">Book Service</a>
-    </div>
-  </section>
-
-  <section class="testimonials">
-    <h2>Customer Testimonials</h2>
-    <div class="testimonial">"Fantastic service! They fixed my laptop in just one visit." – John D.</div>
-    <div class="testimonial">"Affordable and quick. Highly recommend BPK Computer Repair." – Aisha K.</div>
-    <div class="testimonial">"Clear communication and reliable home service. Great experience." – Rajesh M.</div>
-  </section>
-
-  <footer class="footer">
-    &copy; 2025 BPK Computer Repair and Services. All rights reserved.
-    <div class="gdpr">We comply with GDPR and handle your data responsibly.</div>
-  </footer>
-</body>
-</html>
+    <div><strong>BPK</strong> Computer Repair and Serv
