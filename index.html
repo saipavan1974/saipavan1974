@@ -52,7 +52,6 @@
       .cta-wrapper { flex-direction: column; }
     }
 
-    /* New Slideshow Styles */
     .slideshow-container {
       max-width: 800px;
       position: relative;
@@ -61,15 +60,8 @@
       overflow: hidden;
       box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
-
-    .mySlides {
-      display: none;
-    }
-
-    .fade {
-      animation: fadeEffect 1.5s;
-    }
-
+    .mySlides { display: none; }
+    .fade { animation: fadeEffect 1.5s; }
     @keyframes fadeEffect {
       from {opacity: 0.4}
       to {opacity: 1}
@@ -77,7 +69,6 @@
   </style>
 </head>
 <body>
-
 <header>
   <div class="logo-title">
     <img src="LOGO.png" alt="BPK Logo" />
@@ -91,7 +82,6 @@
   </nav>
 </header>
 
-<!-- Slideshow -->
 <div class="slideshow-container">
   <div class="mySlides fade">
     <img alt="Computer Repair Technician" src="computer_repair_technician.jpg" style="width:100%"/>
@@ -106,7 +96,6 @@
     <img alt="Technician Image" src="Professional-Computer-Repair-Technician.png" style="width:100%"/>
   </div>
 </div>
-
 <script>
   let slideIndex = 0;
   function showSlides() {
@@ -117,7 +106,7 @@
     slideIndex++;
     if (slideIndex > slides.length) {slideIndex = 1}
     slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 4000); // 4-second interval
+    setTimeout(showSlides, 4000);
   }
   document.addEventListener("DOMContentLoaded", showSlides);
 </script>
@@ -131,7 +120,6 @@
   <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank">Get a Free Quote</a>
 </div>
 
-<!-- Services Section -->
 <section class="section" id="services">
   <h2>Our Services</h2>
   <table>
@@ -148,22 +136,7 @@
   </table>
 </section>
 
-<!-- About Section -->
-<section class="section" id="about">
-  <h2>About Us</h2>
-  <p>
-    BPK Computer Repair and Services offers fast and reliable laptop & desktop repair in Preston. From OS installs to hardware repairs like screen and charging socket replacements, we’ve got you covered. Whether it's upgrading RAM or installing Windows 11, our team is committed to high-quality work and great customer satisfaction.
-  </p>
-</section>
-
-<!-- Contact Section -->
-<section class="section" id="contact">
-  <h2>Contact Us</h2>
-  <p><strong>Email:</strong> bpk@bpkcomputer.com<br>
-     <strong>Phone:</strong> 07818955500</p>
-  <p>Available in Preston | SAT & SUN | 10 AM – 10:30 PM</p>
-
-  <!-- Google Reviews Section -->
+<!-- Google Reviews Section -->
 <section class="section" id="reviews">
   <h2>What Our Customers Say</h2>
   <p>Real feedback from our Google Business profile:</p>
@@ -175,7 +148,6 @@
   </div>
 </section>
 
-<!-- Privacy Policy Section -->
 <section class="privacy" id="privacy">
   <h2>Privacy Policy (GDPR Compliant)</h2>
   <p>At BPK Computer Repair and Services, your data privacy is important. We are committed to full compliance with the UK General Data Protection Regulation (UK GDPR).</p>
@@ -189,7 +161,6 @@
   <p>For any queries or data-related requests, contact us at <a href="mailto:bpk@bpkcomputer.com">bpk@bpkcomputer.com</a>.</p>
 </section>
 
-  
 <footer>
   <p>© 2025 BPK Computer Repair and Services. All rights reserved.</p>
 </footer>
