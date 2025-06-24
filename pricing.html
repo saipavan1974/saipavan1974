@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BPK Computer Repair and Services</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <style>
     * {
       margin: 0;
@@ -16,6 +16,7 @@
     body {
       background-color: #f4f7fb;
       color: #1a1a1a;
+      line-height: 1.6;
     }
     header {
       background-color: #0a3d62;
@@ -24,19 +25,27 @@
       justify-content: space-between;
       align-items: center;
       color: #fff;
+      flex-wrap: wrap;
+    }
+    header div {
+      font-weight: 700;
+      font-size: 1.3em;
     }
     nav a {
       color: #fff;
       margin-left: 20px;
       text-decoration: none;
       font-weight: 500;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover {
+      background-color: #2980b9;
     }
     .cta {
       background-color: #3498db;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
+      color: white !important;
     }
     .hero {
       display: flex;
@@ -48,24 +57,33 @@
       text-align: center;
     }
     .hero h1 {
-      font-size: 3em;
+      font-size: 2.8em;
       margin-bottom: 20px;
     }
     .hero p {
       font-size: 1.2em;
       margin-bottom: 30px;
+      max-width: 600px;
     }
-    .hero a {
+    .hero div a {
+      display: inline-block;
       margin: 0 10px;
       padding: 12px 24px;
-      border-radius: 5px;
+      border-radius: 6px;
       background-color: #2980b9;
       color: white;
       text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .hero div a:hover {
+      background-color: #1c5d8b;
     }
     .services {
       padding: 60px 20px;
       text-align: center;
+      max-width: 1100px;
+      margin: 0 auto;
     }
     .services h2 {
       font-size: 2em;
@@ -75,8 +93,6 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 30px;
-      max-width: 1100px;
-      margin: 0 auto;
     }
     .card {
       background: white;
@@ -94,56 +110,72 @@
     .card:hover {
       transform: translateY(-5px);
     }
-    .testimonials {
-      background: #fff;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .testimonials h2 {
-      margin-bottom: 30px;
-    }
-    .testimonial {
-      font-style: italic;
-      margin: 10px auto;
-      max-width: 800px;
-    }
     .pricing {
       padding: 60px 20px;
-      text-align: center;
       background-color: #fff;
+      max-width: 900px;
+      margin: 0 auto 60px;
+      text-align: center;
     }
     .pricing h2 {
       margin-bottom: 30px;
+      font-size: 2.2em;
     }
     table {
       width: 100%;
-      max-width: 800px;
-      margin: 0 auto 30px;
       border-collapse: collapse;
+      margin-bottom: 40px;
     }
     table, th, td {
       border: 1px solid #ccc;
     }
     th, td {
-      padding: 12px;
+      padding: 14px 12px;
       text-align: left;
     }
     th {
       background-color: #0a3d62;
       color: #fff;
+      font-weight: 600;
     }
     .pricing-buttons {
       display: flex;
       justify-content: center;
       gap: 20px;
-      margin-bottom: 40px;
+      flex-wrap: wrap;
     }
     .pricing-buttons a {
       background-color: #3498db;
       color: white;
-      padding: 10px 20px;
+      padding: 12px 24px;
       border-radius: 6px;
       text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      min-width: 150px;
+      text-align: center;
+    }
+    .pricing-buttons a:hover {
+      background-color: #1c5d8b;
+    }
+    .testimonials {
+      background: #fff;
+      padding: 60px 20px;
+      text-align: center;
+      max-width: 900px;
+      margin: 0 auto 60px;
+    }
+    .testimonials h2 {
+      margin-bottom: 30px;
+      font-size: 2em;
+    }
+    .testimonial {
+      font-style: italic;
+      margin: 10px auto 20px;
+      max-width: 700px;
+      font-size: 1.1em;
+      line-height: 1.4;
+      color: #333;
     }
     .footer {
       background-color: #0a3d62;
@@ -151,11 +183,37 @@
       padding: 20px;
       text-align: center;
       font-size: 0.9em;
+      flex-shrink: 0;
     }
     .footer .gdpr {
       margin-top: 10px;
       font-size: 0.8em;
       color: #ddd;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      header {
+        padding: 15px 20px;
+      }
+      nav a {
+        margin-left: 10px;
+        padding: 8px 12px;
+      }
+      .hero h1 {
+        font-size: 2.2em;
+      }
+      .hero p {
+        font-size: 1em;
+      }
+      .pricing-buttons {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .pricing-buttons a {
+        min-width: auto;
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -170,10 +228,10 @@
   </header>
 
   <section class="hero">
-    <h1>Laptop Virus Removal</h1>
-    <p>Professional virus and malware removal services to safeguard your laptop.</p>
+    <h1>Laptop & Computer Hardware Reparis</h1>
+    <p>Professional services to safeguard your laptop & Desktop.</p>
     <div>
-      <a href="tel:0781895500">Call Us: 0781895500</a>
+      <a href="tel:+44781895500">Call Us: 0781895500</a>
       <a href="#contact">Book Online</a>
     </div>
   </section>
