@@ -31,7 +31,6 @@
       background-color: #0a3d62;
       padding: 20px 40px;
       display: flex;
-      flex-wrap: wrap;
       justify-content: space-between;
       align-items: center;
       color: #fff;
@@ -42,25 +41,16 @@
       gap: 15px;
       font-size: 1.6em;
       font-weight: bold;
-      flex: 1 1 auto;
-      min-width: 250px;
     }
     .company-title img {
       height: 90px;
       border-radius: 50%;
-      max-width: 90px;
-      width: 100%;
-      height: auto;
-    }
-    nav {
-      flex: 0 1 auto;
     }
     nav a {
       color: #fff;
       margin-left: 20px;
       text-decoration: none;
       font-weight: 500;
-      font-size: 1em;
     }
     .cta {
       background-color: #3498db;
@@ -70,9 +60,10 @@
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      font-size: 1em;
-      white-space: nowrap;
+      justify-content: center;
+    }
+    .cta i {
+      margin-right: 8px;
     }
     .hero {
       display: flex;
@@ -86,30 +77,109 @@
     .hero h1 {
       font-size: 3em;
       margin-bottom: 20px;
-      line-height: 1.1;
     }
     .hero p {
       font-size: 1.2em;
       margin-bottom: 30px;
-      max-width: 600px;
     }
-    .contact-buttons {
+    .hero a {
+      margin: 0 10px;
+      padding: 12px 24px;
+      border-radius: 5px;
+      background-color: #2980b9;
+      color: white;
+      text-decoration: none;
+    }
+    .slideshow-container {
+      max-width: 800px;
+      position: relative;
+      margin: 2em auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+    .mySlides { display: none; }
+    .fade { animation: fadeEffect 1.5s; }
+    @keyframes fadeEffect { from {opacity: 0.4} to {opacity: 1} }
+    .services {
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .services h2 {
+      font-size: 2em;
+      margin-bottom: 40px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+    .card i {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #0a3d62;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .testimonials {
+      background: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .testimonials h2 {
+      margin-bottom: 30px;
+    }
+    .testimonial {
+      font-style: italic;
+      margin: 10px auto;
+      max-width: 800px;
+    }
+    .footer {
+      background-color: #0a3d62;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+    .footer .gdpr {
+      margin-top: 10px;
+      font-size: 0.8em;
+      color: #ddd;
+    }
+    .action-buttons {
+      margin-top: 40px;
       display: flex;
       flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: nowrap; /* No wrapping */
       gap: 15px;
       justify-content: center;
       margin-top: 20px;
       max-width: 400px;
       width: 100%;
     }
+
     .contact-buttons a {
-      flex: 1 1 180px;
+      flex: 1 1 auto; /* Grow and shrink evenly */
       text-align: center;
     }
-    .contact-buttons a i {
-      margin-right: 8px;
-      font-size: 1.2em;
-    }
+
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -128,169 +198,6 @@
       color: white;
       text-decoration: none;
     }
-    .slideshow-container {
-      max-width: 800px;
-      position: relative;
-      margin: 2em auto;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      width: 90%;
-      max-width: 800px;
-    }
-    .mySlides { display: none; }
-    .fade { animation: fadeEffect 1.5s; }
-    @keyframes fadeEffect { from {opacity: 0.4} to {opacity: 1} }
-    .services {
-      padding: 60px 20px;
-      text-align: center;
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-    .services h2 {
-      font-size: 2em;
-      margin-bottom: 40px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      text-align: center;
-    }
-    .card i {
-      font-size: 2em;
-      margin-bottom: 10px;
-      color: #0a3d62;
-    }
-    .card:hover {
-      transform: translateY(-5px);
-    }
-    .action-buttons {
-      margin-top: 40px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-    .action-buttons a {
-      flex: 1 1 180px;
-      font-size: 1em;
-      white-space: nowrap;
-    }
-    .testimonials {
-      background: #fff;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .testimonials h2 {
-      margin-bottom: 30px;
-      font-size: 2em;
-    }
-    .testimonial {
-      font-style: italic;
-      margin: 10px auto;
-      max-width: 800px;
-      font-size: 1.1em;
-      line-height: 1.4;
-    }
-    .footer {
-      background-color: #0a3d62;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 0.9em;
-    }
-    .footer .gdpr {
-      margin-top: 10px;
-      font-size: 0.8em;
-      color: #ddd;
-    }
-    .footer div {
-      margin-top: 15px;
-    }
-    .footer a {
-      color: #fff;
-      margin: 0 10px;
-      font-size: 1.5em;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .footer a:hover {
-      color: #3498db;
-    }
-    iframe {
-      border-radius: 10px;
-      border: 0;
-      width: 100%;
-      height: 250px;
-    }
-
-    marquee {
-      font-weight: bold;
-      background: #0073e6;
-      color: white;
-      padding: 0.5em;
-    }
-
-    /* Responsive typography & layout tweaks */
-    @media (max-width: 768px) {
-      header {
-        padding: 15px 20px;
-      }
-      .company-title {
-        font-size: 1.3em;
-        gap: 10px;
-        justify-content: center;
-      }
-      nav a {
-        margin-left: 10px;
-        font-size: 0.9em;
-      }
-      .hero h1 {
-        font-size: 2.2em;
-      }
-      .hero p {
-        font-size: 1em;
-      }
-      .contact-buttons {
-        max-width: 100%;
-      }
-      .contact-buttons a {
-        flex: 1 1 100%;
-        font-size: 1em;
-      }
-      .services h2,
-      .testimonials h2 {
-        font-size: 1.6em;
-      }
-      .testimonial {
-        font-size: 1em;
-        padding: 0 15px;
-      }
-      .action-buttons a {
-        flex: 1 1 100%;
-        font-size: 1em;
-      }
-    }
-
-    @media (max-width: 400px) {
-      .hero h1 {
-        font-size: 1.8em;
-      }
-      .hero p {
-        font-size: 0.9em;
-      }
-      .company-title img {
-        height: 70px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -299,9 +206,6 @@
       <img src="logo.png" alt="Logo" />
       <div><strong>BPK</strong> Computer Repair and Services</div>
     </div>
-    <nav>
-      <!-- Removed top Pricing and Request Quote per your previous request -->
-    </nav>
   </header>
 
   <section class="hero">
@@ -348,7 +252,7 @@
     document.addEventListener("DOMContentLoaded", showSlides);
   </script>
 
-  <marquee>
+  <marquee style="background: #0073e6; color: white; padding: 0.5em; font-weight: bold;">
     *🏠 Home Service is Available – Book Now! | Repairing desktops & laptops at your doorstep within 10 miles!*
   </marquee>
 
@@ -399,27 +303,28 @@
   <footer class="footer">
     &copy; 2025 BPK Computer Repair and Services. All rights reserved.
     <div class="gdpr">We comply with GDPR and handle your data responsibly.</div>
-    <div>
+    <div style="margin-top: 15px;">
       <strong>📍 Location:</strong> Preston, UK<br>
       <strong>🕒 Business Hours:</strong> Saturday & Sunday, 10:00 AM – 10:30 PM
     </div>
 
-    <div>
-      <a href="https://www.facebook.com/share/1ASn3THFMY/?mibextid=wwXIfr" target="_blank" aria-label="Facebook">
+    <div style="margin-top: 15px;">
+      <a href="https://www.facebook.com/share/1ASn3THFMY/?mibextid=wwXIfr" target="_blank" style="color: #fff; margin: 0 10px; font-size: 1.5em;">
         <i class="fab fa-facebook"></i>
       </a>
-      <a href="https://wa.me/447818955500" target="_blank" aria-label="WhatsApp">
+      <a href="https://wa.me/447818955500" target="_blank" style="color: #25D366; margin: 0 10px; font-size: 1.5em;">
         <i class="fab fa-whatsapp"></i>
       </a>
-      <a href="https://maps.app.goo.gl/MU78urvGdNf8Wwbf6" target="_blank" aria-label="Google Maps">
+      <a href="https://maps.app.goo.gl/MU78urvGdNf8Wwbf6" target="_blank" style="color: #fff; margin: 0 10px; font-size: 1.5em;">
         <i class="fas fa-map-marker-alt"></i>
       </a>
     </div>
 
-    <div>
+    <div style="margin-top: 20px;">
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2373.623125585419!2d-2.698958!3d53.7632836!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b73b5d38dd0eb%3A0xbb30a9ae9f4992f4!2sPreston!5e0!3m2!1sen!2suk!4v1719257751557!5m2!1sen!2suk"
-        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        width="100%" height="250" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </footer>
 </body>
