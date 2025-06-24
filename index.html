@@ -60,10 +60,11 @@
       text-decoration: none;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
+      gap: 8px;
+      transition: background-color 0.3s ease;
     }
-    .cta i {
-      margin-right: 8px;
+    .cta:hover {
+      background-color: #2a80b9;
     }
     .hero {
       display: flex;
@@ -81,14 +82,6 @@
     .hero p {
       font-size: 1.2em;
       margin-bottom: 30px;
-    }
-    .hero a {
-      margin: 0 10px;
-      padding: 12px 24px;
-      border-radius: 5px;
-      background-color: #2980b9;
-      color: white;
-      text-decoration: none;
     }
     .slideshow-container {
       max-width: 800px;
@@ -158,28 +151,22 @@
       color: #ddd;
     }
     .action-buttons {
-      margin-top: 40px;
+      margin-top: 20px;
       display: flex;
       flex-wrap: wrap;
       gap: 15px;
       justify-content: center;
     }
-
     .contact-buttons {
       display: flex;
-      flex-wrap: nowrap; /* No wrapping */
+      flex-wrap: wrap;
       gap: 15px;
       justify-content: center;
-      margin-top: 20px;
-      max-width: 400px;
-      width: 100%;
+      margin-top: 30px;
     }
-
-    .contact-buttons a {
-      flex: 1 1 auto; /* Grow and shrink evenly */
-      text-align: center;
+    .contact-buttons a i {
+      margin-right: 8px;
     }
-
     .whatsapp-float {
       position: fixed;
       bottom: 20px;
@@ -198,6 +185,33 @@
       color: white;
       text-decoration: none;
     }
+
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 15px 20px;
+      }
+      .company-title img {
+        height: 70px;
+      }
+      .hero h1 {
+        font-size: 2.2em;
+      }
+      .hero p {
+        font-size: 1em;
+        margin-bottom: 20px;
+      }
+      .action-buttons {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .contact-buttons {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -211,12 +225,20 @@
   <section class="hero">
     <h1>Laptop & Computer Hardware Repairs</h1>
     <p>Professional services to safeguard your laptop & Desktop.</p>
+
+    <div class="action-buttons">
+      <a href="pricing.html" class="cta">View Detailed Pricing</a>
+      <a href="#booking" class="cta">Book a Service</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" class="cta" target="_blank">Request a Quote</a>
+    </div>
+
     <div class="contact-buttons">
       <a href="tel:+447818955500" class="cta"><i class="fas fa-phone"></i> Call Us: +44 7818 955500</a>
       <a href="https://wa.me/447818955500?text=Hi%20BPK%20Computer%20Repair%2C%20I%20need%20help%20with%20my%20computer." class="cta" target="_blank">
         <i class="fab fa-whatsapp"></i> Chat on WhatsApp
       </a>
     </div>
+
     <a href="https://wa.me/447818955500?text=Hi%20BPK%20Computer%20Repair%2C%20I%20need%20help%20with%20my%20computer." 
        class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
       <i class="fab fa-whatsapp"></i>
@@ -284,12 +306,6 @@
         <h3>SSD Installations</h3>
         <p>Installation and configuration of fast and reliable SSDs.</p>
       </div>
-    </div>
-
-    <div class="action-buttons">
-      <a href="pricing.html" class="cta">View Detailed Pricing</a>
-      <a href="#booking" class="cta">Book a Service</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" class="cta" target="_blank">Request a Quote</a>
     </div>
   </section>
 
