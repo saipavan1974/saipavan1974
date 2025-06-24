@@ -1,33 +1,16 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<meta content="Reliable and affordable desktop &amp; laptop repairs, upgrades, and servicing in the UK by BPK Computer Repair and Services." name="description"/>
-<meta content="computer repair UK, laptop service, Windows installation, SSD upgrade, RAM upgrade, antivirus removal, data backup" name="keywords"/>
-<meta content="BPK Computer Repair and Services" name="author"/>
-<title>BPK Computer Repair and Services</title>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7Y0P5TXK2T"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-7Y0P5TXK2T');
-</script>
-<style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BPK Computer Repair and Services</title>
+  <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
     header, footer { background: #003366; color: white; padding: 1em; text-align: center; }
     nav a { margin: 0 1em; color: white; text-decoration: none; }
-    .services, .contact, .about, .privacy { padding: 2em; max-width: 900px; margin: auto; }
-    table { width: 100%; border-collapse: collapse; margin-top: 1em; }
-    th, td { border: 1px solid #ccc; padding: 0.8em; text-align: left; vertical-align: middle; }
-    th { background: #003366; color: white; }
+    .section { padding: 2em; max-width: 900px; margin: auto; }
     .cta-wrapper {
-      display: flex;
-      justify-content: center;
-      gap: 1em;
-      margin: 2em auto;
+      display: flex; justify-content: center; gap: 1em; margin: 2em auto;
     }
     .cta {
       background: #0073e6; color: white;
@@ -35,170 +18,57 @@
       text-decoration: none; border-radius: 5px;
       font-weight: bold;
     }
-    .logo-title { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .logo-title {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+    }
     .logo-title img { height: 60px; }
     .logo-title h1 { margin: 0; }
-    .contact-info img { height: 16px; width: 16px; vertical-align: middle; margin-right: 6px; }
-    .service-images {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1em;
-      margin: 2em auto;
-    }
-    .service-images img {
-      width: 100%; height: auto;
-      max-width: 300px;
-      border-radius: 10px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    }
-    @media (max-width: 768px) {
-      .cta-wrapper { flex-direction: column; }
-    }
-    .slideshow-container {
-      max-width: 600px;
-      margin: 2em auto;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    }
-    .mySlides {
-      display: none;
-    }
-    .fade {
-      animation: fadeEffect 1.5s;
-    }
-    @keyframes fadeEffect {
-      from {opacity: 0.4}
-      to {opacity: 1}
-    }
-</style>
+  </style>
 </head>
 <body>
 <header>
-<div class="logo-title">
-<img alt="BPK Logo" src="LOGO.png"/>
-<h1>BPK Computer Repair and Services</h1>
-</div>
-<nav>
-<a href="#services">Services</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-<a href="#privacy">Privacy</a>
-</nav>
+  <div class="logo-title">
+    <img src="LOGO.png" alt="BPK Logo" />
+    <h1>BPK Computer Repair and Services</h1>
+  </div>
+  <nav>
+    <a href="services.html">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+    <a href="#privacy">Privacy</a>
+  </nav>
 </header>
-<!-- Optimized Slideshow Starts Here -->
-<div class="slideshow-container">
-  <div class="mySlides fade">
-    <img 
-      src="computer_repair_technician.jpg" 
-      alt="Computer Repair Technician" 
-      width="600" 
-      height="400" 
-      style="width:100%; height:auto;" 
-      loading="eager" 
-      fetchpriority="high"
-    />
-  </div>
-  <div class="mySlides fade">
-    <img 
-      src="laptop-repair-box-1.jpg" 
-      alt="Laptop Repair" 
-      width="600" 
-      height="400" 
-      style="width:100%; height:auto;" 
-      loading="lazy"
-    />
-  </div>
-</div>
-<script>
-  let slideIndex = 0;
-  function showSlides() {
-    const slides = document.getElementsByClassName("mySlides");
-    for (let i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";
-    }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 4000);
-  }
-  document.addEventListener("DOMContentLoaded", showSlides);
-</script>
-<!-- Optimized Slideshow Ends Here -->
+
 <marquee style="background: #0073e6; color: white; padding: 0.5em; font-weight: bold;">
-  *🏠 Home Service is Available – Book Now! | Repairing desktops & laptops at your doorstep within 10 miles!*
+  *🏠 Home Service is Available – Book Now! | Desktop & Laptop repairs within 10 miles!*
 </marquee>
+
 <div class="cta-wrapper">
-<a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" target="_blank">Book a Service</a>
-<a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank">Get a Free Quote</a>
+  <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" target="_blank">Book a Service</a>
+  <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank">Get a Free Quote</a>
 </div>
-<section class="services" id="services">
-<h2>Our Services</h2>
-<table>
-<tr><th>Service</th><th>Description</th><th>Price (from)</th></tr>
-<tr><td>Windows OS Installation</td><td>Clean install of Windows 10 or 11 (with drivers and updates)</td><td>£60</td></tr>
-<tr><td>RAM Upgrade</td><td>RAM installation + compatibility check (excluding RAM price)</td><td>£30</td></tr>
-<tr><td>SSD Upgrade</td><td>SSD installation with OS clone or fresh install(with customer provided SSD)</td><td>£60</td></tr>
-<tr><td>Antivirus Removal</td><td>Virus/malware scan and removal</td><td>£35</td></tr>
-<tr><td>Data Backup &amp; Transfer</td><td>Backup to customer-supplied external device</td><td>£40</td></tr>
-<tr><td><strong>Home Service Visit</strong></td><td>Home services for repairing your Desktop or Laptop within 10 miles. First hour charge is included.</td><td><strong>£65</strong></td></tr>
-<tr><td><strong>Combo Offer</strong></td><td>OS Installation + Antivirus Removal + Drivers &amp; Updates </td><td><strong>£95</strong></td></tr>
-</table>
-</section>
-<section class="contact" id="contact">
-<h2>Contact Us</h2>
-<div class="contact-info">
-<p><img alt="Email Icon" src="https://cdn-icons-png.flaticon.com/128/732/732200.png"/> Email: bpk@bpkcomputer.com</p>
-<p><img alt="Phone Icon" src="https://cdn-icons-png.flaticon.com/128/597/597177.png"/> Phone: 07818955500</p>
-</div>
-<p>Available in Preston | SAT & SUN | 10 AM – 10:30 PM</p>
-</section>
-<section class="about" id="about">
-<h2>About Us</h2>
-<p>
-    At BPK Computer Repair and Services, we take pride in delivering high-quality, professional IT Repairs and service solutions tailored to meet your individual needs. Based in the Preston UK, we specialise in diagnosing and resolving desktop and laptop issues with precision and care. Whether it’s installing a new operating system, upgrading hardware, or recovering basic data, our skilled technicians are committed to providing prompt and trustworthy service. Customer satisfaction, data security, and transparent pricing are the foundations of our business.
+
+<section class="section" id="about">
+  <h2>About Us</h2>
+  <p>
+    BPK Computer Repair and Services offers fast and reliable laptop & desktop repair in Preston. From OS installs to hardware repairs like screen and charging socket replacements, we’ve got you covered.
   </p>
 </section>
-<section class="privacy" id="privacy">
-<h2>Privacy Policy (GDPR Compliant)</h2>
-<p>At BPK Computer Repair and Services, your data privacy is important. We are committed to full compliance with the UK General Data Protection Regulation (UK GDPR).</p>
-<ul>
-<li><strong>Data Collection:</strong> We collect only essential data (e.g., name, contact details) for the purpose of providing services.</li>
-<li><strong>Use of Data:</strong> Your data is used solely for communication, invoicing, and service delivery.</li>
-<li><strong>Storage:</strong> All data is securely stored and accessible only to authorised personnel.</li>
-<li><strong>No Third-Party Sharing:</strong> We do not sell or share your information with third parties.</li>
-<li><strong>Your Rights:</strong> You have the right to request data access, correction, or deletion at any time.</li>
-</ul>
-<p>For any queries or data-related requests, contact us at <a href="mailto:bpk@bpkcomputer.com">bpk@bpkcomputer.com</a>.</p>
-</section>
-<script>
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", function () {
-      navigator.serviceWorker.register("/service-worker.js").then(
-        function (registration) {
-          console.log("Service Worker registered with scope:", registration.scope);
-        },
-        function (err) {
-          console.log("Service Worker registration failed:", err);
-        }
-      );
-    });
-  }
-</script>
 
-<!-- New Section: Company Registration Documents -->
-<section class="about" id="company-documents" style="padding: 2em; background-color: #f2f2f2;">
-<h2 style="text-align: center;">Company Registration Documents</h2>
-<p style="text-align: center;">Below are our official company registration documents. These are view-only for your reference.</p>
-<div style="max-width: 900px; margin: 2em auto; display: flex; flex-direction: column; gap: 2em;">
-<div style="text-align: center;">
-<h3>Certificate of Incorporation</h3>
-<img alt="Certificate of Incorporation" src="/certificate_of_incorporation_16519697.jpg" style="width: 90%; max-width: 500px; height: auto; border-radius: 8px; border: 1px solid #ccc; box-shadow: 0 4px 6px rgba(0,0,0,0.1); display: block; margin: auto;"/>
-</div>
-</div></section>
+<section class="section" id="contact">
+  <h2>Contact Us</h2>
+  <p><strong>Email:</strong> bpk@bpkcomputer.com<br>
+     <strong>Phone:</strong> 07818955500</p>
+  <p>Available in Preston | SAT & SUN | 10 AM – 10:30 PM</p>
+</section>
+
+<section class="section" id="privacy">
+  <h2>Privacy Policy (GDPR)</h2>
+  <p>We respect your privacy. Data is only used for service purposes and is never shared.</p>
+</section>
+
 <footer>
-<p>© 2025 BPK Computer Repair and Services. All rights reserved.</p>
+  <p>© 2025 BPK Computer Repair and Services. All rights reserved.</p>
 </footer>
 </body>
 </html>
