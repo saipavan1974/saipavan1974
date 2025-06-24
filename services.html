@@ -1,19 +1,132 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Our Services – BPK Computer Repair</title>
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta content="Reliable and affordable desktop &amp; laptop repairs, upgrades, and servicing in the UK by BPK Computer Repair and Services." name="description"/>
+<meta content="computer repair UK, laptop service, Windows installation, SSD upgrade, RAM upgrade, antivirus removal, data backup" name="keywords"/>
+<meta content="BPK Computer Repair and Services" name="author"/>
+<title>BPK Computer Repair and Services</title>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-7Y0P5TXK2T"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7Y0P5TXK2T');
+  </script>
+<style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
     header, footer { background: #003366; color: white; padding: 1em; text-align: center; }
     nav a { margin: 0 1em; color: white; text-decoration: none; }
-    section { padding: 2em; max-width: 900px; margin: auto; }
+    .services, .contact, .about, .privacy { padding: 2em; max-width: 900px; margin: auto; }
     table { width: 100%; border-collapse: collapse; margin-top: 1em; }
-    th, td { border: 1px solid #ccc; padding: 0.8em; }
+    th, td { border: 1px solid #ccc; padding: 0.8em; text-align: left; vertical-align: middle; }
     th { background: #003366; color: white; }
-    .back-link { text-align: center; margin-top: 1em; }
+    .cta-wrapper {
+      display: flex;
+      justify-content: center;
+      gap: 1em;
+      margin: 2em auto;
+    }
+    .cta {
+      background: #0073e6; color: white;
+      padding: 1em 2em; text-align: center;
+      text-decoration: none; border-radius: 5px;
+      font-weight: bold;
+    }
+    .logo-title { display: flex; align-items: center; justify-content: center; gap: 10px; flex-wrap: wrap; }
+    .logo-title img { height: 60px; }
+    .logo-title h1 { margin: 0; }
+    .contact-info img { height: 16px; width: 16px; vertical-align: middle; margin-right: 6px; }
+    .service-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1em;
+      margin: 2em auto;
+    }
+    .service-images img {
+      width: 100%; height: auto;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    @media (max-width: 768px) {
+      .cta-wrapper { flex-direction: column; }
+    }
+
+    /* New Slideshow Styles */
+    .slideshow-container {
+      max-width: 800px;
+      position: relative;
+      margin: 2em auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    .fade {
+      animation: fadeEffect 1.5s;
+    }
+
+    @keyframes fadeEffect {
+      from {opacity: 0.4}
+      to {opacity: 1}
+    }
   </style>
+</head>
+<body>
+<header>
+<div class="logo-title">
+<img alt="BPK Logo" src="LOGO.png"/>
+<h1>BPK Computer Repair and Services</h1>
+</div>
+<nav>
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+<a href="#privacy">Privacy</a>
+</nav>
+</header>
+<!-- Updated Slideshow Starts Here -->
+<div class="slideshow-container" style="max-width: 600px; margin: 2em auto; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 8px rgba(0,0,0,0.3);">
+<div class="mySlides fade">
+<img alt="Computer Repair Technician" src="computer_repair_technician.jpg" style="width:100%"/>
+</div>
+<div class="mySlides fade">
+<img alt="Repair Support" src="difference-computer-repair-and-support-1.jpg" style="width:100%"/>
+</div>
+<div class="mySlides fade">
+<img alt="Laptop Repair" src="laptop-repair-box-1.jpg" style="width:100%"/>
+</div>
+<div class="mySlides fade">
+<img alt="Technician Image" src="Professional-Computer-Repair-Technician.png" style="width:100%"/>
+</div>
+</div>
+<script>
+  let slideIndex = 0;
+  function showSlides() {
+    const slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 4000); // 4-second interval
+  }
+  document.addEventListener("DOMContentLoaded", showSlides);
+</script>
+<!-- Updated Slideshow Ends Here -->
+<marquee style="background: #0073e6; color: white; padding: 0.5em; font-weight: bold;">
+  *🏠 Home Service is Available – Book Now! | Repairing desktops & laptops at your doorstep within 10 miles!*
+</marquee>
+
 </head>
 <body>
 <header>
