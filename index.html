@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta content="Reliable and affordable desktop &amp; laptop repairs, upgrades, and servicing in the UK by BPK Computer Repair and Services." name="description"/>
+  <meta content="Reliable and affordable desktop & laptop repairs, upgrades, and servicing in the UK by BPK Computer Repair and Services." name="description"/>
   <meta content="computer repair UK, laptop service, Windows installation, SSD upgrade, RAM upgrade, antivirus removal, data backup" name="keywords"/>
   <meta content="BPK Computer Repair and Services" name="author"/>
   <title>BPK Computer Repair and Services</title>
@@ -34,6 +34,17 @@
       justify-content: space-between;
       align-items: center;
       color: #fff;
+    }
+    .company-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.6em;
+      font-weight: bold;
+    }
+    .company-title img {
+      height: 90px;
+      border-radius: 50%;
     }
     nav a {
       color: #fff;
@@ -140,11 +151,21 @@
       font-size: 0.8em;
       color: #ddd;
     }
+    .action-buttons {
+      margin-top: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
   </style>
 </head>
 <body>
   <header>
-    <div><strong>BPK</strong> Computer Repair and Services</div>
+    <div class="company-title">
+      <img src="your-logo.png" alt="Logo" />
+      <div><strong>BPK</strong> Computer Repair and Services</div>
+    </div>
     <nav>
       <a href="pricing.html">Pricing</a>
       <a href="#booking" class="cta">Request a Quote</a>
@@ -152,26 +173,25 @@
   </header>
 
   <section class="hero">
-    <h1>Laptop Virus Removal</h1>
-    <p>Professional virus and malware removal services to safeguard your laptop.</p>
+    <h1>Laptop & Computer Hardware Repairs</h1>
+    <p>Professional services to safeguard your laptop & Destop.</p>
     <div>
       <a href="tel:0781895500">Call Us: 0781895500</a>
-      <a href="#booking">Book Online</a>
     </div>
   </section>
 
   <div class="slideshow-container">
     <div class="mySlides fade">
-      <img alt="Computer Repair Technician" src="computer_repair_technician.jpg" style="width:100%"/>
+      <img alt="Computer Repair Technician" src="computer_repair_technician.jpg" style="width:100%" />
     </div>
     <div class="mySlides fade">
-      <img alt="Repair Support" src="difference-computer-repair-and-support-1.jpg" style="width:100%"/>
+      <img alt="Repair Support" src="difference-computer-repair-and-support-1.jpg" style="width:100%" />
     </div>
     <div class="mySlides fade">
-      <img alt="Laptop Repair" src="laptop-repair-box-1.jpg" style="width:100%"/>
+      <img alt="Laptop Repair" src="laptop-repair-box-1.jpg" style="width:100%" />
     </div>
     <div class="mySlides fade">
-      <img alt="Technician Image" src="Professional-Computer-Repair-Technician.png" style="width:100%"/>
+      <img alt="Technician Image" src="Professional-Computer-Repair-Technician.png" style="width:100%" />
     </div>
   </div>
   <script>
@@ -197,6 +217,11 @@
     <h2>Our Services</h2>
     <div class="grid">
       <div class="card">
+        <i class="OS Installation"></i>
+        <h3>Windows 10 / 11</h3>
+        <p>INcudes with driver updates</p>
+    <div class="grid">
+      <div class="card">
         <i class="fas fa-shield-virus"></i>
         <h3>Virus & Malware Removal</h3>
         <p>Thorough removal of viruses, malware, and spyware.</p>
@@ -217,8 +242,11 @@
         <p>Installation and configuration of fast and reliable SSDs.</p>
       </div>
     </div>
-    <div style="margin-top: 40px;">
+
+    <div class="action-buttons">
       <a href="pricing.html" class="cta">View Detailed Pricing</a>
+      <a href="#booking" class="cta">Book a Service</a>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" class="cta" target="_blank">Request a Quote</a>
     </div>
   </section>
 
@@ -228,12 +256,6 @@
     <div class="testimonial">"Affordable and quick. Highly recommend BPK Computer Repair." – Aisha K.</div>
     <div class="testimonial">"Clear communication and reliable home service. Great experience." – Rajesh M.</div>
   </section>
-
-  <nav>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" target="_blank" class="cta">Book a Service</a>
-  </nav>
-</header>
-
 
   <footer class="footer">
     &copy; 2025 BPK Computer Repair and Services. All rights reserved.
