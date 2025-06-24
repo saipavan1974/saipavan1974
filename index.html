@@ -7,7 +7,7 @@
   <meta name="keywords" content="computer repair UK, laptop service, Windows installation, SSD upgrade, RAM upgrade, antivirus removal, data backup" />
   <meta name="author" content="BPK Computer Repair and Services" />
   <title>BPK Computer Repair and Services</title>
-  
+
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0P5TXK2T"></script>
   <script>
@@ -41,8 +41,38 @@
     th, td { border: 1px solid #ccc; padding: 0.8em; text-align: left; vertical-align: top; }
     th { background: #003366; color: white; }
 
+    .service-images img {
+      width: 100%; height: auto;
+      max-width: 300px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
     @media (max-width: 768px) {
       .cta-wrapper { flex-direction: column; }
+    }
+
+    /* New Slideshow Styles */
+    .slideshow-container {
+      max-width: 800px;
+      position: relative;
+      margin: 2em auto;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    }
+
+    .mySlides {
+      display: none;
+    }
+
+    .fade {
+      animation: fadeEffect 1.5s;
+    }
+
+    @keyframes fadeEffect {
+      from {opacity: 0.4}
+      to {opacity: 1}
     }
   </style>
 </head>
@@ -60,6 +90,37 @@
     <a href="#privacy">Privacy</a>
   </nav>
 </header>
+
+<!-- Slideshow -->
+<div class="slideshow-container">
+  <div class="mySlides fade">
+    <img alt="Computer Repair Technician" src="computer_repair_technician.jpg" style="width:100%"/>
+  </div>
+  <div class="mySlides fade">
+    <img alt="Repair Support" src="difference-computer-repair-and-support-1.jpg" style="width:100%"/>
+  </div>
+  <div class="mySlides fade">
+    <img alt="Laptop Repair" src="laptop-repair-box-1.jpg" style="width:100%"/>
+  </div>
+  <div class="mySlides fade">
+    <img alt="Technician Image" src="Professional-Computer-Repair-Technician.png" style="width:100%"/>
+  </div>
+</div>
+
+<script>
+  let slideIndex = 0;
+  function showSlides() {
+    const slides = document.getElementsByClassName("mySlides");
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex - 1].style.display = "block";
+    setTimeout(showSlides, 4000); // 4-second interval
+  }
+  document.addEventListener("DOMContentLoaded", showSlides);
+</script>
 
 <marquee style="background: #0073e6; color: white; padding: 0.5em; font-weight: bold;">
   *🏠 Home Service is Available – Book Now! | Desktop & Laptop repairs within 10 miles!*
@@ -102,19 +163,20 @@
      <strong>Phone:</strong> 07818955500</p>
   <p>Available in Preston | SAT & SUN | 10 AM – 10:30 PM</p>
 </section>
+  
+<section class="privacy" id="privacy">
+<h2>Privacy Policy (GDPR Compliant)</h2>
+<p>At BPK Computer Repair and Services, your data privacy is important. We are committed to full compliance with the UK General Data Protection Regulation (UK GDPR).</p>
+<ul>
+<li><strong>Data Collection:</strong> We collect only essential data (e.g., name, contact details) for the purpose of providing services.</li>
+<li><strong>Use of Data:</strong> Your data is used solely for communication, invoicing, and service delivery.</li>
+<li><strong>Storage:</strong> All data is securely stored and accessible only to authorised personnel.</li>
+<li><strong>No Third-Party Sharing:</strong> We do not sell or share your information with third parties.</li>
+<li><strong>Your Rights:</strong> You have the right to request data access, correction, or deletion at any time.</li>
+</ul>
+<p>For any queries or data-related requests, contact us at <a href="mailto:bpk@bpkcomputer.com">bpk@bpkcomputer.com</a>.</p>
 
-<!-- Privacy Policy -->
-<section class="section" id="privacy">
-  <h2>Privacy Policy (GDPR Compliant)</h2>
-  <p>Your data is only collected for communication and service purposes. We do not share your data with third parties.</p>
-  <ul>
-    <li><strong>Collected Data:</strong> Only basic contact details</li>
-    <li><strong>Use:</strong> To provide and manage services</li>
-    <li><strong>Storage:</strong> Secure, limited access</li>
-    <li><strong>Your Rights:</strong> You may request access or deletion at any time</li>
-  </ul>
-</section>
-
+  
 <footer>
   <p>© 2025 BPK Computer Repair and Services. All rights reserved.</p>
 </footer>
