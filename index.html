@@ -84,43 +84,61 @@
     .mySlides { display: none; }
     .fade { animation: fadeEffect 1.5s; }
     @keyframes fadeEffect { from {opacity: 0.4} to {opacity: 1} }
-    .pricing {
+    .services {
       padding: 60px 20px;
       text-align: center;
-      background-color: #fff;
     }
-    .pricing h2 {
-      margin-bottom: 30px;
-    }
-    table {
-      width: 100%;
-      max-width: 800px;
-      margin: 0 auto 30px;
-      border-collapse: collapse;
-    }
-    table, th, td {
-      border: 1px solid #ccc;
-    }
-    th, td {
-      padding: 12px;
-      text-align: left;
-    }
-    th {
-      background-color: #0a3d62;
-      color: #fff;
-    }
-    .pricing-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
+    .services h2 {
+      font-size: 2em;
       margin-bottom: 40px;
     }
-    .pricing-buttons a {
-      background-color: #3498db;
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+    .card i {
+      font-size: 2em;
+      margin-bottom: 10px;
+      color: #0a3d62;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+    }
+    .testimonials {
+      background: #fff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .testimonials h2 {
+      margin-bottom: 30px;
+    }
+    .testimonial {
+      font-style: italic;
+      margin: 10px auto;
+      max-width: 800px;
+    }
+    .footer {
+      background-color: #0a3d62;
       color: white;
-      padding: 10px 20px;
-      border-radius: 6px;
-      text-decoration: none;
+      padding: 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+    .footer .gdpr {
+      margin-top: 10px;
+      font-size: 0.8em;
+      color: #ddd;
     }
   </style>
 </head>
@@ -129,8 +147,8 @@
     <div><strong>BPK</strong> Computer Repair and Services</div>
     <nav>
       <a href="#services">Services</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#contact" class="cta">Request a Quote</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="#booking" class="cta">Request a Quote</a>
     </nav>
   </header>
 
@@ -176,31 +194,40 @@
     *🏠 Home Service is Available – Book Now! | Repairing desktops & laptops at your doorstep within 10 miles!*
   </marquee>
 
-  <section class="pricing" id="pricing">
-    <h2>Service Pricing</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Service</th>
-          <th>Description</th>
-          <th>Price</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>Windows OS Installation</td><td>Clean install of Windows 10 or 11 (with drivers and updates)</td><td>£60</td></tr>
-        <tr><td>RAM Upgrade</td><td>RAM installation + compatibility check (excluding RAM price)</td><td>£30</td></tr>
-        <tr><td>SSD Upgrade</td><td>SSD installation with OS clone or fresh install (with customer provided SSD)</td><td>£60</td></tr>
-        <tr><td>Antivirus Removal</td><td>Virus/malware scan and removal</td><td>£35</td></tr>
-        <tr><td>Data Backup & Transfer</td><td>Backup to customer-supplied external device</td><td>£40</td></tr>
-        <tr><td>Home Service Visit</td><td>Home services within 10 miles. First hour included.</td><td>£65</td></tr>
-        <tr><td>Combo Offer</td><td>OS Installation + Antivirus Removal + Drivers & Updates</td><td>£95</td></tr>
-      </tbody>
-    </table>
-    <div class="pricing-buttons">
-      <a href="#" onclick="window.print()">Download as PDF</a>
-      <a href="#contact">Contact Form</a>
-      <a href="#booking">Book Service</a>
+  <section class="services" id="services">
+    <h2>Our Services</h2>
+    <div class="grid">
+      <div class="card">
+        <i class="fas fa-shield-virus"></i>
+        <h3>Virus & Malware Removal</h3>
+        <p>Thorough removal of viruses, malware, and spyware.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-database"></i>
+        <h3>Data Recovery</h3>
+        <p>Recovery of lost or corrupted data from your laptop.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-memory"></i>
+        <h3>RAM Upgrades</h3>
+        <p>Upgrading your laptop’s memory for better performance.</p>
+      </div>
+      <div class="card">
+        <i class="fas fa-hdd"></i>
+        <h3>SSD Installations</h3>
+        <p>Installation and configuration of fast and reliable SSDs.</p>
+      </div>
     </div>
+    <div style="margin-top: 40px;">
+      <a href="pricing.html" class="cta">View Detailed Pricing</a>
+    </div>
+  </section>
+
+  <section class="testimonials">
+    <h2>Customer Testimonials</h2>
+    <div class="testimonial">"Fantastic service! They fixed my laptop in just one visit." – John D.</div>
+    <div class="testimonial">"Affordable and quick. Highly recommend BPK Computer Repair." – Aisha K.</div>
+    <div class="testimonial">"Clear communication and reliable home service. Great experience." – Rajesh M.</div>
   </section>
 
   <section id="booking" style="padding: 40px; text-align: center; background-color: #fff;">
@@ -209,5 +236,9 @@
     <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform?embedded=true" width="100%" height="900" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
   </section>
 
+  <footer class="footer">
+    &copy; 2025 BPK Computer Repair and Services. All rights reserved.
+    <div class="gdpr">We comply with GDPR and handle your data responsibly.</div>
+  </footer>
 </body>
 </html>
