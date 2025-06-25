@@ -39,11 +39,21 @@
       border-radius: 50%;
       object-fit: contain;
     }
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
     nav a {
       color: #fff;
-      margin-left: 20px;
       text-decoration: none;
       font-weight: 500;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    nav a:hover {
+      background-color: #2980b9;
     }
     .cta {
       background-color: #3498db;
@@ -51,6 +61,7 @@
       padding: 10px 20px;
       border-radius: 8px;
       text-decoration: none;
+      font-weight: 600;
     }
     .hero {
       display: flex;
@@ -180,7 +191,12 @@
       <strong>BPK</strong> Computer Repair and Services
     </div>
     <nav>
-    </header>
+      <a href="index.html">Home</a>
+      <a href="#services">Services</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact" class="cta">Request a Quote</a>
+    </nav>
+  </header>
 
   <section class="hero">
     <h1>Laptop Virus Removal</h1>
@@ -237,7 +253,12 @@
         <tr><td>Combo Offer</td><td>OS Installation + Antivirus Removal + Drivers & Updates</td><td>£95</td></tr>
       </tbody>
     </table>
-    </section>
+    <div class="pricing-buttons">
+      <a href="#" onclick="window.print()">Download as PDF</a>
+      <a href="#contact">Contact Form</a>
+      <a href="#booking">Book Service</a>
+    </div>
+  </section>
 
   <section class="testimonials">
     <h2>Customer Testimonials</h2>
