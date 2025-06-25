@@ -31,11 +31,10 @@
       background-color: #0a3d62;
       padding: 20px 40px;
       display: flex;
-      justify-content: space-between;
-      align-items: center;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
       color: #fff;
-      flex-wrap: wrap;
-      gap: 10px;
     }
     .company-title {
       display: flex;
@@ -43,19 +42,19 @@
       gap: 15px;
       font-size: 1.6em;
       font-weight: bold;
-      flex-shrink: 0;
     }
     .company-title img {
-      height: 90px;
+      height: 70px;
       border-radius: 50%;
     }
-    nav {
+    .nav-buttons {
       display: flex;
-      align-items: center;
-      gap: 15px;
       flex-wrap: wrap;
+      justify-content: flex-start;
+      gap: 10px;
+      width: 100%;
     }
-    nav a {
+    .nav-buttons a {
       color: #fff;
       text-decoration: none;
       font-weight: 500;
@@ -67,7 +66,7 @@
       gap: 8px;
       transition: background-color 0.3s ease;
     }
-    nav a:hover {
+    .nav-buttons a:hover {
       background-color: #2a80b9;
     }
     .hero {
@@ -80,12 +79,53 @@
       text-align: center;
     }
     .hero h1 {
-      font-size: 3em;
+      font-size: 2.5em;
       margin-bottom: 20px;
     }
     .hero p {
       font-size: 1.2em;
       margin-bottom: 30px;
+    }
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    .contact-buttons a {
+      background-color: #3498db;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background-color 0.3s ease;
+    }
+    .contact-buttons a i {
+      margin-right: 8px;
+    }
+    .contact-buttons a:hover {
+      background-color: #2a80b9;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      font-size: 28px;
+      padding: 16px;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      transition: background-color 0.3s ease;
+    }
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      text-decoration: none;
     }
     .slideshow-container {
       max-width: 800px;
@@ -154,76 +194,12 @@
       font-size: 0.8em;
       color: #ddd;
     }
-    .action-buttons {
-      margin-top: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-    }
-    .contact-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      margin-top: 30px;
-    }
-    .contact-buttons a i {
-      margin-right: 8px;
-    }
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
-      font-size: 28px;
-      padding: 16px;
-      z-index: 1000;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: background-color 0.3s ease;
-    }
-    .whatsapp-float:hover {
-      background-color: #128C7E;
-      color: white;
-      text-decoration: none;
-    }
-    background-color: #3498db;
-color: white;
-padding: 10px 20px;
-border-radius: 8px;
-text-decoration: none;
-display: inline-flex;
-align-items: center;
-gap: 8px;
-transition: background-color 0.3s ease;
-}
-
-    /* Responsive Adjustments */
     @media (max-width: 768px) {
-      header {
-        flex-direction: column;
-        gap: 15px;
-        padding: 15px 20px;
-      }
-      .company-title img {
-        height: 70px;
-      }
       .hero h1 {
-        font-size: 2.2em;
+        font-size: 1.8em;
       }
       .hero p {
         font-size: 1em;
-        margin-bottom: 20px;
-      }
-      .action-buttons {
-        flex-direction: column;
-        gap: 12px;
-      }
-      .contact-buttons {
-        flex-direction: column;
-        gap: 12px;
       }
     }
   </style>
@@ -234,7 +210,7 @@ transition: background-color 0.3s ease;
       <img src="logo.png" alt="Logo" />
       <div><strong>BPK</strong> Computer Repair and Services</div>
     </div>
-    <nav>
+    <nav class="nav-buttons">
       <a href="index.html">Home</a>
       <a href="pricing.html">Pricing</a>
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" target="_blank">Book a Service</a>
@@ -247,32 +223,22 @@ transition: background-color 0.3s ease;
     <p>Professional services to safeguard your laptop & Desktop.</p>
 
     <div class="contact-buttons">
-      <div class="contact-buttons">
-  <a href="tel:+447818955500" class="cta"><i class="fas fa-phone"></i> Call Us: +44 7818 955500</a>
-  <a href="https://wa.me/447818955500?text=Hi%20BPK%20Computer%20Repair%2C%20I%20need%20help%20with%20my%20computer." class="cta" target="_blank">
-    <i class="fab fa-whatsapp"></i> Chat on WhatsApp
-  </a>
-</div>
-
-    <a href="https://wa.me/447818955500?text=Hi%20BPK%20Computer%20Repair%2C%20I%20need%20help%20with%20my%20computer." 
+      <a href="tel:+447818955500" class="cta"><i class="fas fa-phone"></i> Call Us: +44 7818 955500</a>
+      <a href="https://wa.me/447818955500?text=Hi%20BPK%20Computer%20Repair%2C%20I%20need%20help%20with%20my%20computer." class="cta" target="_blank">
+        <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+      </a>
+    </div>
+    <a href="https://wa.me/447818955500?text=Hi%20BPK%20Computer%20Repair%2C%20I%20need%20help%20with%20my%20computer."
        class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
       <i class="fab fa-whatsapp"></i>
     </a>
   </section>
 
   <div class="slideshow-container">
-    <div class="mySlides fade">
-      <img alt="Computer Repair Technician" src="computer_repair_technician.jpg" style="width:100%" />
-    </div>
-    <div class="mySlides fade">
-      <img alt="Repair Support" src="difference-computer-repair-and-support-1.jpg" style="width:100%" />
-    </div>
-    <div class="mySlides fade">
-      <img alt="Laptop Repair" src="laptop-repair-box-1.jpg" style="width:100%" />
-    </div>
-    <div class="mySlides fade">
-      <img alt="Technician Image" src="Professional-Computer-Repair-Technician.png" style="width:100%" />
-    </div>
+    <div class="mySlides fade"><img src="computer_repair_technician.jpg" alt="Slide 1" style="width:100%"></div>
+    <div class="mySlides fade"><img src="difference-computer-repair-and-support-1.jpg" alt="Slide 2" style="width:100%"></div>
+    <div class="mySlides fade"><img src="laptop-repair-box-1.jpg" alt="Slide 3" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Professional-Computer-Repair-Technician.png" alt="Slide 4" style="width:100%"></div>
   </div>
   <script>
     let slideIndex = 0;
@@ -296,31 +262,11 @@ transition: background-color 0.3s ease;
   <section class="services" id="services">
     <h2>Our Services</h2>
     <div class="grid">
-      <div class="card">
-        <i class="fab fa-windows"></i>
-        <h3>Windows 10 / 11</h3>
-        <p>Includes installation with driver updates</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-shield-virus"></i>
-        <h3>Virus & Malware Removal</h3>
-        <p>Thorough removal of viruses, malware, and spyware.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-database"></i>
-        <h3>Data Recovery</h3>
-        <p>Recovery of lost or corrupted data from your laptop.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-memory"></i>
-        <h3>RAM Upgrades</h3>
-        <p>Upgrading your laptop’s memory for better performance.</p>
-      </div>
-      <div class="card">
-        <i class="fas fa-hdd"></i>
-        <h3>SSD Installations</h3>
-        <p>Installation and configuration of fast and reliable SSDs.</p>
-      </div>
+      <div class="card"><i class="fab fa-windows"></i><h3>Windows 10 / 11</h3><p>Includes installation with driver updates</p></div>
+      <div class="card"><i class="fas fa-shield-virus"></i><h3>Virus & Malware Removal</h3><p>Thorough removal of viruses, malware, and spyware.</p></div>
+      <div class="card"><i class="fas fa-database"></i><h3>Data Recovery</h3><p>Recovery of lost or corrupted data from your laptop.</p></div>
+      <div class="card"><i class="fas fa-memory"></i><h3>RAM Upgrades</h3><p>Upgrading your laptop’s memory for better performance.</p></div>
+      <div class="card"><i class="fas fa-hdd"></i><h3>SSD Installations</h3><p>Installation and configuration of fast and reliable SSDs.</p></div>
     </div>
   </section>
 
@@ -338,7 +284,6 @@ transition: background-color 0.3s ease;
       <strong>📍 Location:</strong> Preston, UK<br>
       <strong>🕒 Business Hours:</strong> Saturday & Sunday, 10:00 AM – 10:30 PM
     </div>
-
     <div style="margin-top: 15px;">
       <a href="https://www.facebook.com/share/1ASn3THFMY/?mibextid=wwXIfr" target="_blank" style="color: #fff; margin: 0 10px; font-size: 1.5em;">
         <i class="fab fa-facebook"></i>
@@ -350,13 +295,12 @@ transition: background-color 0.3s ease;
         <i class="fas fa-map-marker-alt"></i>
       </a>
     </div>
-
-   <div style="margin-top: 20px;">
-  <iframe
-    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2391.7494776583856!2d-2.708851984163432!3d53.75864927995644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b74f999f4db6f%3A0x21708a0dfab28b1c!2s3%20Murray%20St%2C%20Preston%20PR1%207HY%2C%20UK!5e0!3m2!1sen!2suk!4v1719264879572!5m2!1sen!2suk"
-    width="100%" height="250" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"
-    referrerpolicy="no-referrer-when-downgrade"></iframe>
-</div>
-</footer>
+    <div style="margin-top: 20px;">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2391.7494776583856!2d-2.708851984163432!3d53.75864927995644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b74f999f4db6f%3A0x21708a0dfab28b1c!2s3%20Murray%20St%2C%20Preston%20PR1%207HY%2C%20UK!5e0!3m2!1sen!2suk!4v1719264879572!5m2!1sen!2suk"
+        width="100%" height="250" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </footer>
 </body>
 </html>
