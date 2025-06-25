@@ -23,36 +23,6 @@
       box-sizing: border-box;
       font-family: 'Inter', sans-serif;
     }
-<script>
-  const track = document.querySelector(".testimonial-track");
-  const prev = document.querySelector(".testimonial-slider .prev");
-  const next = document.querySelector(".testimonial-slider .next");
-
-  let currentIndex = 0;
-  const cardWidth = 320;
-  const totalCards = document.querySelectorAll(".testimonial-card").length;
-  const visibleCards = window.innerWidth >= 768 ? 3 : 1;
-
-  function updateSlider() {
-    const maxIndex = totalCards - visibleCards;
-    if (currentIndex < 0) currentIndex = 0;
-    if (currentIndex > maxIndex) currentIndex = maxIndex;
-    track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-  }
-
-  prev.addEventListener("click", () => {
-    currentIndex--;
-    updateSlider();
-  });
-
-  next.addEventListener("click", () => {
-    currentIndex++;
-    updateSlider();
-  });
-
-  window.addEventListener("resize", updateSlider);
-  updateSlider();
-</script>
     body {
       background-color: #f4f7fb;
       color: #1a1a1a;
@@ -212,11 +182,88 @@
     .testimonials h2 {
       margin-bottom: 30px;
     }
-    .testimonial {
-      font-style: italic;
-      margin: 10px auto;
-      max-width: 800px;
+
+    /* Testimonial slider styles */
+    .testimonial-slider {
+      position: relative;
+      overflow: hidden;
+      max-width: 100%;
+      margin-top: 30px;
     }
+    .testimonial-track {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+      gap: 20px;
+    }
+    .testimonial-card {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      min-width: 300px;
+      max-width: 300px;
+      flex-shrink: 0;
+      text-align: center;
+    }
+    .testimonial-card img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+    .testimonial-card h3 {
+      font-size: 1em;
+      margin-bottom: 10px;
+      color: #0a3d62;
+    }
+    .testimonial-card p {
+      font-style: italic;
+      font-size: 0.95em;
+      margin-bottom: 10px;
+    }
+    .testimonial-card .stars {
+      color: #f1c40f;
+      font-size: 1.1em;
+    }
+    .testimonial-slider .prev,
+    .testimonial-slider .next {
+      position: absolute;
+      top: 40%;
+      transform: translateY(-50%);
+      background-color: #3498db;
+      border: none;
+      color: white;
+      font-size: 2em;
+      padding: 10px 15px;
+      cursor: pointer;
+      z-index: 1;
+      border-radius: 50%;
+      user-select: none;
+    }
+    .testimonial-slider .prev:hover,
+    .testimonial-slider .next:hover {
+      background-color: #2a80b9;
+    }
+    .testimonial-slider .prev {
+      left: 10px;
+    }
+    .testimonial-slider .next {
+      right: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 1.8em;
+      }
+      .hero p {
+        font-size: 1em;
+      }
+      .testimonial-card {
+        min-width: 90%;
+        max-width: 90%;
+      }
+    }
+
     .footer {
       background-color: #0a3d62;
       color: white;
@@ -229,84 +276,6 @@
       font-size: 0.8em;
       color: #ddd;
     }
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 1.8em;
-      }
-      .hero p {
-        font-size: 1em;
-      }
-      .testimonial-slider {
-  position: relative;
-  overflow: hidden;
-  max-width: 100%;
-  margin-top: 30px;
-}
-.testimonial-track {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-  gap: 20px;
-}
-.testimonial-card {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  min-width: 300px;
-  max-width: 300px;
-  flex-shrink: 0;
-  text-align: center;
-}
-.testimonial-card img {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  margin-bottom: 10px;
-}
-.testimonial-card h3 {
-  font-size: 1em;
-  margin-bottom: 10px;
-  color: #0a3d62;
-}
-.testimonial-card p {
-  font-style: italic;
-  font-size: 0.95em;
-  margin-bottom: 10px;
-}
-.testimonial-card .stars {
-  color: #f1c40f;
-  font-size: 1.1em;
-}
-.testimonial-slider .prev,
-.testimonial-slider .next {
-  position: absolute;
-  top: 40%;
-  transform: translateY(-50%);
-  background-color: #3498db;
-  border: none;
-  color: white;
-  font-size: 2em;
-  padding: 10px 15px;
-  cursor: pointer;
-  z-index: 1;
-  border-radius: 50%;
-}
-.testimonial-slider .prev:hover,
-.testimonial-slider .next:hover {
-  background-color: #2a80b9;
-}
-.testimonial-slider .prev {
-  left: 10px;
-}
-.testimonial-slider .next {
-  right: 10px;
-}
-@media (max-width: 768px) {
-  .testimonial-card {
-    min-width: 90%;
-  }
-}
-}
   </style>
 </head>
 <body>
@@ -379,83 +348,83 @@
   </section>
 
   <!-- Testimonials -->
- <section class="testimonials">
-  <h2>Customer Testimonials</h2>
-  <div class="testimonial-slider">
-    <button class="prev">&#10094;</button>
-    <div class="testimonial-track">
-      <!-- 10 testimonial cards -->
-      <div class="testimonial-card">
-        <img src="https://i.pravatar.cc/100?img=10" alt="Customer 1">
-        <h3>John D.</h3>
-        <p>Fantastic service! They fixed my laptop in just one visit.</p>
-        <div class="stars">★★★★★</div>
+  <section class="testimonials">
+    <h2>Customer Testimonials</h2>
+    <div class="testimonial-slider">
+      <button class="prev" aria-label="Previous testimonials">&#10094;</button>
+      <div class="testimonial-track">
+        <!-- 10 testimonial cards -->
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=10" alt="Customer 1" />
+          <h3>John D.</h3>
+          <p>Fantastic service! They fixed my laptop in just one visit.</p>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=11" alt="Customer 2" />
+          <h3>Aisha K.</h3>
+          <p>Affordable and quick. Highly recommend BPK Computer Repair.</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=12" alt="Customer 3" />
+          <h3>Rajesh M.</h3>
+          <p>Clear communication and reliable home service. Great experience.</p>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=13" alt="Customer 4" />
+          <h3>Susan P.</h3>
+          <p>Quick diagnosis and solution. My PC is running like new.</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=14" alt="Customer 5" />
+          <h3>Mike B.</h3>
+          <p>Friendly technician and fair pricing. Highly recommended!</p>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=15" alt="Customer 6" />
+          <h3>Emily J.</h3>
+          <p>Excellent laptop upgrade service. Very professional.</p>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=16" alt="Customer 7" />
+          <h3>Ali R.</h3>
+          <p>Saved my important data after a crash. Life saver!</p>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=17" alt="Customer 8" />
+          <h3>Nina T.</h3>
+          <p>Great work ethic and reliable home service support.</p>
+          <div class="stars">★★★★☆</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=18" alt="Customer 9" />
+          <h3>Chris L.</h3>
+          <p>Fast response and efficient repair. Will use again.</p>
+          <div class="stars">★★★★★</div>
+        </div>
+        <div class="testimonial-card">
+          <img src="https://i.pravatar.cc/100?img=19" alt="Customer 10" />
+          <h3>Samantha W.</h3>
+          <p>Professional and courteous. My go-to repair expert!</p>
+          <div class="stars">★★★★★</div>
+        </div>
       </div>
-      <div class="testimonial-card">
-        <img src="https://i.pravatar.cc/100?img=11" alt="Customer 2">
-        <h3>Aisha K.</h3>
-        <p>Affordable and quick. Highly recommend BPK Computer Repair.</p>
-        <div class="stars">★★★★☆</div>
-      </div>
-      <div class="testimonial-card">
-        <img src="https://i.pravatar.cc/100?img=12" alt="Customer 3">
-        <h3>Rajesh M.</h3>
-        <p>Clear communication and reliable home service. Great experience.</p>
-        <div class="stars">★★★★★</div>
-      </div>
-      <div class="testimonial-card">
-        <img src="https://i.pravatar.cc/100?img=13" alt="Customer 4">
-        <h3>Susan P.</h3>
-        <p>Quick diagnosis and solution. My PC is running like new.</p>
-        <div class="stars">★★★★☆</div>
-      </div>
-      <div class="testimonial-card">
-        <img src="https://i.pravatar.cc/100?img=14" alt="Customer 5">
-        <h3>Mike B.</h3>
-        <p>Friendly technician and fair pricing. Highly recommended!</p>
-        <div class="stars">★★★★★</div>
-      </div>
-      <div class="testimonial-card">
-        <img src="https://i.pravatar.cc/100?img=15" alt="Customer 6">
-        <h3>Emily J.</h3>
-        <p>Excellent laptop upgrade service. Very professional.</p>
-        <div class="stars">★★★★★</div>
-      </div>
-      <div class="testimonial-card">
-        <img src="https://i.pravatar.cc/100?img=16" alt="Customer 7">
-        <h3>Ali R.</h3>
-        <p>Saved my important data after a crash. Life saver!</p>
-        <div class="stars">★★★★★</div>
-      </div>
-      <div class="testimonial-card">
-        <img src="https://i.pravatar.cc/100?img=17" alt="Customer 8">
-        <h3>Nina T.</h3>
-        <p>Great work ethic and reliable home service support.</p>
-        <div class="stars">★★★★☆</div>
-      </div>
-      <div class="testimonial-card">
-        <img src="https://i.pravatar.cc/100?img=18" alt="Customer 9">
-        <h3>Chris L.</h3>
-        <p>Fast response and efficient repair. Will use again.</p>
-        <div class="stars">★★★★★</div>
-      </div>
-      <div class="testimonial-card">
-        <img src="https://i.pravatar.cc/100?img=19" alt="Customer 10">
-        <h3>Samantha W.</h3>
-        <p>Professional and courteous. My go-to repair expert!</p>
-        <div class="stars">★★★★★</div>
-      </div>
+      <button class="next" aria-label="Next testimonials">&#10095;</button>
     </div>
-    <button class="next">&#10095;</button>
-  </div>
-</section>
+  </section>
 
   <!-- Footer -->
   <footer class="footer">
     &copy; 2025 BPK Computer Repair and Services. All rights reserved.
     <div class="gdpr">We comply with GDPR and handle your data responsibly.</div>
     <div style="margin-top: 15px;">
-      <strong>📍 Location:</strong> Preston, UK<br>
+      <strong>📍 Location:</strong> Preston, UK<br />
       <strong>🕒 Business Hours:</strong> Saturday & Sunday, 10:00 AM – 10:30 PM
     </div>
     <div style="margin-top: 15px;">
@@ -476,5 +445,49 @@
         referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </footer>
+
+  <!-- Testimonial Slider Script -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const track = document.querySelector(".testimonial-track");
+      const prev = document.querySelector(".testimonial-slider .prev");
+      const next = document.querySelector(".testimonial-slider .next");
+      const cards = document.querySelectorAll(".testimonial-card");
+
+      let currentIndex = 0;
+
+      function getVisibleCardsCount() {
+        return window.innerWidth >= 768 ? 3 : 1;
+      }
+
+      function updateSlider() {
+        const visibleCards = getVisibleCardsCount();
+        const cardWidth = cards[0].offsetWidth + 20; // 20 is gap between cards
+        const maxIndex = cards.length - visibleCards;
+
+        if (currentIndex < 0) currentIndex = 0;
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+      }
+
+      prev.addEventListener("click", () => {
+        currentIndex--;
+        updateSlider();
+      });
+
+      next.addEventListener("click", () => {
+        currentIndex++;
+        updateSlider();
+      });
+
+      window.addEventListener("resize", () => {
+        // Adjust slider position on resize
+        updateSlider();
+      });
+
+      updateSlider();
+    });
+  </script>
 </body>
 </html>
