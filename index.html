@@ -27,49 +27,37 @@
       background-color: #f4f7fb;
       color: #1a1a1a;
     }
+
+    /* Updated Header Styles */
     header {
-  background-color: #0a3d62;
-  padding: 20px 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 15px;
-  color: #fff;
-}
+      background-color: #0a3d62;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      color: #fff;
+    }
 
-@media (min-width: 769px) {
-  header {
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .nav-buttons {
-    justify-content: flex-end;
-    width: auto;
-  }
-}
+    .company-title {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      font-size: 1.6em;
+      font-weight: bold;
+    }
 
-.company-title {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-  font-size: 1.6em;
-  font-weight: bold;
-}
+    .company-title img {
+      height: 70px;
+      border-radius: 50%;
+    }
 
-.company-title img {
-  height: 70px;
-  border-radius: 50%;
-}
+    .nav-buttons {
+      display: flex;
+      gap: 10px;
+    }
 
-.nav-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 10px;
-  width: 100%;
-}
-      .nav-buttons a {
+    .nav-buttons a {
       color: #fff;
       text-decoration: none;
       font-weight: 500;
@@ -81,9 +69,11 @@
       gap: 8px;
       transition: background-color 0.3s ease;
     }
+
     .nav-buttons a:hover {
       background-color: #2a80b9;
     }
+
     .hero {
       display: flex;
       flex-direction: column;
@@ -233,10 +223,10 @@
     </nav>
   </header>
 
+  <!-- Hero Section -->
   <section class="hero">
     <h1>Laptop & Computer Hardware Repairs</h1>
     <p>Professional services to safeguard your laptop & Desktop.</p>
-
     <div class="contact-buttons">
       <a href="tel:+447818955500" class="cta"><i class="fas fa-phone"></i> Call Us: +44 7818 955500</a>
       <a href="https://wa.me/447818955500?text=Hi%20BPK%20Computer%20Repair%2C%20I%20need%20help%20with%20my%20computer." class="cta" target="_blank">
@@ -249,6 +239,7 @@
     </a>
   </section>
 
+  <!-- Slideshow -->
   <div class="slideshow-container">
     <div class="mySlides fade"><img src="computer_repair_technician.jpg" alt="Slide 1" style="width:100%"></div>
     <div class="mySlides fade"><img src="difference-computer-repair-and-support-1.jpg" alt="Slide 2" style="width:100%"></div>
@@ -270,10 +261,12 @@
     document.addEventListener("DOMContentLoaded", showSlides);
   </script>
 
+  <!-- Marquee -->
   <marquee style="background: #0073e6; color: white; padding: 0.5em; font-weight: bold;">
     *🏠 Home Service is Available – Book Now! | Repairing desktops & laptops at your doorstep within 10 miles!*
   </marquee>
 
+  <!-- Services -->
   <section class="services" id="services">
     <h2>Our Services</h2>
     <div class="grid">
@@ -285,6 +278,7 @@
     </div>
   </section>
 
+  <!-- Testimonials -->
   <section class="testimonials">
     <h2>Customer Testimonials</h2>
     <div class="testimonial">"Fantastic service! They fixed my laptop in just one visit." – John D.</div>
@@ -292,6 +286,7 @@
     <div class="testimonial">"Clear communication and reliable home service. Great experience." – Rajesh M.</div>
   </section>
 
+  <!-- Footer -->
   <footer class="footer">
     &copy; 2025 BPK Computer Repair and Services. All rights reserved.
     <div class="gdpr">We comply with GDPR and handle your data responsibly.</div>
