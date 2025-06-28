@@ -251,18 +251,49 @@
       right: 10px;
     }
 
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 1.8em;
-      }
-      .hero p {
-        font-size: 1em;
-      }
-      .testimonial-card {
-        min-width: 90%;
-        max-width: 90%;
-      }
-    }
+   <!-- Look for the @media section inside your <style> tag and replace it with this -->
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8em;
+  }
+  .hero p {
+    font-size: 1em;
+  }
+  .testimonial-card {
+    min-width: 90%;
+    max-width: 90%;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .company-title {
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+  }
+
+  .company-title img {
+    height: 60px;
+  }
+
+  .nav-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+  }
+
+  .nav-buttons a {
+    width: 100%;
+    margin-bottom: 10px;
+    justify-content: center;
+    text-align: center;
+  }
+}
 
     .footer {
       background-color: #0a3d62;
@@ -278,12 +309,6 @@
     }
   </style>
 </head>
-  <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
-    const count = cart.length;
-    document.getElementById("cart-count").textContent = count;
-  });
 </script>
 <body>
   <header>
