@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,32 +22,25 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo {
+    header .logo {
       font-size: 1.5em;
       font-weight: bold;
     }
-    .nav-right {
+    .nav-buttons {
       display: flex;
-      align-items: center;
       gap: 15px;
     }
-    .home-btn {
+    .nav-buttons a {
+      padding: 8px 16px;
       background-color: #3498db;
       color: white;
-      padding: 8px 16px;
+      border-radius: 5px;
       text-decoration: none;
-      border-radius: 6px;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    .home-btn:hover {
-      background-color: #2980b9;
     }
     .cart {
       position: relative;
       font-size: 1.5em;
-      color: white;
-      text-decoration: none;
+      cursor: pointer;
     }
     .cart-count {
       position: absolute;
@@ -113,12 +107,12 @@
 <body>
   <header>
     <div class="logo">BPK Shop</div>
-    <div class="nav-right">
-      <a href="index.html" class="home-btn">Home</a>
-      <a href="checkout.html" class="cart" title="Go to Checkout">
+    <div class="nav-buttons">
+      <a href="index.html">Home</a>
+      <div class="cart" onclick="goToCheckout()">
         <i class="fas fa-shopping-cart"></i>
         <span class="cart-count" id="cartCount">0</span>
-      </a>
+      </div>
     </div>
   </header>
 
@@ -126,56 +120,56 @@
     <div class="shop-title">Available Products</div>
     <div class="products">
       <div class="product">
-        <img src="https://m.media-amazon.com/images/I/61J11sWlkoL._AC_SY355_.jpg" alt="RAM">
+        <img src="https://m.media-amazon.com/images/I/61iB7K+xNsL._AC_SL1500_.jpg" alt="RAM">
         <h3>8GB DDR4 RAM</h3>
         <p>£25.00</p>
         <button onclick="addToCart('8GB DDR4 RAM')">Add to Cart</button>
         <button onclick="buyNow('8GB DDR4 RAM')">Buy Now</button>
       </div>
       <div class="product">
-        <img src="https://m.media-amazon.com/images/I/71V1CeeYH2L._AC_SY355_.jpg" alt="NVMe SSD">
+        <img src="https://m.media-amazon.com/images/I/71Yd2N-jGOL._AC_SL1500_.jpg" alt="NVMe">
         <h3>NVMe SSD 500GB</h3>
         <p>£40.00</p>
         <button onclick="addToCart('NVMe SSD 500GB')">Add to Cart</button>
         <button onclick="buyNow('NVMe SSD 500GB')">Buy Now</button>
       </div>
       <div class="product">
-        <img src="https://m.media-amazon.com/images/I/61ywwL6lJPL._AC_SY355_.jpg" alt="Wireless Keyboard and Mouse">
+        <img src="https://m.media-amazon.com/images/I/61mRMYiCJLL._AC_SL1500_.jpg" alt="Keyboard Mouse">
         <h3>Wireless Keyboard & Mouse</h3>
         <p>£20.00</p>
         <button onclick="addToCart('Wireless Keyboard & Mouse')">Add to Cart</button>
         <button onclick="buyNow('Wireless Keyboard & Mouse')">Buy Now</button>
       </div>
       <div class="product">
-        <img src="https://m.media-amazon.com/images/I/61IsTQw3shL._AC_SY355_.jpg" alt="SATA Cables">
+        <img src="https://m.media-amazon.com/images/I/71tW3EqaZyL._AC_SL1500_.jpg" alt="SATA Cables">
         <h3>SATA Cables (2pcs)</h3>
         <p>£5.00</p>
         <button onclick="addToCart('SATA Cables')">Add to Cart</button>
         <button onclick="buyNow('SATA Cables')">Buy Now</button>
       </div>
       <div class="product">
-        <img src="https://m.media-amazon.com/images/I/61FtaAjGMCL._AC_SY355_.jpg" alt="Card Reader">
+        <img src="https://m.media-amazon.com/images/I/61UXjHpKy6L._AC_SL1500_.jpg" alt="Card Reader">
         <h3>Multi Card Reader</h3>
         <p>£7.00</p>
         <button onclick="addToCart('Multi Card Reader')">Add to Cart</button>
         <button onclick="buyNow('Multi Card Reader')">Buy Now</button>
       </div>
       <div class="product">
-        <img src="https://m.media-amazon.com/images/I/61+obeh3bXL._AC_SY355_.jpg" alt="2.5 SSD">
-        <h3>2.5" SSD 1TB</h3>
+        <img src="https://m.media-amazon.com/images/I/81Z5WQPlEOL._AC_SL1500_.jpg" alt="SSD">
+        <h3>2.5&quot; SSD 1TB</h3>
         <p>£50.00</p>
         <button onclick="addToCart('2.5 SSD 1TB')">Add to Cart</button>
         <button onclick="buyNow('2.5 SSD 1TB')">Buy Now</button>
       </div>
       <div class="product">
-        <img src="https://m.media-amazon.com/images/I/61wxQs-4xBL._AC_SY355_.jpg" alt="External HDD">
+        <img src="https://m.media-amazon.com/images/I/71Rj9A8Tf4L._AC_SL1500_.jpg" alt="External HDD">
         <h3>External Hard Drive 1TB</h3>
         <p>£60.00</p>
         <button onclick="addToCart('External Hard Drive')">Add to Cart</button>
         <button onclick="buyNow('External Hard Drive')">Buy Now</button>
       </div>
       <div class="product">
-        <img src="https://m.media-amazon.com/images/I/61xpW3NLq2L._AC_SY355_.jpg" alt="USB Hub">
+        <img src="https://m.media-amazon.com/images/I/71sFYu4G7uL._AC_SL1500_.jpg" alt="USB Hub">
         <h3>USB Hub 4-Port</h3>
         <p>£8.00</p>
         <button onclick="addToCart('USB Hub 4-Port')">Add to Cart</button>
@@ -185,17 +179,28 @@
   </div>
 
   <script>
-    let cart = [];
     function addToCart(product) {
+      let cart = JSON.parse(localStorage.getItem('cartItems')) || [];
       cart.push(product);
+      localStorage.setItem('cartItems', JSON.stringify(cart));
       document.getElementById("cartCount").textContent = cart.length;
       alert(`${product} added to cart.`);
     }
 
     function buyNow(product) {
-      alert(`You chose to buy ${product} now.`);
+      localStorage.setItem('cartItems', JSON.stringify([product]));
       window.location.href = "checkout.html";
     }
+
+    function goToCheckout() {
+      window.location.href = "checkout.html";
+    }
+
+    // Initialize cart count on page load
+    document.addEventListener("DOMContentLoaded", function() {
+      const cart = JSON.parse(localStorage.getItem('cartItems')) || [];
+      document.getElementById("cartCount").textContent = cart.length;
+    });
   </script>
 </body>
 </html>
