@@ -17,10 +17,25 @@
       color: #fff;
       padding: 20px;
       text-align: center;
+      position: relative;
     }
     h1 {
       margin: 0;
       font-size: 28px;
+    }
+    .home-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      padding: 8px 16px;
+      border-radius: 5px;
+      font-weight: 600;
+    }
+    .home-button:hover {
+      background-color: #0056b3;
     }
     .product-grid {
       display: grid;
@@ -75,6 +90,7 @@
 </head>
 <body>
   <header>
+    <a class="home-button" href="index.html">Home</a>
     <h1>Shop – Recommended Products</h1>
     <p>All purchases redirect securely to Amazon.co.uk</p>
   </header>
