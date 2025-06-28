@@ -6,7 +6,71 @@
   <title>Shop – BPK Computer Services</title>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap">
   <style>
-    /* (same styles as before) */
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+    header {
+      background-color: #004466;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 30px 0;
+    }
+    .product-card {
+      background-color: #fff;
+      border-radius: 10px;
+      padding: 15px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.2s ease;
+    }
+    .product-card:hover {
+      transform: scale(1.02);
+    }
+    .product-card img {
+      max-width: 100%;
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+    .product-card h3 {
+      font-size: 18px;
+      margin: 0 0 10px;
+    }
+    .product-card p {
+      font-size: 14px;
+      color: #555;
+      margin: 0 0 15px;
+    }
+    .product-card a {
+      background-color: #0077cc;
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 15px;
+      border-radius: 5px;
+      display: inline-block;
+    }
+    .product-card a:hover {
+      background-color: #005fa3;
+    }
+    footer {
+      text-align: center;
+      font-size: 14px;
+      color: #777;
+      margin-top: 40px;
+    }
   </style>
 </head>
 <body>
@@ -16,64 +80,52 @@
   </header>
 
   <section class="product-grid">
-
-    <!-- Wired USB Keyboard & Mouse -->
     <div class="product-card">
-      <img src="images/wired_kb_mouse.jpg" alt="Wired USB Keyboard and Mouse" loading="lazy">
+      <img src="https://m.media-amazon.com/images/I/71cvh9QgJYL._AC_SL1500_.jpg" alt="Wired USB Keyboard and Mouse" loading="lazy">
       <h3>Wired USB Keyboard & Mouse – HP / Dell / Logitech</h3>
       <p>Reliable plug-and-play USB sets from HP, Dell, and Logitech – ideal for desktops.</p>
       <a href="https://www.amazon.co.uk/s?k=wired+usb+keyboard+mouse+hp+dell+logitech&amp;tag=YOUR_AFFILIATE_ID" target="_blank">Buy on Amazon</a>
     </div>
-
-    <!-- Wireless Keyboard & Mouse -->
     <div class="product-card">
-      <img src="images/wireless_kb_mouse.jpg" alt="Wireless Keyboard and Mouse" loading="lazy">
+      <img src="https://m.media-amazon.com/images/I/71dZW2B9LBL._AC_SL1500_.jpg" alt="Wireless Keyboard and Mouse" loading="lazy">
       <h3>Wireless Keyboard & Mouse – HP / Dell / Logitech</h3>
       <p>Durable wireless sets with long battery life and compact USB receiver from top brands.</p>
       <a href="https://www.amazon.co.uk/s?k=wireless+keyboard+mouse+combo+hp+dell+logitech&amp;tag=YOUR_AFFILIATE_ID" target="_blank">Buy on Amazon</a>
     </div>
-
-    <!-- RAM Cards -->
     <div class="product-card">
-      <img src="images/4gb_ddr3.jpg" alt="4GB DDR3 RAM" loading="lazy">
-      <h3>4 GB DDR3 RAM (Desktop)</h3>
+      <img src="https://m.media-amazon.com/images/I/71xNATm7GqL._AC_SL1500_.jpg" alt="4GB DDR3 RAM" loading="lazy">
+      <h3>4 GB DDR3 RAM (Desktop)</h3>
       <p>Reliable upgrade for desktops.</p>
-      <a href="https://www.amazon.co.uk/s?k=4gb+ddr3+ram+desktop&amp;tag=YOUR_AFFILIATE_ID" target="_blank">Buy on Amazon</a>
+      <a href="https://www.amazon.co.uk/s?k=4gb+ddr3+ram&amp;tag=YOUR_AFFILIATE_ID" target="_blank">Buy on Amazon</a>
     </div>
-    <!-- ... repeat for 8GB DDR3, 4GB DDR4, 8GB DDR4, 16GB DDR4, 8GB DDR5, 16GB DDR5, 32GB DDR5 -->
-    <!-- Internal SSD Cards -->
     <div class="product-card">
-      <img src="images/256gb_ssd.jpg" alt="256GB Internal SSD" loading="lazy">
-      <h3>256 GB Internal SSD (SATA)</h3>
+      <img src="https://m.media-amazon.com/images/I/81Y5WuARqpL._AC_SL1500_.jpg" alt="256GB Internal SSD" loading="lazy">
+      <h3>256 GB Internal SSD (SATA)</h3>
       <p>Fast boot drive upgrade.</p>
       <a href="https://www.amazon.co.uk/s?k=256gb+internal+ssd&amp;tag=YOUR_AFFILIATE_ID" target="_blank">Buy on Amazon</a>
     </div>
-    <!-- ... repeat for 512GB NVMe and 1TB variants -->
-    <!-- External SSD Cards -->
     <div class="product-card">
-      <img src="images/256gb_ext_ssd.jpg" alt="256GB External SSD" loading="lazy">
-      <h3>256 GB External SSD</h3>
-      <p>Portable storage for documents & photos.</p>
+      <img src="https://m.media-amazon.com/images/I/71kC8kP3uUL._AC_SL1500_.jpg" alt="256GB External SSD" loading="lazy">
+      <h3>256 GB External SSD</h3>
+      <p>Portable storage for documents &amp; photos.</p>
       <a href="https://www.amazon.co.uk/s?k=256gb+external+ssd&amp;tag=YOUR_AFFILIATE_ID" target="_blank">Buy on Amazon</a>
     </div>
-    <!-- ... repeat for 512GB and 1TB external SSDs -->
-    <!-- Fixed Multi Card Reader -->
     <div class="product-card">
-      <img src="images/card_reader.jpg" alt="7-in-1 USB 3.0 Multi Card Reader" loading="lazy">
+      <img src="https://m.media-amazon.com/images/I/61zN1p8+L8L._AC_SL1500_.jpg" alt="Multi Card Reader USB" loading="lazy">
       <h3>7‑in‑1 USB 3.0 Multi Card Reader</h3>
       <p>Read SD/CF/MS formats.</p>
       <a href="https://www.amazon.co.uk/dp/B06ZXV6Y8J?tag=YOUR_AFFILIATE_ID" target="_blank">Buy on Amazon</a>
     </div>
-    <!-- Fixed Laptop Stand -->
     <div class="product-card">
-      <img src="images/laptop_stand.jpg" alt="Adjustable Laptop Stand" loading="lazy">
+      <img src="https://m.media-amazon.com/images/I/71LJWc6KdyL._AC_SL1500_.jpg" alt="Adjustable Laptop Stand" loading="lazy">
       <h3>Adjustable Laptop Stand – Amazon Basics</h3>
       <p>Ergonomic and height‑adjustable.</p>
       <a href="https://www.amazon.co.uk/dp/B09WNH5ZT9?tag=YOUR_AFFILIATE_ID" target="_blank">Buy on Amazon</a>
     </div>
-
   </section>
 
-  <footer>&copy; 2025 BPK Computer Services. All rights reserved.</footer>
+  <footer>
+    &copy; 2025 BPK Computer Services. All rights reserved.
+  </footer>
 </body>
 </html>
