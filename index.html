@@ -251,47 +251,52 @@
       right: 10px;
     }
 
-   <!-- Look for the @media section inside your <style> tag and replace it with this -->
-@media (max-width: 768px) {
-  .hero h1 {
-    font-size: 1.8em;
-  }
-  .hero p {
-    font-size: 1em;
-  }
-  .testimonial-card {
-    min-width: 90%;
-    max-width: 90%;
-  }
-
+   @media (max-width: 768px) {
   header {
     flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
+    align-items: center;
+    padding: 20px 10px;
+    text-align: center;
   }
 
   .company-title {
-    width: 100%;
+    flex-direction: column;
     justify-content: center;
-    margin-bottom: 15px;
+    text-align: center;
     font-size: 1.3em;
+    margin-bottom: 10px;
   }
 
   .company-title img {
-    height: 60px;
+    height: 80px;
   }
 
   .nav-buttons {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
     width: 100%;
   }
 
   .nav-buttons a {
-    width: 100%;
-    margin-bottom: 10px;
-    justify-content: center;
+    display: block;
+    padding: 12px;
+    margin: 4px 0;
+    font-size: 1em;
     text-align: center;
+    border-radius: 6px;
+  }
+
+  .hero h1 {
+    font-size: 1.8em;
+  }
+
+  .hero p {
+    font-size: 1em;
+  }
+
+  .testimonial-card {
+    min-width: 90%;
+    max-width: 90%;
   }
 }
 
@@ -312,17 +317,18 @@
 </script>
 <body>
   <header>
-    <div class="company-title">
-      <img src="logo.png" alt="Logo" />
-      <div><strong>BPK</strong> Computer Repair and Services</div>
-    </div>
-    <nav class="nav-buttons">
-  <a href="index.html">Home</a>
-  <a href="pricing.html">Pricing</a>
-  <a href="shop.html">Shop</a>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" target="_blank">Book a Service</a>
-  <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank">Request a Quote</a>
-</nav>
+    <header>
+  <div class="company-title">
+    <img src="logo.png" alt="Logo" />
+    <div><strong>BPK</strong> Computer Repair and Services</div>
+  </div>
+  <nav class="nav-buttons">
+    <a href="index.html">Home</a>
+    <a href="pricing.html">Pricing</a>
+    <a href="shop.html">Shop</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" target="_blank">Book a Service</a>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank">Request a Quote</a>
+  </nav>
 </header>
 
   <!-- Hero Section -->
