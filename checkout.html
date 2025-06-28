@@ -73,7 +73,7 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Cart items will be inserted here -->
+        <!-- Items added dynamically -->
       </tbody>
       <tfoot>
         <tr class="total-row">
@@ -105,7 +105,6 @@
       let total = 0;
       const itemCount = {};
 
-      // Count quantities
       cartItems.forEach(item => {
         itemCount[item] = (itemCount[item] || 0) + 1;
       });
@@ -121,7 +120,8 @@
             <td>£${price.toFixed(2)}</td>
             <td>${quantity}</td>
             <td>£${itemTotal.toFixed(2)}</td>
-          </tr>`;
+          </tr>
+        `;
         tbody.innerHTML += row;
       });
 
@@ -129,7 +129,7 @@
     }
 
     function proceedToPayment() {
-      alert("This is a demo checkout. Redirect to payment gateway here.");
+      alert("This is a demo checkout. Redirecting to payment gateway...");
       localStorage.removeItem('cartItems');
       window.location.href = "index.html";
     }
