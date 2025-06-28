@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - BPK Computer Repair and Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f7fb;
+      color: #1a1a1a;
+    }
+    header {
+      background-color: #0a3d62;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .checkout-container {
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-bottom: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    .total-row {
+      font-weight: bold;
+    }
+    .btn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #0a3d62;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background-color: #2a80b9;
+    }
+  </style>
+</head>
+<body>
+  <header>Checkout - BPK Computer Repair and Services</header>
+
+  <div class="checkout-container">
+    <h2>Your Cart Items</h2>
+    <table id="cartTable">
+      <thead>
+        <tr>
+          <th>Product</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Cart items will be inserted here -->
+      </tbody>
+      <tfoot>
+        <tr class="total-row">
+          <td colspan="3">Grand Total</td>
+          <td id="grandTotal">£0.00</td>
+        </tr>
+      </tfoot>
+    </table>
+    <button class="btn" onclick="proceedToPayment()">Proceed to Payment</button>
+  </div>
+
+  <script>
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+    const prices = {
+      "8GB DDR4 RAM": 25.00,
+      "NVMe SSD 500GB": 40.00,
+      "Wireless Keyboard & Mouse": 20.00,
+      "SATA Cables": 5.00,
+      "Multi Card Reader": 7.00,
+      "2.5 SSD 1TB": 50.00,
+      "External Hard Drive": 60.00,
+      "USB Hub 4-Port": 8.00
+    };
+
+    function renderCart() {
+      const tbody = document.querySelector("#cartTable tbody");
+      tbody.innerHTML = "";
+      let total = 0;
+      const itemCount = {};
+
+      // Count quantities
+      cartItems.forEach(item => {
+        itemCount[item] = (itemCount[item] || 0) + 1;
+      });
+
+      Object.entries(itemCount).forEach(([product, quantity]) => {
+        const price = prices[product] || 0;
+        const itemTotal = price * quantity;
+        total += itemTotal;
+
+        const row = `
+          <tr>
+            <td>${product}</td>
+            <td>£${price.toFixed(2)}</td>
+            <td>${quantity}</td>
+            <td>£${itemTotal.toFixed(2)}</td>
+          </tr>`;
+        tbody.innerHTML += row;
+      });
+
+      document.getElementById("grandTotal").textContent = `£${total.toFixed(2)}`;
+    }
+
+    function proceedToPayment() {
+      alert("This is a demo checkout. Redirect to payment gateway here.");
+      localStorage.removeItem('cartItems');
+      window.location.href = "index.html";
+    }
+
+    renderCart();
+  </script>
+</body>
+</html>
