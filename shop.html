@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shop - BPK Computer Repair and Services</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f7fb;
+      color: #1a1a1a;
+    }
+    header {
+      background-color: #0a3d62;
+      color: white;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header .logo {
+      font-size: 1.5em;
+      font-weight: bold;
+    }
+    .cart {
+      position: relative;
+      font-size: 1.5em;
+      cursor: pointer;
+    }
+    .cart-count {
+      position: absolute;
+      top: -8px;
+      right: -12px;
+      background: red;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 0.8em;
+    }
+    .shop-container {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .shop-title {
+      text-align: center;
+      font-size: 2em;
+      margin-bottom: 30px;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .product {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .product img {
+      width: 100%;
+      max-height: 150px;
+      object-fit: contain;
+      margin-bottom: 15px;
+    }
+    .product h3 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .product p {
+      font-size: 1em;
+      margin-bottom: 10px;
+      color: #3498db;
+    }
+    .product button {
+      padding: 8px 14px;
+      margin: 5px;
+      border: none;
+      border-radius: 6px;
+      background: #0a3d62;
+      color: white;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .product button:hover {
+      background: #2a80b9;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">BPK Shop</div>
+    <div class="cart">
+      <i class="fas fa-shopping-cart"></i>
+      <span class="cart-count" id="cartCount">0</span>
+    </div>
+  </header>
+
+  <div class="shop-container">
+    <div class="shop-title">Available Products</div>
+    <div class="products">
+      <div class="product">
+        <img src="images/ram.jpg" alt="RAM">
+        <h3>8GB DDR4 RAM</h3>
+        <p>£25.00</p>
+        <button onclick="addToCart('8GB DDR4 RAM')">Add to Cart</button>
+        <button onclick="buyNow('8GB DDR4 RAM')">Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="images/nvme.jpg" alt="NVMe">
+        <h3>NVMe SSD 500GB</h3>
+        <p>£40.00</p>
+        <button onclick="addToCart('NVMe SSD 500GB')">Add to Cart</button>
+        <button onclick="buyNow('NVMe SSD 500GB')">Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="images/keyboard_mouse.jpg" alt="Keyboard Mouse">
+        <h3>Wireless Keyboard & Mouse</h3>
+        <p>£20.00</p>
+        <button onclick="addToCart('Wireless Keyboard & Mouse')">Add to Cart</button>
+        <button onclick="buyNow('Wireless Keyboard & Mouse')">Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="images/sata_cable.jpg" alt="SATA Cables">
+        <h3>SATA Cables (2pcs)</h3>
+        <p>£5.00</p>
+        <button onclick="addToCart('SATA Cables')">Add to Cart</button>
+        <button onclick="buyNow('SATA Cables')">Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="images/card_reader.jpg" alt="Card Reader">
+        <h3>Multi Card Reader</h3>
+        <p>£7.00</p>
+        <button onclick="addToCart('Multi Card Reader')">Add to Cart</button>
+        <button onclick="buyNow('Multi Card Reader')">Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="images/ssd.jpg" alt="SSD">
+        <h3>2.5" SSD 1TB</h3>
+        <p>£50.00</p>
+        <button onclick="addToCart('2.5 SSD 1TB')">Add to Cart</button>
+        <button onclick="buyNow('2.5 SSD 1TB')">Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="images/external_hdd.jpg" alt="External HDD">
+        <h3>External Hard Drive 1TB</h3>
+        <p>£60.00</p>
+        <button onclick="addToCart('External Hard Drive')">Add to Cart</button>
+        <button onclick="buyNow('External Hard Drive')">Buy Now</button>
+      </div>
+      <div class="product">
+        <img src="images/usb_hub.jpg" alt="USB Hub">
+        <h3>USB Hub 4-Port</h3>
+        <p>£8.00</p>
+        <button onclick="addToCart('USB Hub 4-Port')">Add to Cart</button>
+        <button onclick="buyNow('USB Hub 4-Port')">Buy Now</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let cart = [];
+    function addToCart(product) {
+      cart.push(product);
+      document.getElementById("cartCount").textContent = cart.length;
+      alert(`${product} added to cart.`);
+    }
+
+    function buyNow(product) {
+      alert(`You chose to buy ${product} now.`);
+      window.location.href = "checkout.html";
+    }
+  </script>
+</body>
+</html>
