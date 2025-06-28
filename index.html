@@ -278,6 +278,13 @@
     }
   </style>
 </head>
+  <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const cart = JSON.parse(localStorage.getItem("cartItems")) || [];
+    const count = cart.length;
+    document.getElementById("cart-count").textContent = count;
+  });
+</script>
 <body>
   <header>
     <div class="company-title">
@@ -285,12 +292,16 @@
       <div><strong>BPK</strong> Computer Repair and Services</div>
     </div>
     <nav class="nav-buttons">
-      <a href="index.html">Home</a>
-      <a href="pricing.html">Pricing</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" target="_blank">Book a Service</a>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank">Request a Quote</a>
-    </nav>
-  </header>
+  <a href="index.html">Home</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="shop.html">Shop</a>
+  <a href="checkout.html">
+    🛒 Cart <span id="cart-count" style="background:red; color:white; border-radius:50%; padding:2px 8px; font-size:0.8em;">0</span>
+  </a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSd7gzVQkYdvBvzdO0Pbh7d3bZZCAZSxnFFOHOhqo3VojIeWmw/viewform" target="_blank">Book a Service</a>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank">Request a Quote</a>
+</nav>
+</header>
 
   <!-- Hero Section -->
   <section class="hero">
