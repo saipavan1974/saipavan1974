@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,7 +74,7 @@
         </tr>
       </thead>
       <tbody>
-        <!-- Items added dynamically -->
+        <!-- Cart items will be inserted here -->
       </tbody>
       <tfoot>
         <tr class="total-row">
@@ -120,8 +121,7 @@
             <td>£${price.toFixed(2)}</td>
             <td>${quantity}</td>
             <td>£${itemTotal.toFixed(2)}</td>
-          </tr>
-        `;
+          </tr>`;
         tbody.innerHTML += row;
       });
 
@@ -129,9 +129,7 @@
     }
 
     function proceedToPayment() {
-      alert("This is a demo checkout. Redirecting to payment gateway...");
-      localStorage.removeItem('cartItems');
-      window.location.href = "index.html";
+      window.location.href = "payment.html";
     }
 
     renderCart();
