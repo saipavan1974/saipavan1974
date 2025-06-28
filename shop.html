@@ -21,30 +21,32 @@
       justify-content: space-between;
       align-items: center;
     }
-    .logo-container {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-    }
     .logo {
       font-size: 1.5em;
       font-weight: bold;
     }
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
     .home-btn {
-      background: white;
-      color: #0a3d62;
+      background-color: #3498db;
+      color: white;
       padding: 8px 16px;
       text-decoration: none;
       border-radius: 6px;
       font-weight: bold;
+      transition: background-color 0.3s ease;
     }
     .home-btn:hover {
-      background: #e3e3e3;
+      background-color: #2980b9;
     }
     .cart {
       position: relative;
       font-size: 1.5em;
-      cursor: pointer;
+      color: white;
+      text-decoration: none;
     }
     .cart-count {
       position: absolute;
@@ -110,13 +112,13 @@
 </head>
 <body>
   <header>
-    <div class="logo-container">
-      <div class="logo">BPK Shop</div>
+    <div class="logo">BPK Shop</div>
+    <div class="nav-right">
       <a href="index.html" class="home-btn">Home</a>
-    </div>
-    <div class="cart">
-      <i class="fas fa-shopping-cart"></i>
-      <span class="cart-count" id="cartCount">0</span>
+      <a href="checkout.html" class="cart" title="Go to Checkout">
+        <i class="fas fa-shopping-cart"></i>
+        <span class="cart-count" id="cartCount">0</span>
+      </a>
     </div>
   </header>
 
