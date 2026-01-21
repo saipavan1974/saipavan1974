@@ -7,7 +7,9 @@
   <title>BPK Technologies | Support</title>
   <meta name="description" content="BPK Technologies Support: onboarding, security hardening, break-fix (optional), backup & recovery, and SME IT optimisation. UK SME-focused platform adoption support with professional SLAs." />
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
@@ -34,6 +36,7 @@
 
     *{ margin:0; padding:0; box-sizing:border-box; font-family:"Inter", sans-serif; }
     body{ background: var(--bg); color: var(--text); }
+    a{ color: inherit; }
 
     /* Header / Nav (same style as homepage) */
     header{
@@ -73,11 +76,12 @@
       font-size: 1.15rem;
       display:block;
       letter-spacing: 0.2px;
+      font-weight: 900;
     }
     .brand .title span{
       font-size: 0.86rem;
       opacity: .9;
-      font-weight: 600;
+      font-weight: 700;
     }
 
     nav.nav{
@@ -91,7 +95,7 @@
     .nav a{
       color:#eaf2ff;
       text-decoration:none;
-      font-weight:800;
+      font-weight:900;
       font-size: 0.95rem;
       padding: 10px 12px;
       border-radius: 12px;
@@ -143,20 +147,21 @@
       line-height: 1.12;
       letter-spacing: -0.6px;
       margin-bottom: 12px;
+      font-weight: 1000;
     }
     .hero p{
       color: rgba(255,255,255,0.92);
       font-size: 1.05rem;
       line-height: 1.7;
       margin-bottom: 14px;
-      max-width: 65ch;
+      max-width: 70ch;
     }
     .hero .sub{
       color: rgba(255,255,255,0.82);
       font-size: 0.98rem;
       line-height: 1.6;
       margin-bottom: 18px;
-      max-width: 65ch;
+      max-width: 70ch;
     }
 
     .hero-badges{
@@ -170,7 +175,7 @@
       border: 1px solid var(--chip-border);
       padding: 9px 12px;
       border-radius: 999px;
-      font-weight: 800;
+      font-weight: 900;
       font-size: 0.92rem;
       display:inline-flex;
       gap: 8px;
@@ -191,7 +196,7 @@
       display:inline-flex;
       align-items:center;
       gap: 10px;
-      font-weight: 900;
+      font-weight: 1000;
       padding: 12px 16px;
       border-radius: 14px;
       transition: transform .15s ease, filter .2s ease;
@@ -209,7 +214,7 @@
       color:#fff;
     }
 
-    /* Right hero panel */
+    /* Right hero panel (structure fix + better scanability) */
     .hero-panel{
       background: rgba(255,255,255,0.06);
       border: 1px solid rgba(255,255,255,0.14);
@@ -221,39 +226,46 @@
       font-size: 1.05rem;
       margin-bottom: 10px;
       letter-spacing: .2px;
+      display:flex;
+      align-items:center;
+      gap: 10px;
     }
+    .hero-panel .rows{ display:grid; gap: 10px; }
     .hero-panel .row{
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
       gap: 12px;
-      padding: 10px 0;
-      border-top: 1px solid rgba(255,255,255,0.10);
+      padding: 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.05);
       color: rgba(255,255,255,0.92);
       font-size: 0.96rem;
       line-height: 1.5;
     }
-    .hero-panel .row:first-of-type{ border-top: none; padding-top: 0; }
+    .hero-panel .row b{ font-weight: 1000; }
     .hero-panel .pill{
       display:inline-flex;
       align-items:center;
       gap: 8px;
       padding: 6px 10px;
       border-radius: 999px;
-      font-weight: 900;
+      font-weight: 1000;
       font-size: 0.82rem;
       border: 1px solid rgba(255,255,255,0.18);
       background: rgba(255,255,255,0.08);
       white-space: nowrap;
     }
 
-    /* Layout helpers */
+    /* Page sections */
     .container{ max-width: 1180px; margin: 0 auto; padding: 54px 20px; }
     .section-title{
       font-size: 2rem;
       text-align:center;
       margin-bottom: 10px;
       letter-spacing: -0.3px;
+      font-weight: 1000;
     }
     .section-desc{
       text-align:center;
@@ -263,6 +275,34 @@
       line-height: 1.7;
     }
 
+    /* Anchor chips (quick navigation) */
+    .quick-nav{
+      max-width: 1180px;
+      margin: -26px auto 0;
+      padding: 0 20px 10px;
+      display:flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content:center;
+    }
+    .quick-nav a{
+      text-decoration:none;
+      font-weight: 1000;
+      font-size: 0.9rem;
+      color: var(--brand-blue);
+      padding: 10px 12px;
+      border-radius: 999px;
+      background: #fff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      transition: transform .15s ease, filter .2s ease;
+    }
+    .quick-nav a:hover{ transform: translateY(-1px); filter: brightness(1.02); }
+
+    /* Cards */
     .grid{
       display:grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -289,10 +329,36 @@
       background: linear-gradient(135deg, var(--brand-cyan), var(--brand-purple));
       box-shadow: 0 10px 18px rgba(124,58,237,0.16);
     }
-    .card h3{ margin-bottom: 8px; }
+    .card h3{ margin-bottom: 8px; font-weight: 1000; }
     .card p{ color: var(--muted); line-height: 1.65; margin-bottom: 10px; }
     .card ul{ margin-left: 18px; color: #334155; line-height: 1.7; }
     .card li{ margin: 6px 0; }
+
+    /* "How it works" stepper */
+    .steps{
+      display:grid;
+      grid-template-columns: repeat(5, minmax(160px, 1fr));
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .step{
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow-soft);
+      padding: 14px;
+    }
+    .step .num{
+      width: 34px; height: 34px;
+      border-radius: 12px;
+      display:flex; align-items:center; justify-content:center;
+      font-weight: 1000;
+      color:#fff;
+      background: linear-gradient(135deg, var(--brand-cyan), var(--brand-purple));
+      margin-bottom: 10px;
+    }
+    .step b{ font-weight: 1000; }
+    .step p{ margin-top: 6px; color: var(--muted); line-height: 1.6; font-size: 0.95rem; }
 
     /* Callout */
     .callout{
@@ -308,14 +374,14 @@
       flex-wrap: wrap;
       margin: 26px 0 0;
     }
-    .callout strong{ display:block; font-size: 1.05rem; margin-bottom: 4px; }
+    .callout strong{ display:block; font-size: 1.05rem; margin-bottom: 4px; font-weight: 1000; }
     .callout .text{ color: #0f172a; max-width: 78ch; line-height: 1.6; }
     .callout .actions{ display:flex; gap: 10px; flex-wrap: wrap; }
     .callout .actions a{
       text-decoration:none;
       padding: 10px 14px;
       border-radius: 14px;
-      font-weight: 900;
+      font-weight: 1000;
       display:inline-flex;
       gap: 10px;
       align-items:center;
@@ -365,6 +431,7 @@
       position: sticky;
       top: 0;
       z-index: 1;
+      font-weight: 1000;
     }
     td{ color: #0f172a; }
     .tag{
@@ -373,13 +440,65 @@
       gap: 8px;
       padding: 6px 10px;
       border-radius: 999px;
-      font-weight: 900;
+      font-weight: 1000;
       font-size: 0.82rem;
       border: 1px solid rgba(15,23,42,0.10);
       background: #f8fafc;
       color: #334155;
       white-space: nowrap;
     }
+
+    /* Intake card (new) */
+    .intake{
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      box-shadow: var(--shadow-soft);
+      padding: 18px;
+      margin-top: 18px;
+      display:grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 16px;
+      align-items:start;
+    }
+    .intake h3{
+      font-weight: 1000;
+      margin-bottom: 8px;
+      color: var(--brand-blue);
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+    .intake p{ color: var(--muted); line-height: 1.7; }
+    .intake ul{ margin: 10px 0 0 18px; color:#334155; line-height: 1.7; }
+    .intake .box{
+      background: linear-gradient(135deg, rgba(14,165,233,0.10), rgba(124,58,237,0.08));
+      border: 1px solid rgba(15,23,42,0.10);
+      border-radius: 16px;
+      padding: 14px;
+    }
+    .intake .box b{ font-weight: 1000; }
+    .intake .mini{
+      display:grid;
+      gap: 10px;
+      margin-top: 10px;
+    }
+    .intake .mini a{
+      text-decoration:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      padding: 12px 12px;
+      border-radius: 14px;
+      background: #fff;
+      border: 1px solid var(--border);
+      font-weight: 1000;
+      color: var(--brand-blue);
+      box-shadow: var(--shadow-soft);
+      transition: transform .15s ease, filter .2s ease;
+    }
+    .intake .mini a:hover{ transform: translateY(-1px); filter: brightness(1.02); }
 
     /* FAQ */
     .faq{
@@ -449,6 +568,8 @@
       nav.nav{ justify-content:flex-start; }
       .brand{ min-width: unset; }
       .two-col{ grid-template-columns: 1fr; }
+      .steps{ grid-template-columns: 1fr; }
+      .intake{ grid-template-columns: 1fr; }
       table{ min-width: 780px; }
     }
     @media (max-width: 520px){
@@ -471,7 +592,7 @@
         </div>
       </div>
 
-      <nav class="nav">
+      <nav class="nav" aria-label="Primary navigation">
         <a href="index.html"><i class="fas fa-house"></i> Home</a>
         <a href="index.html#platform"><i class="fas fa-layer-group"></i> Platform</a>
         <a href="index.html#innovation"><i class="fas fa-lightbulb"></i> Innovation</a>
@@ -496,8 +617,7 @@
           and keep your IT environment reliable.
         </p>
         <div class="sub">
-          Platform-led maintenance is the primary focus. Break-fix repairs remain available as an optional service
-          when needed.
+          Platform-led maintenance is the primary focus. Break-fix repairs remain available as an optional service when needed.
         </div>
 
         <div class="hero-badges">
@@ -508,8 +628,8 @@
         </div>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank" rel="noopener">
-            <i class="fas fa-rocket"></i> Start Onboarding
+          <a class="btn btn-primary" href="#intake">
+            <i class="fas fa-rocket"></i> Raise a Support Request
           </a>
           <a class="btn btn-ghost" href="https://wa.me/447818955500?text=Hi%20BPK%20Technologies%2C%20I%20need%20support%20and%20onboarding%20help%20for%20your%20Smart%20Asset%20Platform." target="_blank" rel="noopener">
             <i class="fab fa-whatsapp"></i> WhatsApp Support
@@ -520,24 +640,26 @@
       <div class="hero-panel" aria-label="Support overview panel">
         <h3><i class="fas fa-headset"></i> What you get</h3>
 
-        <div class="row">
-          <div><b>Onboarding & setup</b><br><span style="opacity:.92">Asset discovery, baseline health, access & policy setup.</span></div>
-          <span class="pill"><i class="fas fa-check"></i> Standard</span>
-        </div>
+        <div class="rows">
+          <div class="row">
+            <div><b>Onboarding & setup</b><br><span style="opacity:.92">Asset discovery, baseline health, access & policy setup.</span></div>
+            <span class="pill"><i class="fas fa-check"></i> Standard</span>
+          </div>
 
-        <div class="row">
-          <div><b>Monitoring & reporting</b><br><span style="opacity:.92">Health scoring, alerts, preventative schedules, monthly insights.</span></div>
-          <span class="pill"><i class="fas fa-chart-line"></i> Ongoing</span>
-        </div>
+          <div class="row">
+            <div><b>Monitoring & reporting</b><br><span style="opacity:.92">Health scoring, alerts, preventative schedules, monthly insights.</span></div>
+            <span class="pill"><i class="fas fa-chart-line"></i> Ongoing</span>
+          </div>
 
-        <div class="row">
-          <div><b>Optional break-fix</b><br><span style="opacity:.92">Repairs/upgrades for laptops and selected devices when required.</span></div>
-          <span class="pill"><i class="fas fa-toolbox"></i> Optional</span>
-        </div>
+          <div class="row">
+            <div><b>Optional break-fix</b><br><span style="opacity:.92">Repairs/upgrades for laptops and selected devices when required.</span></div>
+            <span class="pill"><i class="fas fa-toolbox"></i> Optional</span>
+          </div>
 
-        <div class="row">
-          <div><b>Backup & recovery</b><br><span style="opacity:.92">Business continuity alignment, backup checks, restore testing.</span></div>
-          <span class="pill"><i class="fas fa-database"></i> Add-on</span>
+          <div class="row">
+            <div><b>Backup & recovery</b><br><span style="opacity:.92">Business continuity alignment, backup checks, restore testing.</span></div>
+            <span class="pill"><i class="fas fa-database"></i> Add-on</span>
+          </div>
         </div>
       </div>
     </div>
@@ -547,6 +669,15 @@
       <i class="fab fa-whatsapp"></i>
     </a>
   </section>
+
+  <!-- Quick section navigation (STRUCTURAL FIX: helps scanning) -->
+  <div class="quick-nav" aria-label="Support page quick links">
+    <a href="#support-services"><i class="fas fa-screwdriver-wrench"></i> Services</a>
+    <a href="#support-model"><i class="fas fa-route"></i> Workflow</a>
+    <a href="#slas"><i class="fas fa-stopwatch"></i> SLAs</a>
+    <a href="#intake"><i class="fas fa-headset"></i> Raise a request</a>
+    <a href="#faq"><i class="fas fa-circle-question"></i> FAQ</a>
+  </div>
 
   <!-- Core Support Services -->
   <section class="container" id="support-services">
@@ -652,41 +783,77 @@
     </div>
   </section>
 
-  <!-- Support Model + SLAs -->
+  <!-- Support Model -->
   <section class="container" id="support-model" style="padding-top: 0;">
     <h2 class="section-title">How Support Works</h2>
     <p class="section-desc">
-      A simple, professional support workflow that clients understand. Clear steps, response times, and outcomes.
+      A simple, professional workflow that clients understand. Clear steps, response times, and outcomes.
+    </p>
+
+    <!-- STRUCTURAL FIX: stepper makes it look more “product/company” -->
+    <div class="steps" aria-label="Support workflow steps">
+      <div class="step">
+        <div class="num">1</div>
+        <b>Intake</b>
+        <p>Raise a request via WhatsApp, email, or our form with key details.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <b>Triage</b>
+        <p>We confirm priority (Critical/High/Normal) and the next best action.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <b>Action</b>
+        <p>Remote guidance first; onsite support when it’s genuinely required.</p>
+      </div>
+      <div class="step">
+        <div class="num">4</div>
+        <b>Prevention</b>
+        <p>Root cause is logged and preventative actions are scheduled.</p>
+      </div>
+      <div class="step">
+        <div class="num">5</div>
+        <b>Close & Report</b>
+        <p>Short summary shared: what happened, what changed, and what’s next.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SLAs + Priority table -->
+  <section class="container" id="slas" style="padding-top: 0;">
+    <h2 class="section-title">Response SLAs (Typical)</h2>
+    <p class="section-desc">
+      These are baseline targets; exact SLAs can be set by plan and customer agreement.
     </p>
 
     <div class="two-col">
       <div class="card">
-        <div class="icon"><i class="fas fa-route"></i></div>
-        <h3>Support Workflow</h3>
-        <ul>
-          <li><b>1) Intake:</b> issue reported via WhatsApp / email / form</li>
-          <li><b>2) Triage:</b> priority set (critical/high/normal) and next step agreed</li>
-          <li><b>3) Action:</b> remote guidance or onsite support (if required)</li>
-          <li><b>4) Preventative fix:</b> root cause + recommendation logged</li>
-          <li><b>5) Close & report:</b> short summary + any follow-ups added to schedule</li>
-        </ul>
-        <p style="margin-top:10px; color: var(--muted);">
-          Everything is documented clearly so clients can see what happened, what changed, and what’s next.
-        </p>
-      </div>
-
-      <div class="card">
         <div class="icon"><i class="fas fa-stopwatch"></i></div>
-        <h3>Response SLAs (Typical)</h3>
-        <p>These are baseline targets; exact SLAs can be set by plan / customer agreement.</p>
+        <h3>Targets (Business Hours)</h3>
         <ul>
-          <li><b>Critical:</b> response within 2–4 hours (business hours)</li>
+          <li><b>Critical:</b> response within 2–4 hours</li>
           <li><b>High:</b> response within 8–24 hours</li>
           <li><b>Normal:</b> response within 1–2 business days</li>
           <li><b>Planned changes:</b> scheduled maintenance windows</li>
         </ul>
         <p style="margin-top:10px; color: var(--muted);">
           If your team operates outside standard hours, we can discuss extended coverage.
+        </p>
+      </div>
+
+      <div class="card">
+        <div class="icon"><i class="fas fa-clipboard-list"></i></div>
+        <h3>What we track</h3>
+        <ul>
+          <li>Time to first response</li>
+          <li>Time to resolution (where measurable)</li>
+          <li>Recurring issues and root cause categories</li>
+          <li>Preventative tasks completed vs planned</li>
+          <li>Asset risk trend over time</li>
+        </ul>
+        <p style="margin-top:10px; color: var(--muted);">
+          This helps you see the ROI: fewer incidents, lower downtime, better reliability.
         </p>
       </div>
     </div>
@@ -733,6 +900,45 @@
           </tr>
         </tbody>
       </table>
+    </div>
+
+    <!-- STRUCTURAL FIX: clear “Raise request” block so clients know what to do -->
+    <div class="intake" id="intake" aria-label="Raise a support request">
+      <div>
+        <h3><i class="fas fa-headset"></i> Raise a Support Request</h3>
+        <p>
+          For faster support, include the basics below. We’ll confirm priority and the next step.
+        </p>
+        <ul>
+          <li><b>Company + location:</b> site/office name (if multi-site)</li>
+          <li><b>Asset details:</b> device name/model/serial (if available)</li>
+          <li><b>Issue summary:</b> what happened + when it started</li>
+          <li><b>Impact:</b> how many users are affected</li>
+          <li><b>Evidence:</b> screenshots/error messages (optional but helpful)</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <b>Fast contact</b>
+        <div class="mini">
+          <a href="tel:+447818955500" aria-label="Call BPK">
+            <span><i class="fas fa-phone"></i> Call support</span>
+            <span style="opacity:.7;">+44 7818 955500</span>
+          </a>
+          <a href="https://wa.me/447818955500?text=Hi%20BPK%20Technologies%2C%20I%20need%20support.%20Company%3A%20%5BNAME%5D%20Location%3A%20%5BSITE%5D%20Asset%3A%20%5BDEVICE%5D%20Issue%3A%20%5BSUMMARY%5D%20Impact%3A%20%5BHOW%20MANY%5D" target="_blank" rel="noopener">
+            <span><i class="fab fa-whatsapp"></i> WhatsApp</span>
+            <span style="opacity:.7;">Quickest</span>
+          </a>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank" rel="noopener">
+            <span><i class="fas fa-paper-plane"></i> Support form</span>
+            <span style="opacity:.7;">Structured</span>
+          </a>
+          <a href="pricing.html">
+            <span><i class="fas fa-tag"></i> View plans</span>
+            <span style="opacity:.7;">Pricing</span>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -796,6 +1002,17 @@
         <p>
           Yes. We help you validate backup strategy, perform restore tests, and document evidence for business continuity.
           Recovery actions depend on device condition and client-approved storage.
+        </p>
+      </details>
+
+      <details>
+        <summary>
+          What are your typical support hours?
+          <span class="tag"><i class="fas fa-clock"></i> Hours</span>
+        </summary>
+        <p>
+          Support is currently aligned to weekend business hours (Sat–Sun). If you need weekday or extended coverage,
+          we can discuss a plan based on your asset count and service requirements.
         </p>
       </details>
     </div>
