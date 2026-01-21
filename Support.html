@@ -5,122 +5,128 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>BPK Technologies | Support</title>
-  <meta name="description" content="BPK Technologies Support: onboarding, security hardening, break-fix (optional), backup & recovery, and SME IT optimisation. UK SME-focused platform adoption support with professional SLAs." />
+  <meta name="description" content="BPK Technologies Support: onboarding, security hardening, break-fix (optional), backup & recovery, and SME IT optimisation. UK SME-focused platform adoption support with clear SLAs and professional delivery." />
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
   <style>
     :root{
-      /* Brand palette (Blue + Green + Purple) */
-      --bg: #f6f8fc;
-      --text: #0f172a;
-      --muted: #475569;
-      --brand-navy: #071e2e;
-      --brand-blue: #0b2f4a;
-      --brand-cyan: #0ea5e9;
-      --brand-teal: #10b981;
-      --brand-purple: #7c3aed;
+      --bg:#f6f8fc;
+      --text:#0f172a;
+      --muted:#475569;
 
-      --card: #ffffff;
-      --border: #e5e7eb;
-      --shadow: 0 12px 30px rgba(2,6,23,0.12);
-      --shadow-soft: 0 8px 20px rgba(2,6,23,0.08);
-      --radius: 18px;
+      --brand-navy:#071e2e;
+      --brand-blue:#0b2f4a;
+      --brand-cyan:#0ea5e9;
+      --brand-teal:#10b981;
+      --brand-purple:#7c3aed;
 
-      --chip: rgba(255,255,255,0.10);
-      --chip-border: rgba(255,255,255,0.18);
+      --card:#ffffff;
+      --border:#e5e7eb;
+      --shadow:0 12px 30px rgba(2,6,23,0.12);
+      --shadow-soft:0 8px 20px rgba(2,6,23,0.08);
+      --radius:18px;
+
+      --chip:rgba(255,255,255,0.10);
+      --chip-border:rgba(255,255,255,0.18);
     }
 
     *{ margin:0; padding:0; box-sizing:border-box; font-family:"Inter", sans-serif; }
-    body{ background: var(--bg); color: var(--text); }
+    body{ background:var(--bg); color:var(--text); }
     a{ color: inherit; }
 
-    /* Header / Nav (same style as homepage) */
+    /* Skip link for accessibility */
+    .skip-link{
+      position:absolute; left:-999px; top:auto; width:1px; height:1px; overflow:hidden;
+    }
+    .skip-link:focus{
+      left:16px; top:16px; width:auto; height:auto; padding:10px 12px;
+      background:#fff; border:1px solid var(--border); border-radius:12px; z-index:2000;
+      box-shadow: var(--shadow-soft);
+    }
+
+    /* Header / Nav (homepage style) */
     header{
       background: linear-gradient(180deg, rgba(7,30,46,1) 0%, rgba(11,47,74,0.96) 100%);
       color:#fff;
-      padding: 16px 18px;
+      padding:16px 18px;
       position: sticky;
-      top: 0;
-      z-index: 1000;
-      border-bottom: 1px solid rgba(255,255,255,0.10);
+      top:0;
+      z-index:1000;
+      border-bottom:1px solid rgba(255,255,255,0.10);
       backdrop-filter: blur(8px);
     }
     .topbar{
-      max-width: 1180px;
-      margin: 0 auto;
+      max-width:1180px;
+      margin:0 auto;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 14px;
-      flex-wrap: wrap;
+      gap:14px;
+      flex-wrap:wrap;
     }
     .brand{
       display:flex;
       align-items:center;
-      gap: 12px;
-      min-width: 260px;
+      gap:12px;
+      min-width:260px;
     }
     .brand img{
-      width: 54px;
-      height: 54px;
-      border-radius: 50%;
-      background: #fff;
-      object-fit: contain;
+      width:54px; height:54px;
+      border-radius:50%;
+      background:#fff;
+      object-fit:contain;
     }
-    .brand .title{ line-height: 1.15; }
+    .brand .title{ line-height:1.15; }
     .brand .title strong{
-      font-size: 1.15rem;
+      font-size:1.15rem;
       display:block;
-      letter-spacing: 0.2px;
-      font-weight: 900;
+      letter-spacing:0.2px;
     }
     .brand .title span{
-      font-size: 0.86rem;
-      opacity: .9;
-      font-weight: 700;
+      font-size:0.86rem;
+      opacity:.9;
+      font-weight:600;
     }
 
     nav.nav{
       display:flex;
       flex-wrap:wrap;
-      gap: 10px;
+      gap:10px;
       align-items:center;
       justify-content:flex-end;
-      flex: 1;
+      flex:1;
     }
     .nav a{
       color:#eaf2ff;
       text-decoration:none;
-      font-weight:900;
-      font-size: 0.95rem;
-      padding: 10px 12px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.16);
-      background: rgba(255,255,255,0.08);
+      font-weight:800;
+      font-size:0.95rem;
+      padding:10px 12px;
+      border-radius:12px;
+      border:1px solid rgba(255,255,255,0.16);
+      background:rgba(255,255,255,0.08);
       display:inline-flex;
       align-items:center;
-      gap: 8px;
+      gap:8px;
       transition: transform .15s ease, background .2s ease, border .2s ease;
-      white-space: nowrap;
+      white-space:nowrap;
     }
     .nav a:hover{
-      background: rgba(255,255,255,0.14);
-      border-color: rgba(255,255,255,0.26);
+      background:rgba(255,255,255,0.14);
+      border-color:rgba(255,255,255,0.26);
       transform: translateY(-1px);
     }
     .nav a.primary{
       color:#fff;
-      border: 1px solid rgba(255,255,255,0.15);
+      border:1px solid rgba(255,255,255,0.15);
       background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-purple) 55%, var(--brand-teal) 100%);
-      box-shadow: 0 12px 26px rgba(14,165,233,0.18);
+      box-shadow:0 12px 26px rgba(14,165,233,0.18);
     }
     .nav a.active{
-      background: rgba(255,255,255,0.16);
-      border-color: rgba(255,255,255,0.30);
+      background:rgba(255,255,255,0.16);
+      border-color:rgba(255,255,255,0.30);
     }
 
     /* Hero */
@@ -131,259 +137,284 @@
         radial-gradient(900px 500px at 80% 85%, rgba(16,185,129,0.18), transparent 60%),
         linear-gradient(180deg, rgba(7,30,46,1) 0%, rgba(6,21,32,1) 100%);
       color:#fff;
-      padding: 62px 20px 44px;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      padding:64px 20px 44px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
     }
     .hero-inner{
-      max-width: 1180px;
-      margin: 0 auto;
+      max-width:1180px;
+      margin:0 auto;
       display:grid;
-      grid-template-columns: 1.12fr 0.88fr;
-      gap: 22px;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap:22px;
       align-items:center;
     }
     .hero h1{
-      font-size: 2.45rem;
-      line-height: 1.12;
-      letter-spacing: -0.6px;
-      margin-bottom: 12px;
-      font-weight: 1000;
+      font-size:2.55rem;
+      line-height:1.12;
+      letter-spacing:-0.6px;
+      margin-bottom:12px;
     }
     .hero p{
-      color: rgba(255,255,255,0.92);
-      font-size: 1.05rem;
-      line-height: 1.7;
-      margin-bottom: 14px;
-      max-width: 70ch;
+      color:rgba(255,255,255,0.92);
+      font-size:1.05rem;
+      line-height:1.7;
+      margin-bottom:14px;
+      max-width:65ch;
     }
     .hero .sub{
-      color: rgba(255,255,255,0.82);
-      font-size: 0.98rem;
-      line-height: 1.6;
-      margin-bottom: 18px;
-      max-width: 70ch;
+      color:rgba(255,255,255,0.82);
+      font-size:0.98rem;
+      line-height:1.6;
+      margin-bottom:18px;
+      max-width:65ch;
     }
 
     .hero-badges{
       display:flex;
       flex-wrap:wrap;
       gap:10px;
-      margin: 14px 0 20px;
+      margin:14px 0 20px;
     }
     .hero-badge{
-      background: var(--chip);
-      border: 1px solid var(--chip-border);
-      padding: 9px 12px;
-      border-radius: 999px;
-      font-weight: 900;
-      font-size: 0.92rem;
+      background:var(--chip);
+      border:1px solid var(--chip-border);
+      padding:9px 12px;
+      border-radius:999px;
+      font-weight:800;
+      font-size:0.92rem;
       display:inline-flex;
-      gap: 8px;
+      gap:8px;
       align-items:center;
     }
 
     .hero-actions{
       display:flex;
       flex-wrap:wrap;
-      gap: 12px;
+      gap:12px;
       align-items:center;
-      margin-top: 6px;
+      margin-top:6px;
     }
     .btn{
-      border: none;
+      border:none;
       cursor:pointer;
       text-decoration:none;
       display:inline-flex;
       align-items:center;
-      gap: 10px;
-      font-weight: 1000;
-      padding: 12px 16px;
-      border-radius: 14px;
+      gap:10px;
+      font-weight:900;
+      padding:12px 16px;
+      border-radius:14px;
       transition: transform .15s ease, filter .2s ease;
-      white-space: nowrap;
+      white-space:nowrap;
     }
     .btn:hover{ transform: translateY(-1px); filter: brightness(1.03); }
     .btn-primary{
       color:#fff;
       background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-purple) 58%, var(--brand-teal) 100%);
-      box-shadow: 0 14px 28px rgba(124,58,237,0.16);
+      box-shadow:0 14px 28px rgba(124,58,237,0.16);
     }
     .btn-ghost{
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.10);
+      border:1px solid rgba(255,255,255,0.18);
       color:#fff;
     }
 
-    /* Right hero panel (structure fix + better scanability) */
+    /* Right hero panel (more “client trust”) */
     .hero-panel{
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.14);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-soft);
-      padding: 16px;
+      background:rgba(255,255,255,0.06);
+      border:1px solid rgba(255,255,255,0.14);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow-soft);
+      padding:16px;
     }
     .hero-panel h3{
-      font-size: 1.05rem;
-      margin-bottom: 10px;
-      letter-spacing: .2px;
-      display:flex;
-      align-items:center;
-      gap: 10px;
+      font-size:1.05rem;
+      margin-bottom:10px;
+      letter-spacing:.2px;
     }
-    .hero-panel .rows{ display:grid; gap: 10px; }
     .hero-panel .row{
       display:flex;
       justify-content:space-between;
       align-items:flex-start;
-      gap: 12px;
-      padding: 12px;
-      border-radius: 16px;
-      border: 1px solid rgba(255,255,255,0.10);
-      background: rgba(255,255,255,0.05);
-      color: rgba(255,255,255,0.92);
-      font-size: 0.96rem;
-      line-height: 1.5;
+      gap:12px;
+      padding:10px 0;
+      border-top:1px solid rgba(255,255,255,0.10);
+      color:rgba(255,255,255,0.92);
+      font-size:0.96rem;
+      line-height:1.5;
     }
-    .hero-panel .row b{ font-weight: 1000; }
+    .hero-panel .row:first-of-type{ border-top:none; padding-top:0; }
     .hero-panel .pill{
       display:inline-flex;
       align-items:center;
-      gap: 8px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-weight: 1000;
-      font-size: 0.82rem;
-      border: 1px solid rgba(255,255,255,0.18);
-      background: rgba(255,255,255,0.08);
-      white-space: nowrap;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:0.82rem;
+      border:1px solid rgba(255,255,255,0.18);
+      background:rgba(255,255,255,0.08);
+      white-space:nowrap;
     }
 
-    /* Page sections */
-    .container{ max-width: 1180px; margin: 0 auto; padding: 54px 20px; }
+    /* Page layout */
+    main{ display:block; }
+    .container{ max-width:1180px; margin:0 auto; padding:54px 20px; }
     .section-title{
-      font-size: 2rem;
+      font-size:2rem;
       text-align:center;
-      margin-bottom: 10px;
-      letter-spacing: -0.3px;
-      font-weight: 1000;
+      margin-bottom:10px;
+      letter-spacing:-0.3px;
     }
     .section-desc{
       text-align:center;
-      color: var(--muted);
-      max-width: 90ch;
-      margin: 0 auto 26px;
-      line-height: 1.7;
+      color:var(--muted);
+      max-width:90ch;
+      margin:0 auto 26px;
+      line-height:1.7;
     }
 
-    /* Anchor chips (quick navigation) */
+    /* Quick-nav chips */
     .quick-nav{
-      max-width: 1180px;
-      margin: -26px auto 0;
-      padding: 0 20px 10px;
       display:flex;
-      gap: 10px;
-      flex-wrap: wrap;
+      flex-wrap:wrap;
+      gap:10px;
       justify-content:center;
+      margin-top: 10px;
     }
-    .quick-nav a{
+    .chip-link{
       text-decoration:none;
-      font-weight: 1000;
-      font-size: 0.9rem;
-      color: var(--brand-blue);
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: #fff;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow-soft);
       display:inline-flex;
+      gap:8px;
       align-items:center;
-      gap: 8px;
-      transition: transform .15s ease, filter .2s ease;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid rgba(15,23,42,0.12);
+      background:#fff;
+      box-shadow: var(--shadow-soft);
+      color: var(--brand-blue);
+      font-weight:900;
+      font-size:0.92rem;
+      transition: transform .15s ease;
     }
-    .quick-nav a:hover{ transform: translateY(-1px); filter: brightness(1.02); }
+    .chip-link:hover{ transform: translateY(-1px); }
 
     /* Cards */
     .grid{
       display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap:18px;
     }
     .card{
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: var(--shadow-soft);
-      padding: 18px;
+      background:var(--card);
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow:var(--shadow-soft);
+      padding:18px;
       transition: transform .22s ease, box-shadow .22s ease;
     }
     .card:hover{ transform: translateY(-4px); box-shadow: var(--shadow); }
     .card .icon{
-      width: 44px;
-      height: 44px;
-      border-radius: 14px;
+      width:44px; height:44px;
+      border-radius:14px;
       display:flex;
       align-items:center;
       justify-content:center;
       color:#fff;
-      margin-bottom: 12px;
+      margin-bottom:12px;
       background: linear-gradient(135deg, var(--brand-cyan), var(--brand-purple));
       box-shadow: 0 10px 18px rgba(124,58,237,0.16);
     }
-    .card h3{ margin-bottom: 8px; font-weight: 1000; }
-    .card p{ color: var(--muted); line-height: 1.65; margin-bottom: 10px; }
-    .card ul{ margin-left: 18px; color: #334155; line-height: 1.7; }
-    .card li{ margin: 6px 0; }
+    .card h3{ margin-bottom:8px; }
+    .card p{ color:var(--muted); line-height:1.65; margin-bottom:10px; }
+    .card ul{ margin-left:18px; color:#334155; line-height:1.7; }
+    .card li{ margin:6px 0; }
 
-    /* "How it works" stepper */
+    /* “How it works” steps */
     .steps{
       display:grid;
-      grid-template-columns: repeat(5, minmax(160px, 1fr));
-      gap: 12px;
-      margin-top: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap:18px;
+      margin-top: 12px;
     }
     .step{
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
       box-shadow: var(--shadow-soft);
-      padding: 14px;
+      padding:16px;
     }
     .step .num{
-      width: 34px; height: 34px;
-      border-radius: 12px;
-      display:flex; align-items:center; justify-content:center;
-      font-weight: 1000;
+      width:42px; height:42px;
+      border-radius:14px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
       color:#fff;
+      font-weight:1000;
       background: linear-gradient(135deg, var(--brand-cyan), var(--brand-purple));
-      margin-bottom: 10px;
+      box-shadow: 0 10px 18px rgba(124,58,237,0.16);
+      margin-bottom:10px;
     }
-    .step b{ font-weight: 1000; }
-    .step p{ margin-top: 6px; color: var(--muted); line-height: 1.6; font-size: 0.95rem; }
+    .step p{ color: var(--muted); line-height:1.65; }
+
+    /* Support tiers */
+    .tier-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap:18px;
+      margin-top: 12px;
+    }
+    .tier{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow: var(--shadow-soft);
+      padding:18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .tier .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 10px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:0.82rem;
+      border:1px solid rgba(15,23,42,0.10);
+      background:#f8fafc;
+      color:#334155;
+      margin-bottom:10px;
+    }
+    .tier h3{ margin-bottom:8px; }
+    .tier .who{ color: var(--muted); line-height:1.6; margin-bottom:10px; }
+    .tier ul{ margin-left:18px; color:#334155; line-height:1.7; }
 
     /* Callout */
     .callout{
       background: linear-gradient(135deg, rgba(14,165,233,0.12), rgba(124,58,237,0.10), rgba(16,185,129,0.10));
-      border: 1px solid rgba(15,23,42,0.10);
-      border-radius: 18px;
-      padding: 18px;
+      border:1px solid rgba(15,23,42,0.10);
+      border-radius:18px;
+      padding:18px;
       box-shadow: var(--shadow-soft);
       display:flex;
       align-items:flex-start;
       justify-content:space-between;
-      gap: 14px;
-      flex-wrap: wrap;
-      margin: 26px 0 0;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:22px;
     }
-    .callout strong{ display:block; font-size: 1.05rem; margin-bottom: 4px; font-weight: 1000; }
-    .callout .text{ color: #0f172a; max-width: 78ch; line-height: 1.6; }
-    .callout .actions{ display:flex; gap: 10px; flex-wrap: wrap; }
+    .callout strong{ display:block; font-size:1.05rem; margin-bottom:4px; }
+    .callout .text{ color:#0f172a; max-width:78ch; line-height:1.6; }
+    .callout .actions{ display:flex; gap:10px; flex-wrap:wrap; }
     .callout .actions a{
       text-decoration:none;
-      padding: 10px 14px;
-      border-radius: 14px;
-      font-weight: 1000;
+      padding:10px 14px;
+      border-radius:14px;
+      font-weight:900;
       display:inline-flex;
-      gap: 10px;
+      gap:10px;
       align-items:center;
     }
     .callout .actions a.primary{
@@ -392,160 +423,95 @@
       box-shadow: var(--shadow-soft);
     }
     .callout .actions a.ghost{
-      background: #fff;
-      border: 1px solid var(--border);
+      background:#fff;
+      border:1px solid var(--border);
       color: var(--brand-blue);
     }
 
-    /* Two-column sections */
-    .two-col{
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 18px;
-      align-items: start;
-      margin-top: 18px;
-    }
-
-    /* Table */
+    /* Tables */
     .table-wrap{
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
       box-shadow: var(--shadow-soft);
       overflow:auto;
+      margin-top: 14px;
     }
     table{
-      width: 100%;
-      border-collapse: collapse;
+      width:100%;
+      border-collapse:collapse;
       min-width: 860px;
     }
     th, td{
-      padding: 12px;
+      padding:12px;
       text-align:left;
-      vertical-align: top;
-      border-bottom: 1px solid #eef2f7;
+      vertical-align:top;
+      border-bottom:1px solid #eef2f7;
     }
     th{
       background: linear-gradient(180deg, rgba(11,47,74,1) 0%, rgba(7,30,46,1) 100%);
       color:#fff;
       position: sticky;
-      top: 0;
-      z-index: 1;
-      font-weight: 1000;
+      top:0;
+      z-index:1;
     }
-    td{ color: #0f172a; }
+    td{ color:#0f172a; }
     .tag{
       display:inline-flex;
       align-items:center;
-      gap: 8px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-weight: 1000;
-      font-size: 0.82rem;
-      border: 1px solid rgba(15,23,42,0.10);
-      background: #f8fafc;
-      color: #334155;
+      gap:8px;
+      padding:6px 10px;
+      border-radius:999px;
+      font-weight:900;
+      font-size:0.82rem;
+      border:1px solid rgba(15,23,42,0.10);
+      background:#f8fafc;
+      color:#334155;
       white-space: nowrap;
     }
 
-    /* Intake card (new) */
-    .intake{
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      box-shadow: var(--shadow-soft);
-      padding: 18px;
-      margin-top: 18px;
-      display:grid;
-      grid-template-columns: 1.2fr 0.8fr;
-      gap: 16px;
-      align-items:start;
-    }
-    .intake h3{
-      font-weight: 1000;
-      margin-bottom: 8px;
-      color: var(--brand-blue);
-      display:flex;
-      align-items:center;
-      gap: 10px;
-    }
-    .intake p{ color: var(--muted); line-height: 1.7; }
-    .intake ul{ margin: 10px 0 0 18px; color:#334155; line-height: 1.7; }
-    .intake .box{
-      background: linear-gradient(135deg, rgba(14,165,233,0.10), rgba(124,58,237,0.08));
-      border: 1px solid rgba(15,23,42,0.10);
-      border-radius: 16px;
-      padding: 14px;
-    }
-    .intake .box b{ font-weight: 1000; }
-    .intake .mini{
-      display:grid;
-      gap: 10px;
-      margin-top: 10px;
-    }
-    .intake .mini a{
-      text-decoration:none;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap: 10px;
-      padding: 12px 12px;
-      border-radius: 14px;
-      background: #fff;
-      border: 1px solid var(--border);
-      font-weight: 1000;
-      color: var(--brand-blue);
-      box-shadow: var(--shadow-soft);
-      transition: transform .15s ease, filter .2s ease;
-    }
-    .intake .mini a:hover{ transform: translateY(-1px); filter: brightness(1.02); }
-
     /* FAQ */
-    .faq{
-      margin-top: 18px;
-      display:grid;
-      gap: 12px;
-    }
+    .faq{ margin-top: 14px; display:grid; gap:12px; }
     details{
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 14px 16px;
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:16px;
+      padding:14px 16px;
       box-shadow: var(--shadow-soft);
     }
     summary{
-      cursor: pointer;
-      font-weight: 1000;
-      color: var(--brand-blue);
+      cursor:pointer;
+      font-weight:1000;
+      color:var(--brand-blue);
       list-style:none;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap: 12px;
+      gap:12px;
     }
     summary::-webkit-details-marker{ display:none; }
     details p{
-      margin-top: 10px;
-      color: var(--muted);
-      line-height: 1.7;
+      margin-top:10px;
+      color:var(--muted);
+      line-height:1.7;
     }
 
     /* WhatsApp floating */
     .whatsapp-float{
       position: fixed;
-      bottom: 18px;
-      right: 18px;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
+      bottom:18px;
+      right:18px;
+      width:58px;
+      height:58px;
+      border-radius:50%;
       display:flex;
       align-items:center;
       justify-content:center;
-      background: #25D366;
-      color: #fff;
-      font-size: 28px;
+      background:#25D366;
+      color:#fff;
+      font-size:28px;
       box-shadow: var(--shadow);
-      z-index: 999;
+      z-index:999;
       text-decoration:none;
     }
     .whatsapp-float:hover{ filter: brightness(0.98); }
@@ -553,13 +519,17 @@
     /* Footer */
     .footer{
       background: linear-gradient(180deg, rgba(11,47,74,1) 0%, rgba(7,30,46,1) 100%);
-      color: white;
-      padding: 22px 20px;
-      text-align: center;
-      font-size: 0.92em;
-      border-top: 1px solid rgba(255,255,255,0.08);
+      color:#fff;
+      padding:22px 20px;
+      text-align:center;
+      font-size:0.92em;
+      border-top:1px solid rgba(255,255,255,0.08);
     }
-    .footer .gdpr{ margin-top: 10px; font-size: 0.85em; color: rgba(255,255,255,0.78); }
+    .footer .gdpr{
+      margin-top:10px;
+      font-size:0.85em;
+      color: rgba(255,255,255,0.78);
+    }
 
     /* Responsive */
     @media (max-width: 980px){
@@ -567,20 +537,18 @@
       .hero h1{ font-size: 2.15rem; }
       nav.nav{ justify-content:flex-start; }
       .brand{ min-width: unset; }
-      .two-col{ grid-template-columns: 1fr; }
-      .steps{ grid-template-columns: 1fr; }
-      .intake{ grid-template-columns: 1fr; }
       table{ min-width: 780px; }
     }
     @media (max-width: 520px){
-      .nav a{ width: 100%; justify-content:center; }
-      .hero-actions .btn{ width: 100%; justify-content:center; }
+      .nav a{ width:100%; justify-content:center; }
+      .hero-actions .btn{ width:100%; justify-content:center; }
       table{ min-width: 680px; }
     }
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
   <header>
     <div class="topbar">
@@ -592,7 +560,7 @@
         </div>
       </div>
 
-      <nav class="nav" aria-label="Primary navigation">
+      <nav class="nav" aria-label="Primary">
         <a href="index.html"><i class="fas fa-house"></i> Home</a>
         <a href="index.html#platform"><i class="fas fa-layer-group"></i> Platform</a>
         <a href="index.html#innovation"><i class="fas fa-lightbulb"></i> Innovation</a>
@@ -608,16 +576,16 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" aria-label="Support hero">
     <div class="hero-inner">
       <div>
         <h1>Implementation & Support for UK SMEs</h1>
         <p>
-          Professional onboarding and support to help you adopt the BPK Smart Asset Platform quickly, reduce downtime,
-          and keep your IT environment reliable.
+          Professional onboarding and support to help you adopt the BPK Smart Asset Platform, reduce downtime,
+          and keep your IT assets reliable.
         </p>
         <div class="sub">
-          Platform-led maintenance is the primary focus. Break-fix repairs remain available as an optional service when needed.
+          Platform-led preventative maintenance is the priority. Break-fix repairs remain available as an optional service when needed.
         </div>
 
         <div class="hero-badges">
@@ -628,38 +596,44 @@
         </div>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#intake">
-            <i class="fas fa-rocket"></i> Raise a Support Request
+          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank" rel="noopener">
+            <i class="fas fa-rocket"></i> Start Onboarding
           </a>
           <a class="btn btn-ghost" href="https://wa.me/447818955500?text=Hi%20BPK%20Technologies%2C%20I%20need%20support%20and%20onboarding%20help%20for%20your%20Smart%20Asset%20Platform." target="_blank" rel="noopener">
             <i class="fab fa-whatsapp"></i> WhatsApp Support
           </a>
+        </div>
+
+        <div class="quick-nav" aria-label="Jump links">
+          <a class="chip-link" href="#services"><i class="fas fa-screwdriver-wrench"></i> Services</a>
+          <a class="chip-link" href="#how"><i class="fas fa-route"></i> How it works</a>
+          <a class="chip-link" href="#tiers"><i class="fas fa-layer-group"></i> Support tiers</a>
+          <a class="chip-link" href="#slas"><i class="fas fa-stopwatch"></i> SLAs</a>
+          <a class="chip-link" href="#faq"><i class="fas fa-circle-question"></i> FAQ</a>
         </div>
       </div>
 
       <div class="hero-panel" aria-label="Support overview panel">
         <h3><i class="fas fa-headset"></i> What you get</h3>
 
-        <div class="rows">
-          <div class="row">
-            <div><b>Onboarding & setup</b><br><span style="opacity:.92">Asset discovery, baseline health, access & policy setup.</span></div>
-            <span class="pill"><i class="fas fa-check"></i> Standard</span>
-          </div>
+        <div class="row">
+          <div><b>Onboarding & setup</b><br><span style="opacity:.92">Asset discovery, baseline health, owners, and setup checklist.</span></div>
+          <span class="pill"><i class="fas fa-check"></i> Standard</span>
+        </div>
 
-          <div class="row">
-            <div><b>Monitoring & reporting</b><br><span style="opacity:.92">Health scoring, alerts, preventative schedules, monthly insights.</span></div>
-            <span class="pill"><i class="fas fa-chart-line"></i> Ongoing</span>
-          </div>
+        <div class="row">
+          <div><b>Monitoring & reporting</b><br><span style="opacity:.92">Health scoring, alerts, preventative schedules, monthly insights.</span></div>
+          <span class="pill"><i class="fas fa-chart-line"></i> Ongoing</span>
+        </div>
 
-          <div class="row">
-            <div><b>Optional break-fix</b><br><span style="opacity:.92">Repairs/upgrades for laptops and selected devices when required.</span></div>
-            <span class="pill"><i class="fas fa-toolbox"></i> Optional</span>
-          </div>
+        <div class="row">
+          <div><b>Security hardening</b><br><span style="opacity:.92">Patch guidance, endpoint checks, and practical SME controls.</span></div>
+          <span class="pill"><i class="fas fa-shield-halved"></i> Included</span>
+        </div>
 
-          <div class="row">
-            <div><b>Backup & recovery</b><br><span style="opacity:.92">Business continuity alignment, backup checks, restore testing.</span></div>
-            <span class="pill"><i class="fas fa-database"></i> Add-on</span>
-          </div>
+        <div class="row">
+          <div><b>Optional break-fix</b><br><span style="opacity:.92">Repairs/upgrades for laptops and selected devices when required.</span></div>
+          <span class="pill"><i class="fas fa-toolbox"></i> Optional</span>
         </div>
       </div>
     </div>
@@ -670,362 +644,325 @@
     </a>
   </section>
 
-  <!-- Quick section navigation (STRUCTURAL FIX: helps scanning) -->
-  <div class="quick-nav" aria-label="Support page quick links">
-    <a href="#support-services"><i class="fas fa-screwdriver-wrench"></i> Services</a>
-    <a href="#support-model"><i class="fas fa-route"></i> Workflow</a>
-    <a href="#slas"><i class="fas fa-stopwatch"></i> SLAs</a>
-    <a href="#intake"><i class="fas fa-headset"></i> Raise a request</a>
-    <a href="#faq"><i class="fas fa-circle-question"></i> FAQ</a>
-  </div>
+  <main id="main">
+    <!-- Services -->
+    <section class="container" id="services">
+      <h2 class="section-title">Support Services</h2>
+      <p class="section-desc">
+        A clear support model clients trust: onboarding first, then ongoing health scoring, risk alerts, preventative schedules, and measurable outcomes.
+      </p>
 
-  <!-- Core Support Services -->
-  <section class="container" id="support-services">
-    <h2 class="section-title">Support Services</h2>
-    <p class="section-desc">
-      A clear and repeatable support model that clients trust: onboarding first, then ongoing health scoring,
-      risk alerts, preventative schedules, and measurable outcomes.
-    </p>
+      <div class="grid">
+        <div class="card">
+          <div class="icon"><i class="fas fa-people-arrows"></i></div>
+          <h3>Onboarding & Asset Discovery</h3>
+          <p>Fast, clean setup with correct owners, locations, and baseline health.</p>
+          <ul>
+            <li>Asset inventory creation (devices, users, sites)</li>
+            <li>Baseline health checks (storage, battery, performance, errors)</li>
+            <li>Tagging by department, location, owner, lifecycle stage</li>
+            <li>Initial risk scoring + “top issues” summary</li>
+            <li>Implementation checklist + quick-start guides</li>
+          </ul>
+        </div>
 
-    <div class="grid">
-      <div class="card">
-        <div class="icon"><i class="fas fa-people-arrows"></i></div>
-        <h3>Onboarding & Asset Discovery</h3>
-        <p>Get set up quickly with consistent data, correct owners, and baseline health scoring.</p>
-        <ul>
-          <li>Asset inventory creation (devices, users, sites)</li>
-          <li>Baseline health checks (storage, battery, performance, errors)</li>
-          <li>Tagging: by location, department, owner and lifecycle stage</li>
-          <li>Initial risk scoring + “top issues” summary</li>
-          <li>Implementation checklist and quick-start guides</li>
-        </ul>
+        <div class="card">
+          <div class="icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>Security Hardening</h3>
+          <p>Practical SME security improvements without slowing teams down.</p>
+          <ul>
+            <li>Patch/update guidance and maintenance windows</li>
+            <li>Endpoint protection checks + malware clean-up support</li>
+            <li>Account hygiene: admin rights + password policy guidance</li>
+            <li>Phishing awareness and secure usage guidance</li>
+            <li>SME-friendly security posture recommendations</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="icon"><i class="fas fa-calendar-check"></i></div>
+          <h3>Preventative Maintenance</h3>
+          <p>Turn risk signals into scheduled actions to reduce downtime.</p>
+          <ul>
+            <li>Preventative schedules by site / device type</li>
+            <li>Checklists for patch cycles and health checks</li>
+            <li>Outcomes tracking (done / blocked / follow-up)</li>
+            <li>Root-cause notes for recurring issues</li>
+            <li>Monthly improvement plan</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="icon"><i class="fas fa-screwdriver-wrench"></i></div>
+          <h3>Break-Fix (Optional)</h3>
+          <p>When something fails, we restore service quickly and log prevention steps.</p>
+          <ul>
+            <li>Fault diagnosis and recovery actions</li>
+            <li>Performance optimisation and maintenance tasks</li>
+            <li>OS install support (where required)</li>
+            <li>Hardware upgrades (RAM/SSD) guidance</li>
+            <li>Clear documentation of work done + recommendations</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="icon"><i class="fas fa-database"></i></div>
+          <h3>Backup & Recovery</h3>
+          <p>Reduce risk with backup checks and restore testing aligned to continuity.</p>
+          <ul>
+            <li>Backup strategy review (what/where/how often)</li>
+            <li>Restore testing approach + evidence logging</li>
+            <li>Data transfer support to client-approved storage</li>
+            <li>Critical device protection guidance</li>
+            <li>Incident checklist for faster recovery</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Reporting & Outcomes</h3>
+          <p>Clear reports clients can act on—what improved and what to do next.</p>
+          <ul>
+            <li>Monthly health summary (top risks, critical items)</li>
+            <li>Preventative completion tracking</li>
+            <li>Downtime reduction evidence (where measurable)</li>
+            <li>Upgrade/replacement prioritisation list</li>
+            <li>Action plan for the next period</li>
+          </ul>
+        </div>
       </div>
 
-      <div class="card">
-        <div class="icon"><i class="fas fa-shield-halved"></i></div>
-        <h3>Security Hardening</h3>
-        <p>Practical SME security improvements without slowing down your team.</p>
-        <ul>
-          <li>Patch/update guidance and maintenance windows</li>
-          <li>Endpoint protection checks + malware clean-up support</li>
-          <li>Account hygiene: admin rights, password policy guidance</li>
-          <li>Phishing awareness and secure usage guidance</li>
-          <li>Basic security posture recommendations (SME-friendly)</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="icon"><i class="fas fa-screwdriver-wrench"></i></div>
-        <h3>Break-Fix (Optional)</h3>
-        <p>When something fails, we restore service quickly—but the platform remains the primary model.</p>
-        <ul>
-          <li>Fault diagnosis and recovery actions</li>
-          <li>Performance optimisation and maintenance tasks</li>
-          <li>OS install support (where required)</li>
-          <li>Hardware upgrades (RAM/SSD) and replacement guidance</li>
-          <li>Clear documentation of work done + recommendations</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="icon"><i class="fas fa-database"></i></div>
-        <h3>Backup & Recovery</h3>
-        <p>Reduce risk with backup checks and restore testing aligned to business continuity.</p>
-        <ul>
-          <li>Backup strategy review (what, where, how often)</li>
-          <li>Restore testing approach and evidence logging</li>
-          <li>Data transfer support to customer-approved storage</li>
-          <li>Critical device protection guidance</li>
-          <li>Incident checklist for faster recovery</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="icon"><i class="fas fa-network-wired"></i></div>
-        <h3>SME IT Optimisation</h3>
-        <p>Improve reliability and performance across devices and network basics.</p>
-        <ul>
-          <li>Device performance tuning + housekeeping</li>
-          <li>Wi-Fi / network stability checks (SME-level)</li>
-          <li>Reducing recurring errors and improving uptime</li>
-          <li>Standardisation suggestions (builds, tools, policies)</li>
-          <li>Recommendations tied to measurable outcomes</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <div class="icon"><i class="fas fa-clipboard-check"></i></div>
-        <h3>Reporting & Outcomes</h3>
-        <p>Clients love clarity. Reports show what improved and what to do next.</p>
-        <ul>
-          <li>Monthly health summary (top risks, critical items)</li>
-          <li>Preventative schedule completion tracking</li>
-          <li>Downtime reduction evidence where measurable</li>
-          <li>Upgrade/replacement prioritisation list</li>
-          <li>Action plan for the next period</li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="callout">
-      <div class="text">
-        <strong>Want a support plan tailored to your business size?</strong>
-        Share your asset count and locations — we’ll recommend the best onboarding approach and support tier.
-      </div>
-      <div class="actions">
-        <a class="primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank" rel="noopener">
-          <i class="fas fa-paper-plane"></i> Request Support Plan
-        </a>
-        <a class="ghost" href="pricing.html">
-          <i class="fas fa-tag"></i> View Pricing
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Support Model -->
-  <section class="container" id="support-model" style="padding-top: 0;">
-    <h2 class="section-title">How Support Works</h2>
-    <p class="section-desc">
-      A simple, professional workflow that clients understand. Clear steps, response times, and outcomes.
-    </p>
-
-    <!-- STRUCTURAL FIX: stepper makes it look more “product/company” -->
-    <div class="steps" aria-label="Support workflow steps">
-      <div class="step">
-        <div class="num">1</div>
-        <b>Intake</b>
-        <p>Raise a request via WhatsApp, email, or our form with key details.</p>
-      </div>
-      <div class="step">
-        <div class="num">2</div>
-        <b>Triage</b>
-        <p>We confirm priority (Critical/High/Normal) and the next best action.</p>
-      </div>
-      <div class="step">
-        <div class="num">3</div>
-        <b>Action</b>
-        <p>Remote guidance first; onsite support when it’s genuinely required.</p>
-      </div>
-      <div class="step">
-        <div class="num">4</div>
-        <b>Prevention</b>
-        <p>Root cause is logged and preventative actions are scheduled.</p>
-      </div>
-      <div class="step">
-        <div class="num">5</div>
-        <b>Close & Report</b>
-        <p>Short summary shared: what happened, what changed, and what’s next.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- SLAs + Priority table -->
-  <section class="container" id="slas" style="padding-top: 0;">
-    <h2 class="section-title">Response SLAs (Typical)</h2>
-    <p class="section-desc">
-      These are baseline targets; exact SLAs can be set by plan and customer agreement.
-    </p>
-
-    <div class="two-col">
-      <div class="card">
-        <div class="icon"><i class="fas fa-stopwatch"></i></div>
-        <h3>Targets (Business Hours)</h3>
-        <ul>
-          <li><b>Critical:</b> response within 2–4 hours</li>
-          <li><b>High:</b> response within 8–24 hours</li>
-          <li><b>Normal:</b> response within 1–2 business days</li>
-          <li><b>Planned changes:</b> scheduled maintenance windows</li>
-        </ul>
-        <p style="margin-top:10px; color: var(--muted);">
-          If your team operates outside standard hours, we can discuss extended coverage.
-        </p>
-      </div>
-
-      <div class="card">
-        <div class="icon"><i class="fas fa-clipboard-list"></i></div>
-        <h3>What we track</h3>
-        <ul>
-          <li>Time to first response</li>
-          <li>Time to resolution (where measurable)</li>
-          <li>Recurring issues and root cause categories</li>
-          <li>Preventative tasks completed vs planned</li>
-          <li>Asset risk trend over time</li>
-        </ul>
-        <p style="margin-top:10px; color: var(--muted);">
-          This helps you see the ROI: fewer incidents, lower downtime, better reliability.
-        </p>
-      </div>
-    </div>
-
-    <div class="table-wrap" style="margin-top: 18px;">
-      <table aria-label="Support priority table">
-        <thead>
-          <tr>
-            <th>Priority</th>
-            <th>Examples</th>
-            <th>Client impact</th>
-            <th>Target response</th>
-            <th>Typical resolution approach</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><span class="tag"><i class="fas fa-triangle-exclamation"></i> Critical</span></td>
-            <td>Site outage, key device failure, ransomware suspicion</td>
-            <td>Business stopped or severe disruption</td>
-            <td>2–4 hrs</td>
-            <td>Triage immediately → isolate risk → restore service → document & prevent recurrence</td>
-          </tr>
-          <tr>
-            <td><span class="tag"><i class="fas fa-fire"></i> High</span></td>
-            <td>Multiple users impacted, recurring crashes, storage failure warnings</td>
-            <td>Work degraded and likely to worsen</td>
-            <td>8–24 hrs</td>
-            <td>Remote diagnostics → repair/upgrade plan → preventative schedule update</td>
-          </tr>
-          <tr>
-            <td><span class="tag"><i class="fas fa-circle-info"></i> Normal</span></td>
-            <td>Single user issues, minor performance requests, guidance</td>
-            <td>Limited disruption</td>
-            <td>1–2 days</td>
-            <td>Guidance → scheduling → best-practice recommendation</td>
-          </tr>
-          <tr>
-            <td><span class="tag"><i class="fas fa-calendar-check"></i> Planned</span></td>
-            <td>Patching, onboarding, device refresh, audits</td>
-            <td>Controlled improvement</td>
-            <td>Scheduled</td>
-            <td>Plan → execute → verify → report outcome</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <!-- STRUCTURAL FIX: clear “Raise request” block so clients know what to do -->
-    <div class="intake" id="intake" aria-label="Raise a support request">
-      <div>
-        <h3><i class="fas fa-headset"></i> Raise a Support Request</h3>
-        <p>
-          For faster support, include the basics below. We’ll confirm priority and the next step.
-        </p>
-        <ul>
-          <li><b>Company + location:</b> site/office name (if multi-site)</li>
-          <li><b>Asset details:</b> device name/model/serial (if available)</li>
-          <li><b>Issue summary:</b> what happened + when it started</li>
-          <li><b>Impact:</b> how many users are affected</li>
-          <li><b>Evidence:</b> screenshots/error messages (optional but helpful)</li>
-        </ul>
-      </div>
-
-      <div class="box">
-        <b>Fast contact</b>
-        <div class="mini">
-          <a href="tel:+447818955500" aria-label="Call BPK">
-            <span><i class="fas fa-phone"></i> Call support</span>
-            <span style="opacity:.7;">+44 7818 955500</span>
+      <div class="callout">
+        <div class="text">
+          <strong>Want a support plan tailored to your business size?</strong>
+          Share your asset count and locations — we’ll recommend the best onboarding approach and support tier.
+        </div>
+        <div class="actions">
+          <a class="primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank" rel="noopener">
+            <i class="fas fa-paper-plane"></i> Request Support Plan
           </a>
-          <a href="https://wa.me/447818955500?text=Hi%20BPK%20Technologies%2C%20I%20need%20support.%20Company%3A%20%5BNAME%5D%20Location%3A%20%5BSITE%5D%20Asset%3A%20%5BDEVICE%5D%20Issue%3A%20%5BSUMMARY%5D%20Impact%3A%20%5BHOW%20MANY%5D" target="_blank" rel="noopener">
-            <span><i class="fab fa-whatsapp"></i> WhatsApp</span>
-            <span style="opacity:.7;">Quickest</span>
-          </a>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank" rel="noopener">
-            <span><i class="fas fa-paper-plane"></i> Support form</span>
-            <span style="opacity:.7;">Structured</span>
-          </a>
-          <a href="pricing.html">
-            <span><i class="fas fa-tag"></i> View plans</span>
-            <span style="opacity:.7;">Pricing</span>
+          <a class="ghost" href="pricing.html">
+            <i class="fas fa-tag"></i> View Pricing
           </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ -->
-  <section class="container" id="faq" style="padding-top: 0;">
-    <h2 class="section-title">Support FAQ</h2>
-    <p class="section-desc">
-      Answers to common client questions. If you want, we can tailor this FAQ to your exact support plans.
-    </p>
+    <!-- How it works -->
+    <section class="container" id="how" style="padding-top: 0;">
+      <h2 class="section-title">How Support Works</h2>
+      <p class="section-desc">
+        A simple workflow clients understand: intake, triage, action, prevention, and clear closure notes.
+      </p>
 
-    <div class="faq">
-      <details>
-        <summary>
-          Do you provide onsite support?
-          <span class="tag"><i class="fas fa-location-dot"></i> Yes</span>
-        </summary>
-        <p>
-          Yes. Onsite support is available, especially for onboarding, key repairs, and network/device checks.
-          Primary focus remains platform-led preventative maintenance.
-        </p>
-      </details>
+      <div class="steps" aria-label="Support workflow steps">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>Intake</h3>
+          <p>Report issues via WhatsApp, email, or form. Include device/user/site and any screenshots if possible.</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>Triage</h3>
+          <p>We confirm severity (Critical/High/Normal) and agree the next action (remote guidance or onsite).</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>Action</h3>
+          <p>We restore service quickly and document what was changed (fixes, updates, parts, recommendations).</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>Prevention</h3>
+          <p>If the issue is recurring, we add preventative tasks into your schedule to stop repeat downtime.</p>
+        </div>
+      </div>
+    </section>
 
-      <details>
-        <summary>
-          What do clients receive after an issue is resolved?
-          <span class="tag"><i class="fas fa-file-lines"></i> Summary</span>
-        </summary>
-        <p>
-          A short resolution summary: what caused the issue, what changed, and recommendations to prevent recurrence.
-          For recurring issues, we add preventative actions into the schedule.
-        </p>
-      </details>
+    <!-- Support tiers -->
+    <section class="container" id="tiers" style="padding-top: 0;">
+      <h2 class="section-title">Support Tiers</h2>
+      <p class="section-desc">
+        Choose the level of support you need. We can start lightweight and upgrade as your rollout grows.
+      </p>
 
-      <details>
-        <summary>
-          Can you help choose the right SSD/RAM before purchase?
-          <span class="tag"><i class="fas fa-microchip"></i> Compatibility</span>
-        </summary>
-        <p>
-          Yes. Send your laptop model (or a photo of the label) and we’ll confirm compatibility and a recommended spec.
-          If you buy via the Shop page, checkout is on Amazon.
-        </p>
-      </details>
+      <div class="tier-grid">
+        <div class="tier">
+          <div class="badge"><i class="fas fa-leaf"></i> Starter</div>
+          <h3>Onboarding + Guidance</h3>
+          <div class="who">Best for small SMEs that want a clean setup and occasional support.</div>
+          <ul>
+            <li>Asset discovery & baseline health</li>
+            <li>Setup checklist + templates</li>
+            <li>Email/WhatsApp guidance</li>
+            <li>Monthly health summary</li>
+          </ul>
+        </div>
 
-      <details>
-        <summary>
-          Is break-fix included in the platform subscription?
-          <span class="tag"><i class="fas fa-toolbox"></i> Optional</span>
-        </summary>
-        <p>
-          Break-fix is optional. The platform subscription focuses on tracking, health scoring, risk alerts, scheduling and reporting.
-          Repairs/upgrades can be added as required.
-        </p>
-      </details>
+        <div class="tier">
+          <div class="badge"><i class="fas fa-users"></i> Team</div>
+          <h3>Ongoing Preventative</h3>
+          <div class="who">Best for SMEs with multiple devices and regular maintenance needs.</div>
+          <ul>
+            <li>Preventative schedules & tracking</li>
+            <li>Risk alerts review</li>
+            <li>Priority response targets</li>
+            <li>Quarterly performance review</li>
+          </ul>
+        </div>
 
-      <details>
-        <summary>
-          Do you support data backups and recovery?
-          <span class="tag"><i class="fas fa-database"></i> Add-on</span>
-        </summary>
-        <p>
-          Yes. We help you validate backup strategy, perform restore tests, and document evidence for business continuity.
-          Recovery actions depend on device condition and client-approved storage.
-        </p>
-      </details>
+        <div class="tier">
+          <div class="badge"><i class="fas fa-building"></i> Business</div>
+          <h3>Multi-site & Reporting</h3>
+          <div class="who">Best for multi-location SMEs with standardisation and reporting needs.</div>
+          <ul>
+            <li>Role-based access guidance</li>
+            <li>Advanced reporting & action plans</li>
+            <li>Onsite onboarding option</li>
+            <li>Upgrade/replacement prioritisation</li>
+          </ul>
+        </div>
+      </div>
 
-      <details>
-        <summary>
-          What are your typical support hours?
-          <span class="tag"><i class="fas fa-clock"></i> Hours</span>
-        </summary>
-        <p>
-          Support is currently aligned to weekend business hours (Sat–Sun). If you need weekday or extended coverage,
-          we can discuss a plan based on your asset count and service requirements.
-        </p>
-      </details>
-    </div>
-  </section>
+      <div class="callout">
+        <div class="text">
+          <strong>Not sure which tier fits?</strong>
+          Tell us your approximate asset count (e.g., 20 / 100 / 300+) and whether you have multiple sites.
+        </div>
+        <div class="actions">
+          <a class="primary" href="https://wa.me/447818955500?text=Hi%20BPK%20Technologies%2C%20please%20help%20me%20choose%20a%20support%20tier.%20We%20have%20around%20__%20assets%20and%20__%20sites." target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> Message on WhatsApp
+          </a>
+          <a class="ghost" href="pricing.html">
+            <i class="fas fa-tag"></i> Pricing Page
+          </a>
+        </div>
+      </div>
+    </section>
 
-  <!-- Footer -->
+    <!-- SLAs -->
+    <section class="container" id="slas" style="padding-top: 0;">
+      <h2 class="section-title">Response SLAs</h2>
+      <p class="section-desc">
+        These are typical baseline targets. Exact SLAs can be agreed based on plan and operational hours.
+      </p>
+
+      <div class="table-wrap">
+        <table aria-label="Support priority table">
+          <thead>
+            <tr>
+              <th>Priority</th>
+              <th>Examples</th>
+              <th>Client impact</th>
+              <th>Target response</th>
+              <th>Typical resolution approach</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><span class="tag"><i class="fas fa-triangle-exclamation"></i> Critical</span></td>
+              <td>Site outage, key device failure, ransomware suspicion</td>
+              <td>Business stopped or severe disruption</td>
+              <td>2–4 hrs (business hours)</td>
+              <td>Triage → isolate risk → restore service → document & prevent recurrence</td>
+            </tr>
+            <tr>
+              <td><span class="tag"><i class="fas fa-fire"></i> High</span></td>
+              <td>Multiple users impacted, recurring crashes, storage warnings</td>
+              <td>Work degraded and likely to worsen</td>
+              <td>8–24 hrs</td>
+              <td>Remote diagnostics → repair/upgrade plan → preventative schedule update</td>
+            </tr>
+            <tr>
+              <td><span class="tag"><i class="fas fa-circle-info"></i> Normal</span></td>
+              <td>Single user issues, minor performance requests, guidance</td>
+              <td>Limited disruption</td>
+              <td>1–2 business days</td>
+              <td>Guidance → schedule tasks → best-practice recommendation</td>
+            </tr>
+            <tr>
+              <td><span class="tag"><i class="fas fa-calendar-check"></i> Planned</span></td>
+              <td>Patching, onboarding, device refresh, audits</td>
+              <td>Controlled improvement</td>
+              <td>Scheduled</td>
+              <td>Plan → execute → verify → report outcomes</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <div class="text">
+          <strong>Need extended support coverage?</strong>
+          If your business operates outside standard hours, we can discuss an extended coverage plan.
+        </div>
+        <div class="actions">
+          <a class="primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank" rel="noopener">
+            <i class="fas fa-paper-plane"></i> Request Extended Coverage
+          </a>
+          <a class="ghost" href="index.html">
+            <i class="fas fa-house"></i> Back to Home
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="container" id="faq" style="padding-top: 0;">
+      <h2 class="section-title">Support FAQ</h2>
+      <p class="section-desc">Common questions from SME clients.</p>
+
+      <div class="faq">
+        <details>
+          <summary>Do you provide onsite support? <span class="tag"><i class="fas fa-location-dot"></i> Yes</span></summary>
+          <p>Yes. Onsite support is available for onboarding, key repairs, and network/device checks. Platform-led preventative maintenance remains the primary model.</p>
+        </details>
+
+        <details>
+          <summary>What do clients receive after resolution? <span class="tag"><i class="fas fa-file-lines"></i> Summary</span></summary>
+          <p>You receive a clear summary: what caused the issue, what changed, and recommendations to prevent recurrence. Repeat issues are added into the preventative schedule.</p>
+        </details>
+
+        <details>
+          <summary>Can you help choose the right SSD/RAM before purchase? <span class="tag"><i class="fas fa-microchip"></i> Compatibility</span></summary>
+          <p>Yes. Send your laptop model (or a photo of the label) and we’ll confirm compatibility and recommended specs. If you buy via the Shop page, checkout happens on Amazon.</p>
+        </details>
+
+        <details>
+          <summary>Is break-fix included in the platform subscription? <span class="tag"><i class="fas fa-toolbox"></i> Optional</span></summary>
+          <p>Break-fix is optional. The platform subscription focuses on tracking, health scoring, risk alerts, scheduling, and reporting. Repairs/upgrades can be added as required.</p>
+        </details>
+
+        <details>
+          <summary>Do you support backups and recovery? <span class="tag"><i class="fas fa-database"></i> Add-on</span></summary>
+          <p>Yes. We validate backup strategy, run restore tests, and document evidence for business continuity. Recovery actions depend on device condition and client-approved storage.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
   <footer class="footer">
     &copy; 2026 BPK Technologies (BPK Computer Services). All rights reserved.
     <div class="gdpr">We comply with GDPR and handle your data responsibly.</div>
-    <div style="margin-top: 12px; color: rgba(255,255,255,0.85);">
+    <div style="margin-top:12px; color: rgba(255,255,255,0.85);">
       <b>Support:</b> WhatsApp +44 7818 955500 • Preston, UK • Weekend business hours (Sat–Sun)
     </div>
   </footer>
 
+  <script>
+    // Optional: smooth scroll for jump links
+    document.addEventListener("DOMContentLoaded", () => {
+      document.querySelectorAll('a[href^="#"]').forEach(a => {
+        a.addEventListener("click", (e) => {
+          const id = a.getAttribute("href");
+          const el = document.querySelector(id);
+          if (!el) return;
+          e.preventDefault();
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+          history.replaceState(null, "", id);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
