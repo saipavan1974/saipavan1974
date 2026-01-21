@@ -272,6 +272,137 @@
     .testimonial-slider .prev { left: 10px; }
     .testimonial-slider .next { right: 10px; }
 
+    /* =========================
+       NEW: Review Section (added)
+       ========================= */
+    .reviews {
+      background: #ffffff;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .reviews h2 { margin-bottom: 10px; font-size: 2em; }
+    .reviews .desc {
+      max-width: 900px;
+      margin: 0 auto 30px;
+      color: #4b5563;
+      line-height: 1.6;
+    }
+
+    .review-wrap {
+      max-width: 950px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 20px;
+    }
+
+    .review-card {
+      background: #f4f7fb;
+      border: 1px solid #e5e7eb;
+      border-radius: 14px;
+      padding: 18px;
+      text-align: left;
+    }
+
+    .review-card h3 { color: #0a3d62; margin-bottom: 10px; }
+
+    .review-form { display: grid; gap: 12px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .review-form label {
+      font-weight: 600;
+      font-size: 0.95em;
+      color: #111827;
+    }
+
+    .review-form input,
+    .review-form textarea {
+      width: 100%;
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #d1d5db;
+      outline: none;
+      background: #fff;
+    }
+
+    .review-form textarea { min-height: 110px; resize: vertical; }
+
+    .review-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .review-btn {
+      background-color: #3498db;
+      color: white;
+      padding: 11px 16px;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      transition: background-color .3s ease;
+    }
+    .review-btn:hover { background-color: #2a80b9; }
+
+    .review-muted { color: #4b5563; font-size: 0.92em; line-height: 1.5; }
+
+    .star-picker { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+
+    .stars { display: inline-flex; gap: 6px; font-size: 1.3em; }
+
+    .star {
+      cursor: pointer;
+      color: #d1d5db;
+      transition: transform .15s ease, color .15s ease;
+      user-select: none;
+    }
+    .star:hover { transform: translateY(-1px); }
+    .star.active { color: #f1c40f; }
+
+    .small-hint { font-size: 0.85em; color: #6b7280; margin-top: 4px; }
+
+    .review-list { display: grid; gap: 12px; margin-top: 12px; }
+
+    .user-review {
+      background: #fff;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      padding: 14px;
+    }
+
+    .user-review .top {
+      display: flex;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .user-review .name { font-weight: 800; color: #0a3d62; }
+    .user-review .meta { color: #6b7280; font-size: 0.9em; }
+    .user-review .body { margin-top: 8px; color: #374151; line-height: 1.6; }
+
+    .review-toast {
+      display: none;
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 10px;
+      font-weight: 600;
+    }
+    .review-toast.ok { display: block; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; }
+    .review-toast.err { display: block; background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
+
     /* Responsive (kept & small improvements) */
     @media (max-width: 768px) {
       header { flex-direction: column; align-items: center; padding: 15px; text-align: center; }
@@ -283,9 +414,13 @@
       .hero p { font-size: 1em; padding: 0 10px; }
       .contact-buttons { flex-direction: column; width: 100%; gap: 10px; }
       .testimonial-card { min-width: 90%; max-width: 90%; }
-      .services h2, .testimonials h2, .innovation h2 { font-size: 1.5em; }
+      .services h2, .testimonials h2, .innovation h2, .reviews h2 { font-size: 1.5em; }
       .card i { font-size: 1.5em; }
       .slideshow-container { width: 100%; }
+
+      /* Reviews responsive */
+      .review-wrap { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
     }
 
     .footer {
@@ -315,6 +450,7 @@
     <a href="#platform"><i class="fas fa-layer-group"></i> Platform</a>
     <a href="#innovation"><i class="fas fa-lightbulb"></i> Innovation</a>
     <a href="#support"><i class="fas fa-screwdriver-wrench"></i> Support</a>
+    <a href="#reviews"><i class="fas fa-star"></i> Reviews</a>
     <a href="pricing.html"><i class="fas fa-tag"></i> Pricing</a>
     <a href="shop.html"><i class="fas fa-cart-shopping"></i> Shop</a>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank">
@@ -551,6 +687,89 @@
   </div>
 </section>
 
+<!-- =========================
+     NEW: Leave a Review Section
+     ========================= -->
+<section class="reviews" id="reviews">
+  <h2>Leave a Review</h2>
+  <div class="desc">
+    Your feedback helps us improve and helps other customers choose BPK.
+    (If you prefer, you can also leave a Google review using the link below.)
+  </div>
+
+  <div class="review-wrap">
+    <!-- Left: Review Form -->
+    <div class="review-card">
+      <h3><i class="fas fa-pen-to-square"></i> Submit your review</h3>
+
+      <form class="review-form" id="reviewForm">
+        <div class="form-row">
+          <div>
+            <label for="reviewName">Name</label>
+            <input id="reviewName" name="name" type="text" placeholder="Your name" required />
+          </div>
+          <div>
+            <label for="reviewEmail">Email (optional)</label>
+            <input id="reviewEmail" name="email" type="email" placeholder="name@email.com" />
+          </div>
+        </div>
+
+        <div>
+          <label>Rating</label>
+          <div class="star-picker">
+            <div class="stars" id="starRow" aria-label="Select rating out of 5">
+              <span class="star" data-value="1" aria-label="1 star">★</span>
+              <span class="star" data-value="2" aria-label="2 stars">★</span>
+              <span class="star" data-value="3" aria-label="3 stars">★</span>
+              <span class="star" data-value="4" aria-label="4 stars">★</span>
+              <span class="star" data-value="5" aria-label="5 stars">★</span>
+            </div>
+            <span class="review-muted" id="ratingText">No rating selected</span>
+          </div>
+          <div class="small-hint">Tip: click stars to set your rating.</div>
+          <input type="hidden" id="reviewRating" name="rating" value="" required />
+        </div>
+
+        <div>
+          <label for="reviewMessage">Your review</label>
+          <textarea id="reviewMessage" name="message" placeholder="Tell us about your experience…" required></textarea>
+        </div>
+
+        <label class="review-muted" style="display:flex; gap:10px; align-items:flex-start;">
+          <input type="checkbox" id="reviewConsent" required style="margin-top:4px;" />
+          I confirm this review is genuine and I’m happy for it to be shown on the website.
+        </label>
+
+        <div class="review-actions">
+          <button type="submit" class="review-btn">
+            <i class="fas fa-paper-plane"></i> Submit Review
+          </button>
+
+          <a class="review-btn" style="text-decoration:none; background:#2ecc71;"
+             href="https://www.google.com/search?q=BPK%20Computer%20Repair%20and%20Services%20reviews"
+             target="_blank" rel="noopener">
+            <i class="fab fa-google"></i> Leave Google Review
+          </a>
+        </div>
+
+        <div id="reviewToast" class="review-toast"></div>
+        <div class="review-muted" style="margin-top:8px;">
+          Reviews are moderated for spam. If you submitted and don’t see it immediately, it may still be processing.
+        </div>
+      </form>
+    </div>
+
+    <!-- Right: Recently Submitted Reviews -->
+    <div class="review-card">
+      <h3><i class="fas fa-comments"></i> Recent Website Reviews</h3>
+      <div class="review-muted">
+        These are reviews submitted via this website form.
+      </div>
+      <div class="review-list" id="reviewList"></div>
+    </div>
+  </div>
+</section>
+
 <!-- Footer (kept, but updated name) -->
 <footer class="footer">
   &copy; 2026 BPK Technologies (BPK Computer Services). All rights reserved.
@@ -579,43 +798,217 @@
   </div>
 </footer>
 
-<!-- Testimonial Slider Script (kept) -->
+<!-- Combined: Testimonial Slider Script + NEW Review Script -->
 <script>
+  // =========================
+  // Testimonials slider
+  // =========================
   document.addEventListener('DOMContentLoaded', () => {
     const track = document.querySelector(".testimonial-track");
     const prev = document.querySelector(".testimonial-slider .prev");
     const next = document.querySelector(".testimonial-slider .next");
     const cards = document.querySelectorAll(".testimonial-card");
 
-    let currentIndex = 0;
+    if (track && prev && next && cards.length) {
+      let currentIndex = 0;
 
-    function getVisibleCardsCount() {
-      return window.innerWidth >= 768 ? 3 : 1;
+      function getVisibleCardsCount() {
+        return window.innerWidth >= 768 ? 3 : 1;
+      }
+
+      function updateSlider() {
+        const visibleCards = getVisibleCardsCount();
+        const cardWidth = cards[0].offsetWidth + 20;
+        const maxIndex = Math.max(0, cards.length - visibleCards);
+
+        if (currentIndex < 0) currentIndex = 0;
+        if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
+      }
+
+      prev.addEventListener("click", () => { currentIndex--; updateSlider(); });
+      next.addEventListener("click", () => { currentIndex++; updateSlider(); });
+
+      window.addEventListener("resize", () => updateSlider());
+      updateSlider();
+    }
+  });
+
+  // =========================
+  // NEW: Review Form + Stars
+  // =========================
+
+  // OPTIONAL: Google Sheets endpoint (Apps Script Web App URL)
+  // Paste your deployed Apps Script URL here:
+  // const REVIEW_ENDPOINT = "https://script.google.com/macros/s/XXXX/exec";
+  const REVIEW_ENDPOINT = "";
+
+  const reviewForm = document.getElementById("reviewForm");
+  const reviewList = document.getElementById("reviewList");
+  const reviewToast = document.getElementById("reviewToast");
+
+  const starRow = document.getElementById("starRow");
+  const ratingText = document.getElementById("ratingText");
+  const ratingInput = document.getElementById("reviewRating");
+
+  function setToast(type, msg) {
+    if (!reviewToast) return;
+    reviewToast.className = "review-toast " + (type === "ok" ? "ok" : "err");
+    reviewToast.textContent = msg;
+  }
+
+  function clearToast() {
+    if (!reviewToast) return;
+    reviewToast.className = "review-toast";
+    reviewToast.textContent = "";
+  }
+
+  function renderStars(value) {
+    if (!starRow) return;
+    const stars = starRow.querySelectorAll(".star");
+    stars.forEach((s) => {
+      const v = Number(s.dataset.value);
+      s.classList.toggle("active", v <= value);
+    });
+  }
+
+  function ratingLabel(value) {
+    const labels = {1:"Poor",2:"Fair",3:"Good",4:"Very Good",5:"Excellent"};
+    return labels[value] || "No rating selected";
+  }
+
+  // Click stars
+  if (starRow) {
+    starRow.addEventListener("click", (e) => {
+      const star = e.target.closest(".star");
+      if (!star) return;
+      const value = Number(star.dataset.value);
+      if (ratingInput) ratingInput.value = String(value);
+      if (ratingText) ratingText.textContent = `${value}/5 — ${ratingLabel(value)}`;
+      renderStars(value);
+      clearToast();
+    });
+  }
+
+  // Local storage reviews (fallback)
+  const LS_KEY = "bpk_site_reviews_v1";
+
+  function loadLocalReviews() {
+    try {
+      const raw = localStorage.getItem(LS_KEY);
+      return raw ? JSON.parse(raw) : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function saveLocalReview(review) {
+    const all = loadLocalReviews();
+    all.unshift(review);
+    localStorage.setItem(LS_KEY, JSON.stringify(all.slice(0, 12))); // keep latest 12
+  }
+
+  function escapeHTML(str) {
+    return String(str)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  function renderReviewList() {
+    const reviews = loadLocalReviews();
+    if (!reviewList) return;
+
+    if (reviews.length === 0) {
+      reviewList.innerHTML = `
+        <div class="user-review">
+          <div class="meta">No website reviews yet. Be the first to leave one! ⭐</div>
+        </div>
+      `;
+      return;
     }
 
-    function updateSlider() {
-      const visibleCards = getVisibleCardsCount();
-      const cardWidth = cards[0].offsetWidth + 20;
-      const maxIndex = cards.length - visibleCards;
+    reviewList.innerHTML = reviews.map(r => {
+      const stars = "★★★★★".slice(0, r.rating) + "☆☆☆☆☆".slice(0, 5 - r.rating);
+      return `
+        <div class="user-review">
+          <div class="top">
+            <div class="name">${escapeHTML(r.name)}</div>
+            <div class="meta">${escapeHTML(stars)} • ${escapeHTML(r.date)}</div>
+          </div>
+          <div class="body">${escapeHTML(r.message)}</div>
+        </div>
+      `;
+    }).join("");
+  }
 
-      if (currentIndex < 0) currentIndex = 0;
-      if (currentIndex > maxIndex) currentIndex = maxIndex;
-
-      track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-    }
-
-    prev.addEventListener("click", () => {
-      currentIndex--;
-      updateSlider();
+  async function submitReviewToEndpoint(payload) {
+    const res = await fetch(REVIEW_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(payload)
     });
+    if (!res.ok) throw new Error("Network error");
+    return true;
+  }
 
-    next.addEventListener("click", () => {
-      currentIndex++;
-      updateSlider();
+  if (reviewForm) {
+    reviewForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      clearToast();
+
+      const name = document.getElementById("reviewName")?.value.trim();
+      const email = document.getElementById("reviewEmail")?.value.trim();
+      const rating = Number(document.getElementById("reviewRating")?.value);
+      const message = document.getElementById("reviewMessage")?.value.trim();
+      const consent = document.getElementById("reviewConsent")?.checked;
+
+      if (!name || !message || !consent || !rating || rating < 1 || rating > 5) {
+        setToast("err", "Please fill in your name, rating (stars), review message, and consent.");
+        return;
+      }
+
+      const payload = {
+        name,
+        email,
+        rating,
+        message,
+        date: new Date().toLocaleDateString("en-GB", { day:"2-digit", month:"short", year:"numeric" }),
+        page: location.pathname || "/",
+        source: "website_form"
+      };
+
+      try {
+        // If Apps Script endpoint is set, send there; also save locally for immediate display
+        if (REVIEW_ENDPOINT && REVIEW_ENDPOINT.startsWith("http")) {
+          await submitReviewToEndpoint(payload);
+        }
+
+        saveLocalReview(payload);
+        renderReviewList();
+
+        reviewForm.reset();
+        if (ratingInput) ratingInput.value = "";
+        if (ratingText) ratingText.textContent = "No rating selected";
+        renderStars(0);
+
+        setToast("ok", "Thank you! Your review has been submitted.");
+      } catch (err) {
+        // Save locally anyway so you don't lose it
+        saveLocalReview(payload);
+        renderReviewList();
+        setToast("ok", "Submitted locally. (To store in Google Sheets, add your Apps Script URL in the code.)");
+      }
     });
+  }
 
-    window.addEventListener("resize", () => updateSlider());
-    updateSlider();
+  // Initial render
+  document.addEventListener("DOMContentLoaded", () => {
+    renderReviewList();
+    renderStars(0);
   });
 </script>
 
