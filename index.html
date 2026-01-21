@@ -24,7 +24,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Structured Data (NEW) -->
+  <!-- Structured Data (kept) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
@@ -47,169 +47,413 @@
   </script>
 
   <style>
+    :root{
+      /* Brand palette (Blue + Green + Purple) */
+      --bg: #f6f8fc;
+      --text: #0f172a;
+      --muted: #475569;
+      --brand-navy: #071e2e;
+      --brand-blue: #0b2f4a;
+      --brand-cyan: #0ea5e9;
+      --brand-teal: #10b981;
+      --brand-purple: #7c3aed;
+
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 12px 30px rgba(2,6,23,0.12);
+      --shadow-soft: 0 8px 20px rgba(2,6,23,0.08);
+      --radius: 18px;
+
+      --chip: rgba(255,255,255,0.10);
+      --chip-border: rgba(255,255,255,0.18);
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-    body { background-color: #f4f7fb; color: #1a1a1a; }
+    body { background: var(--bg); color: var(--text); }
 
-    header {
-      background-color: #0a3d62;
-      padding: 20px 40px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    /* =========================
+       Header / Nav (Professional)
+       ========================= */
+    header{
+      background: linear-gradient(180deg, rgba(7,30,46,1) 0%, rgba(11,47,74,0.96) 100%);
+      color:#fff;
+      padding: 16px 18px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(8px);
+    }
+    .topbar{
+      max-width: 1180px;
+      margin: 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
       flex-wrap: wrap;
-      color: #fff;
     }
 
-    .company-title {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      font-size: 1.6em;
-      font-weight: bold;
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 260px;
+    }
+    .brand img{
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #fff;
+      object-fit: contain;
+    }
+    .brand .title{ line-height: 1.15; }
+    .brand .title strong{
+      font-size: 1.15rem;
+      display:block;
+      letter-spacing: 0.2px;
+    }
+    .brand .title span{
+      font-size: 0.86rem;
+      opacity: .9;
+      font-weight: 600;
     }
 
-    .company-title img { height: 70px; border-radius: 50%; }
-
-    .nav-buttons { display: flex; gap: 10px; flex-wrap: wrap; }
-
-    .nav-buttons a {
-      color: #fff;
-      text-decoration: none;
-      font-weight: 500;
-      padding: 10px 18px;
-      border-radius: 8px;
-      background-color: #3498db;
-      display: inline-flex;
-      align-items: center;
+    nav.nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      justify-content:flex-end;
+      flex: 1;
+    }
+    .nav a{
+      color:#eaf2ff;
+      text-decoration:none;
+      font-weight:800;
+      font-size: 0.95rem;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+      display:inline-flex;
+      align-items:center;
       gap: 8px;
-      transition: background-color 0.3s ease;
+      transition: transform .15s ease, background .2s ease, border .2s ease;
       white-space: nowrap;
     }
-
-    .nav-buttons a:hover { background-color: #2a80b9; }
-
-    .hero {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 60px 20px;
-      background-color: #0a3d62;
-      color: white;
-      text-align: center;
+    .nav a:hover{
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.26);
+      transform: translateY(-1px);
     }
-    .hero h1 { font-size: 2.5em; margin-bottom: 16px; max-width: 1000px; }
-    .hero p { font-size: 1.15em; margin-bottom: 18px; max-width: 950px; line-height: 1.6; }
-    .hero .sub {
-      font-size: 0.95em;
-      opacity: 0.92;
-      max-width: 950px;
+    .nav a.primary{
+      color:#fff;
+      border: 1px solid rgba(255,255,255,0.15);
+      background:
+        linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-purple) 55%, var(--brand-teal) 100%);
+      box-shadow: 0 12px 26px rgba(14,165,233,0.18);
+    }
+    .nav a.primary:hover{ filter: brightness(1.03); }
+
+    /* =========================
+       Hero (Left text, Right mockups)
+       ========================= */
+    .hero{
+      background:
+        radial-gradient(900px 500px at 15% 25%, rgba(14,165,233,0.25), transparent 60%),
+        radial-gradient(900px 500px at 85% 0%, rgba(124,58,237,0.25), transparent 60%),
+        radial-gradient(900px 500px at 80% 85%, rgba(16,185,129,0.18), transparent 60%),
+        linear-gradient(180deg, rgba(7,30,46,1) 0%, rgba(6,21,32,1) 100%);
+      color: white;
+      padding: 64px 20px 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .hero-inner{
+      max-width: 1180px;
+      margin: 0 auto;
+      display:grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 26px;
+      align-items:center;
+    }
+    .hero h1{
+      font-size: 2.6rem;
+      line-height: 1.12;
+      letter-spacing: -0.6px;
+      margin-bottom: 14px;
+      max-width: 22ch;
+    }
+    .hero p{
+      color: rgba(255,255,255,0.92);
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin-bottom: 14px;
+      max-width: 62ch;
+    }
+    .hero .sub{
+      color: rgba(255,255,255,0.82);
+      font-size: 0.98rem;
       line-height: 1.6;
+      margin-bottom: 18px;
+      max-width: 62ch;
     }
 
-    .contact-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      justify-content: center;
-      margin-top: 26px;
+    .hero-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin: 14px 0 20px;
     }
-
-    .contact-buttons a {
-      background-color: #3498db;
-      color: white;
-      padding: 10px 20px;
-      border-radius: 8px;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: background-color 0.3s ease;
-    }
-    .contact-buttons a:hover { background-color: #2a80b9; }
-
-    .badges {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-      margin-top: 20px;
-    }
-    .badge {
-      background: rgba(255,255,255,0.15);
-      border: 1px solid rgba(255,255,255,0.2);
-      padding: 8px 12px;
+    .hero-badge{
+      background: var(--chip);
+      border: 1px solid var(--chip-border);
+      padding: 9px 12px;
       border-radius: 999px;
-      font-size: 0.9em;
+      font-weight: 800;
+      font-size: 0.92rem;
+      display:inline-flex;
+      gap: 8px;
+      align-items:center;
     }
 
-    .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
-      color: white;
-      border-radius: 50%;
-      font-size: 28px;
-      padding: 16px;
-      z-index: 1000;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-      transition: background-color 0.3s ease;
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+      align-items:center;
+      margin-top: 6px;
     }
-    .whatsapp-float:hover { background-color: #128C7E; text-decoration: none; }
+    .btn{
+      border: none;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      font-weight: 900;
+      padding: 12px 16px;
+      border-radius: 14px;
+      transition: transform .15s ease, filter .2s ease;
+      white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+    .btn-primary{
+      color:#fff;
+      background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-purple) 58%, var(--brand-teal) 100%);
+      box-shadow: 0 14px 28px rgba(124,58,237,0.16);
+    }
+    .btn-ghost{
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
+      color:#fff;
+    }
 
-    .slideshow-container {
-      max-width: 800px;
+    /* Dashboard mockups (no stock photos) */
+    .hero-media{ display:grid; gap: 12px; }
+    .mock-grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .mock{
       position: relative;
-      margin: 2em auto;
-      border-radius: 10px;
+      border-radius: var(--radius);
       overflow: hidden;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.06);
+      box-shadow: var(--shadow-soft);
+      padding: 12px;
+      min-height: 150px;
+    }
+    .mock.big{
+      grid-column: 1 / -1;
+      min-height: 220px;
+      padding: 14px;
+    }
+    .mock .label{
+      position:absolute;
+      left: 12px;
+      bottom: 12px;
+      background: rgba(7,30,46,0.75);
+      border: 1px solid rgba(255,255,255,0.18);
+      color:#fff;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 0.84rem;
+      display:inline-flex;
+      gap: 8px;
+      align-items:center;
     }
 
+    /* Mock UI bits */
+    .mock-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .mock-title{
+      display:flex; flex-direction:column; gap: 4px;
+    }
+    .mock-title strong{ font-size: 0.95rem; letter-spacing: 0.2px; }
+    .mock-title span{ font-size: 0.78rem; opacity: 0.85; }
+    .mock-pill{
+      padding: 6px 9px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 900;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.08);
+      opacity: 0.95;
+    }
+    .kpis{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .kpi{
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 10px;
+    }
+    .kpi .k{ font-size: 0.74rem; opacity: 0.85; font-weight: 800; }
+    .kpi .v{
+      font-size: 1.1rem;
+      font-weight: 1000;
+      letter-spacing: -0.2px;
+      margin-top: 4px;
+      background: linear-gradient(90deg, var(--brand-cyan), var(--brand-purple), var(--brand-teal));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .chart{
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 10px;
+      height: 120px;
+      display:flex;
+      align-items:flex-end;
+      gap: 6px;
+    }
+    .bar{
+      flex: 1;
+      border-radius: 10px;
+      background: linear-gradient(180deg, rgba(14,165,233,0.95), rgba(124,58,237,0.85));
+      opacity: 0.95;
+    }
+    .bar.g{ background: linear-gradient(180deg, rgba(16,185,129,0.95), rgba(14,165,233,0.75)); }
+    .bar.p{ background: linear-gradient(180deg, rgba(124,58,237,0.95), rgba(16,185,129,0.72)); }
+
+    .mini-table{
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      padding: 10px;
+      display:grid;
+      gap: 8px;
+    }
+    .row{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap: 10px;
+      font-size: 0.86rem;
+      opacity: 0.92;
+    }
+    .status{
+      font-size: 0.78rem;
+      font-weight: 900;
+      padding: 5px 8px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+    }
+
+    /* WhatsApp floating */
+    .whatsapp-float{
+      position: fixed;
+      bottom: 18px;
+      right: 18px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background: #25D366;
+      color: #fff;
+      font-size: 28px;
+      box-shadow: var(--shadow);
+      z-index: 999;
+      text-decoration:none;
+    }
+    .whatsapp-float:hover{ filter: brightness(0.98); }
+
+    /* Marquee banner */
+    .banner{
+      background: linear-gradient(90deg, rgba(14,165,233,0.18), rgba(124,58,237,0.18), rgba(16,185,129,0.18));
+      border-top: 1px solid rgba(255,255,255,0.10);
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      background-color: #0b2f4a;
+      color: #fff;
+      padding: 10px 0;
+    }
+
+    /* =========================
+       Existing sections (kept, polished)
+       ========================= */
+    .slideshow-container {
+      max-width: 900px;
+      position: relative;
+      margin: 28px auto 10px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid var(--border);
+      background: #fff;
+    }
     .mySlides { display: none; }
-    .fade { animation: fadeEffect 1.5s; }
-    @keyframes fadeEffect { from {opacity: 0.4} to {opacity: 1} }
+    .fade { animation: fadeEffect 1.3s; }
+    @keyframes fadeEffect { from {opacity: 0.35} to {opacity: 1} }
 
     .services { padding: 60px 20px; text-align: center; }
     .services h2 { font-size: 2em; margin-bottom: 10px; }
-    .services .desc { max-width: 900px; margin: 10px auto 35px; color: #4b5563; line-height: 1.6; }
+    .services .desc { max-width: 900px; margin: 10px auto 35px; color: var(--muted); line-height: 1.6; }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
+      gap: 18px;
       max-width: 1100px;
       margin: 0 auto;
     }
 
     .card {
-      background: white;
+      background: var(--card);
       padding: 22px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease;
-      text-align: center;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+      text-align: left;
     }
-
-    .card i { font-size: 2em; margin-bottom: 10px; color: #0a3d62; }
+    .card i { font-size: 1.65em; margin-bottom: 10px; color: var(--brand-blue); }
     .card h3 { margin-bottom: 8px; }
-    .card p { color: #4b5563; line-height: 1.5; }
+    .card p { color: var(--muted); line-height: 1.55; }
+    .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 
-    .card:hover { transform: translateY(-5px); }
-
-    /* NEW: Innovation section */
-    .innovation {
-      padding: 60px 20px;
-      background: #ffffff;
-      text-align: center;
-    }
+    /* Innovation */
+    .innovation { padding: 60px 20px; background: #ffffff; text-align: center; }
     .innovation h2 { font-size: 2em; margin-bottom: 12px; }
-    .innovation .desc {
-      max-width: 950px;
-      margin: 0 auto 35px;
-      color: #4b5563;
-      line-height: 1.6;
-    }
+    .innovation .desc { max-width: 950px; margin: 0 auto 35px; color: var(--muted); line-height: 1.6; }
     .pill-grid {
       max-width: 1100px;
       margin: 0 auto;
@@ -218,46 +462,44 @@
       gap: 18px;
     }
     .pill {
-      background: #f4f7fb;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 16px;
       padding: 18px;
       text-align: left;
+      box-shadow: var(--shadow-soft);
     }
-    .pill h3 { color: #0a3d62; margin-bottom: 8px; }
+    .pill h3 { color: var(--brand-blue); margin-bottom: 8px; }
     .pill ul { margin-left: 18px; color: #374151; line-height: 1.7; }
 
-    /* Testimonials (kept) */
-    .testimonials {
-      background: #fff;
-      padding: 60px 20px;
-      text-align: center;
-    }
+    /* Testimonials */
+    .testimonials { background: #fff; padding: 60px 20px; text-align: center; }
     .testimonials h2 { margin-bottom: 30px; }
 
-    .testimonial-slider { position: relative; overflow: hidden; max-width: 100%; margin-top: 30px; }
-    .testimonial-track { display: flex; transition: transform 0.5s ease-in-out; gap: 20px; }
+    .testimonial-slider { position: relative; overflow: hidden; max-width: 1100px; margin: 30px auto 0; }
+    .testimonial-track { display: flex; transition: transform 0.5s ease-in-out; gap: 20px; padding: 4px; }
     .testimonial-card {
       background: #ffffff;
       padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid var(--border);
       min-width: 300px;
       max-width: 300px;
       flex-shrink: 0;
       text-align: center;
     }
     .testimonial-card img { width: 70px; height: 70px; border-radius: 50%; margin-bottom: 10px; }
-    .testimonial-card h3 { font-size: 1em; margin-bottom: 10px; color: #0a3d62; }
-    .testimonial-card p { font-style: italic; font-size: 0.95em; margin-bottom: 10px; }
+    .testimonial-card h3 { font-size: 1em; margin-bottom: 10px; color: var(--brand-blue); }
+    .testimonial-card p { font-style: italic; font-size: 0.95em; margin-bottom: 10px; color: var(--muted); }
     .testimonial-card .stars { color: #f1c40f; font-size: 1.1em; }
 
     .testimonial-slider .prev,
     .testimonial-slider .next {
       position: absolute;
-      top: 40%;
+      top: 44%;
       transform: translateY(-50%);
-      background-color: #3498db;
+      background: linear-gradient(135deg, var(--brand-cyan), var(--brand-purple));
       border: none;
       color: white;
       font-size: 2em;
@@ -266,605 +508,380 @@
       z-index: 1;
       border-radius: 50%;
       user-select: none;
+      box-shadow: var(--shadow-soft);
     }
     .testimonial-slider .prev:hover,
-    .testimonial-slider .next:hover { background-color: #2a80b9; }
+    .testimonial-slider .next:hover { filter: brightness(1.03); }
     .testimonial-slider .prev { left: 10px; }
     .testimonial-slider .next { right: 10px; }
 
     /* =========================
-       NEW: Review Section (added)
+       Review Section (kept)
        ========================= */
-    .reviews {
-      background: #ffffff;
-      padding: 60px 20px;
-      text-align: center;
-    }
-
+    .reviews { background: #ffffff; padding: 60px 20px; text-align: center; }
     .reviews h2 { margin-bottom: 10px; font-size: 2em; }
-    .reviews .desc {
-      max-width: 900px;
-      margin: 0 auto 30px;
-      color: #4b5563;
-      line-height: 1.6;
-    }
+    .reviews .desc { max-width: 900px; margin: 0 auto 30px; color: var(--muted); line-height: 1.6; }
 
     .review-wrap {
-      max-width: 950px;
+      max-width: 1100px;
       margin: 0 auto;
       display: grid;
       grid-template-columns: 1.05fr 0.95fr;
-      gap: 20px;
+      gap: 18px;
     }
-
     .review-card {
-      background: #f4f7fb;
-      border: 1px solid #e5e7eb;
-      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: 16px;
       padding: 18px;
       text-align: left;
+      box-shadow: var(--shadow-soft);
     }
-
-    .review-card h3 { color: #0a3d62; margin-bottom: 10px; }
+    .review-card h3 { color: var(--brand-blue); margin-bottom: 10px; }
 
     .review-form { display: grid; gap: 12px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .review-form label {
-      font-weight: 600;
-      font-size: 0.95em;
-      color: #111827;
-    }
-
-    .review-form input,
-    .review-form textarea {
+    .review-form label { font-weight: 700; font-size: 0.95em; color: #111827; }
+    .review-form input, .review-form textarea {
       width: 100%;
       padding: 12px;
-      border-radius: 10px;
+      border-radius: 12px;
       border: 1px solid #d1d5db;
       outline: none;
       background: #fff;
     }
-
     .review-form textarea { min-height: 110px; resize: vertical; }
 
-    .review-actions {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
+    .review-actions { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
 
     .review-btn {
-      background-color: #3498db;
-      color: white;
+      color:#fff;
       padding: 11px 16px;
-      border-radius: 10px;
+      border-radius: 12px;
       border: none;
       cursor: pointer;
-      font-weight: 700;
+      font-weight: 900;
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      transition: background-color .3s ease;
+      transition: filter .2s ease, transform .15s ease;
+      text-decoration: none;
+      white-space: nowrap;
     }
-    .review-btn:hover { background-color: #2a80b9; }
+    .review-btn:hover { filter: brightness(1.03); transform: translateY(-1px); }
 
-    .review-muted { color: #4b5563; font-size: 0.92em; line-height: 1.5; }
+    .review-btn.primary {
+      background: linear-gradient(135deg, var(--brand-cyan), var(--brand-purple));
+      box-shadow: var(--shadow-soft);
+    }
+    .review-btn.google { background: linear-gradient(135deg, #22c55e, #16a34a); }
+
+    .review-muted { color: var(--muted); font-size: 0.92em; line-height: 1.5; }
 
     .star-picker { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
-
     .stars { display: inline-flex; gap: 6px; font-size: 1.3em; }
-
-    .star {
-      cursor: pointer;
-      color: #d1d5db;
-      transition: transform .15s ease, color .15s ease;
-      user-select: none;
-    }
+    .star { cursor: pointer; color: #d1d5db; transition: transform .15s ease, color .15s ease; user-select: none; }
     .star:hover { transform: translateY(-1px); }
     .star.active { color: #f1c40f; }
 
     .small-hint { font-size: 0.85em; color: #6b7280; margin-top: 4px; }
 
     .review-list { display: grid; gap: 12px; margin-top: 12px; }
-
     .user-review {
       background: #fff;
-      border: 1px solid #e5e7eb;
-      border-radius: 12px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
       padding: 14px;
+      box-shadow: var(--shadow-soft);
     }
-
-    .user-review .top {
-      display: flex;
-      justify-content: space-between;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .user-review .name { font-weight: 800; color: #0a3d62; }
+    .user-review .top { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .user-review .name { font-weight: 1000; color: var(--brand-blue); }
     .user-review .meta { color: #6b7280; font-size: 0.9em; }
     .user-review .body { margin-top: 8px; color: #374151; line-height: 1.6; }
 
-    .review-toast {
-      display: none;
-      margin-top: 10px;
-      padding: 10px 12px;
-      border-radius: 10px;
-      font-weight: 600;
-    }
+    .review-toast { display: none; margin-top: 10px; padding: 10px 12px; border-radius: 12px; font-weight: 700; }
     .review-toast.ok { display: block; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; }
     .review-toast.err { display: block; background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
 
-    /* Responsive (kept & small improvements) */
-    @media (max-width: 768px) {
-      header { flex-direction: column; align-items: center; padding: 15px; text-align: center; }
-      .company-title { flex-direction: column; justify-content: center; text-align: center; font-size: 1.3em; margin-bottom: 15px; }
-      .company-title img { height: 70px; }
-      .nav-buttons { flex-direction: column; align-items: center; width: 100%; gap: 10px; }
-      .nav-buttons a { display: block; width: 90%; font-size: 1em; padding: 12px; text-align: center; border-radius: 6px; }
-      .hero h1 { font-size: 1.8em; padding: 0 10px; }
-      .hero p { font-size: 1em; padding: 0 10px; }
-      .contact-buttons { flex-direction: column; width: 100%; gap: 10px; }
-      .testimonial-card { min-width: 90%; max-width: 90%; }
-      .services h2, .testimonials h2, .innovation h2, .reviews h2 { font-size: 1.5em; }
-      .card i { font-size: 1.5em; }
-      .slideshow-container { width: 100%; }
-
-      /* Reviews responsive */
-      .review-wrap { grid-template-columns: 1fr; }
-      .form-row { grid-template-columns: 1fr; }
-    }
-
+    /* Footer */
     .footer {
-      background-color: #0a3d62;
+      background: linear-gradient(180deg, rgba(11,47,74,1) 0%, rgba(7,30,46,1) 100%);
       color: white;
-      padding: 20px;
+      padding: 22px 20px;
       text-align: center;
-      font-size: 0.9em;
+      font-size: 0.92em;
+      border-top: 1px solid rgba(255,255,255,0.08);
     }
-    .footer .gdpr { margin-top: 10px; font-size: 0.8em; color: #ddd; }
+    .footer .gdpr { margin-top: 10px; font-size: 0.85em; color: rgba(255,255,255,0.78); }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .hero-inner{ grid-template-columns: 1fr; }
+      .hero h1{ font-size: 2.15rem; max-width: 100%; }
+      nav.nav{ justify-content:flex-start; }
+      .brand{ min-width: unset; }
+    }
+    @media (max-width: 520px){
+      .nav a{ width: 100%; justify-content:center; }
+      .hero-actions .btn{ width: 100%; justify-content:center; }
+      .mock-grid{ grid-template-columns: 1fr; }
+      .kpis{ grid-template-columns: 1fr; }
+      .review-wrap{ grid-template-columns: 1fr; }
+      .form-row{ grid-template-columns: 1fr; }
+      .testimonial-card{ min-width: 90%; max-width: 90%; }
+    }
   </style>
 </head>
 
 <body>
 
-<header>
-  <div class="company-title">
-    <img src="logo.png" alt="Logo" />
-    <div>
-      <strong>BPK</strong> Technologies<br/>
-      <span style="font-weight:600; font-size:0.65em; opacity:0.9;">Smart Asset Intelligence (Platform-led)</span>
+  <!-- Header -->
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <img src="logo.png" alt="BPK Logo" />
+        <div class="title">
+          <strong>BPK Technologies</strong>
+          <span>Smart Asset Intelligence (Platform-led)</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html"><i class="fas fa-house"></i> Home</a>
+        <a href="#platform"><i class="fas fa-layer-group"></i> Platform</a>
+        <a href="#innovation"><i class="fas fa-lightbulb"></i> Innovation</a>
+        <a href="#support"><i class="fas fa-screwdriver-wrench"></i> Support</a>
+        <a href="#reviews"><i class="fas fa-star"></i> Reviews</a>
+        <a href="pricing.html"><i class="fas fa-tag"></i> Pricing</a>
+        <a href="shop.html"><i class="fas fa-cart-shopping"></i> Shop</a>
+        <a class="primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank" rel="noopener">
+          <i class="fas fa-paper-plane"></i> Request Demo
+        </a>
+      </nav>
     </div>
-  </div>
+  </header>
 
-  <nav class="nav-buttons">
-    <a href="index.html"><i class="fas fa-house"></i> Home</a>
-    <a href="#platform"><i class="fas fa-layer-group"></i> Platform</a>
-    <a href="#innovation"><i class="fas fa-lightbulb"></i> Innovation</a>
-    <a href="#support"><i class="fas fa-screwdriver-wrench"></i> Support</a>
-    <a href="#reviews"><i class="fas fa-star"></i> Reviews</a>
-    <a href="pricing.html"><i class="fas fa-tag"></i> Pricing</a>
-    <a href="shop.html"><i class="fas fa-cart-shopping"></i> Shop</a>
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank">
-      <i class="fas fa-paper-plane"></i> Request Demo
-    </a>
-  </nav>
-</header>
-
-<!-- Hero Section (UPDATED) -->
-<section class="hero">
-  <h1>Smart Asset Intelligence & Predictive Maintenance for UK SMEs</h1>
-  <p>
-    We build a platform that helps businesses <b>track assets</b>, <b>predict failures</b>, and <b>automate preventative maintenance</b>
-    across IT devices and selected equipment—reducing downtime and improving reliability.
-  </p>
-  <div class="sub">
-    Existing break-fix services are available, but our primary focus is a <b>scalable technology platform</b> designed for national growth.
-  </div>
-
-  <div class="badges">
-    <div class="badge"><i class="fas fa-chart-line"></i> Health scoring</div>
-    <div class="badge"><i class="fas fa-bell"></i> Risk alerts</div>
-    <div class="badge"><i class="fas fa-calendar-check"></i> Preventative schedules</div>
-    <div class="badge"><i class="fas fa-file-lines"></i> Analytics reports</div>
-  </div>
-
-  <div class="contact-buttons">
-    <a href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" class="cta" target="_blank">
-      <i class="fas fa-rocket"></i> Join Pilot / Request Demo
-    </a>
-    <a href="https://wa.me/447818955500?text=Hi%20BPK%20Technologies%2C%20I%20want%20a%20demo%20of%20your%20asset%20platform%20for%20my%20business." class="cta" target="_blank">
-      <i class="fab fa-whatsapp"></i> WhatsApp (Platform Demo)
-    </a>
-  </div>
-
-  <a href="https://wa.me/447818955500?text=Hi%20BPK%20Technologies%2C%20I%20want%20a%20demo%20of%20your%20asset%20platform%20for%20my%20business."
-     class="whatsapp-float" target="_blank" aria-label="Chat on WhatsApp">
-    <i class="fab fa-whatsapp"></i>
-  </a>
-</section>
-
-<!-- Slideshow (kept) -->
-<div class="slideshow-container">
-  <div class="mySlides fade"><img src="computer_repair_technician.jpg" alt="Slide 1" style="width:100%"></div>
-  <div class="mySlides fade"><img src="difference-computer-repair-and-support-1.jpg" alt="Slide 2" style="width:100%"></div>
-  <div class="mySlides fade"><img src="laptop-repair-box-1.jpg" alt="Slide 3" style="width:100%"></div>
-  <div class="mySlides fade"><img src="Professional-Computer-Repair-Technician.png" alt="Slide 4" style="width:100%"></div>
-</div>
-
-<script>
-  let slideIndex = 0;
-  function showSlides() {
-    const slides = document.getElementsByClassName("mySlides");
-    for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
-    slideIndex++;
-    if (slideIndex > slides.length) slideIndex = 1;
-    slides[slideIndex - 1].style.display = "block";
-    setTimeout(showSlides, 4000);
-  }
-  document.addEventListener("DOMContentLoaded", showSlides);
-</script>
-
-<!-- Marquee (UPDATED positioning) -->
-<marquee style="background: #0073e6; color: white; padding: 0.5em; font-weight: bold;">
-  🚀 Pilot programme now open for UK SMEs — Reduce downtime with BPK Smart Asset Intelligence Platform (Preston → UK-wide rollout).
-</marquee>
-
-<!-- PLATFORM (NEW: replaces old repair-only services as core) -->
-<section class="services" id="platform">
-  <h2>BPK Platform Modules</h2>
-  <div class="desc">
-    The platform is designed to be scalable and evidence-driven: collect health signals, convert them into risk scores,
-    and automate preventative actions. Implementation support is available to help SMEs adopt quickly.
-  </div>
-
-  <div class="grid">
-    <div class="card">
-      <i class="fas fa-boxes-stacked"></i>
-      <h3>Asset Inventory</h3>
-      <p>Track laptops, desktops, network devices and equipment. Tag assets by site/team with lifecycle history.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-heart-pulse"></i>
-      <h3>Health Scoring</h3>
-      <p>Rule-based scoring from measurable signals (performance, errors, storage health, battery). ML roadmap as data grows.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-bell"></i>
-      <h3>Risk Alerts</h3>
-      <p>Early warnings for high-risk assets to prevent disruption and reduce reactive “break-fix” incidents.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-calendar-check"></i>
-      <h3>Preventative Scheduling</h3>
-      <p>Automated maintenance schedules and task assignments with audit trail and outcomes tracking.</p>
-    </div>
-
-    <div class="card">
-      <i class="fas fa-chart-line"></i>
-      <h3>Analytics & Reporting</h3>
-      <p>Downtime reduction metrics, asset performance trends, and actionable reports for operational decisions.</p>
-    </div>
-  </div>
-</section>
-
-<!-- INNOVATION (NEW: Innovator Visa-friendly proof) -->
-<section class="innovation" id="innovation">
-  <h2>Innovation, Viability & Scalability</h2>
-  <div class="desc">
-    SMEs typically rely on reactive support. BPK shifts this to a platform-led model: monitor signals, predict risk,
-    and automate preventative maintenance—built to scale beyond local services.
-  </div>
-
-  <div class="pill-grid">
-    <div class="pill">
-      <h3><i class="fas fa-lightbulb"></i> Innovation</h3>
-      <ul>
-        <li>SME-friendly smart asset intelligence (fast to deploy, affordable)</li>
-        <li>Health scoring + automation from measurable device/equipment signals</li>
-        <li>Roadmap to predictive analytics and anomaly detection as dataset grows</li>
-      </ul>
-    </div>
-
-    <div class="pill">
-      <h3><i class="fas fa-check-circle"></i> Viability</h3>
-      <ul>
-        <li>Founder capability aligned to engineering + reliability mindset</li>
-        <li>Pilot-first approach to validate savings and outcomes</li>
-        <li>Clear operational model: onboarding → monitoring → preventative actions</li>
-      </ul>
-    </div>
-
-    <div class="pill">
-      <h3><i class="fas fa-globe"></i> Scalability</h3>
-      <ul>
-        <li>Subscription model (SaaS) enabling national rollout</li>
-        <li>Partner delivery model for onboarding and expansion</li>
-        <li>Job creation roadmap: engineering, customer success, sales</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- SUPPORT (Secondary) -->
-<section class="services" id="support">
-  <h2>Implementation & Support (Secondary)</h2>
-  <div class="desc">
-    These services support adoption of the platform. Traditional repairs remain available, but they are not the core focus
-    of BPK’s scalable innovation model.
-  </div>
-
-  <div class="grid">
-    <div class="card"><i class="fas fa-people-arrows"></i><h3>Onboarding</h3><p>Setup, asset discovery and baseline health assessment for your organisation.</p></div>
-    <div class="card"><i class="fas fa-shield-virus"></i><h3>Security Hardening</h3><p>Endpoint protection, malware clean-up, patching policies and user safety guidance.</p></div>
-    <div class="card"><i class="fas fa-screwdriver-wrench"></i><h3>Break-Fix (Optional)</h3><p>Repair and upgrades available as optional support—platform-led maintenance remains primary.</p></div>
-    <div class="card"><i class="fas fa-database"></i><h3>Backup & Recovery</h3><p>Backup strategy and recovery support aligned to business continuity planning.</p></div>
-    <div class="card"><i class="fas fa-network-wired"></i><h3>SME IT Optimisation</h3><p>Network and device optimisation, monitoring, and performance improvements.</p></div>
-  </div>
-</section>
-
-</div>
-    <button class="next" aria-label="Next testimonials">&#10095;</button>
-  </div>
-</section>
-
-<!-- =========================
-     NEW: Leave a Review Section
-     ========================= -->
-<section class="reviews" id="reviews">
-  <h2>Leave a Review</h2>
-  <div class="desc">
-    Your feedback helps us improve and helps other customers choose BPK.
-    (If you prefer, you can also leave a Google review using the link below.)
-  </div>
-
-  <div class="review-wrap">
-    <!-- Left: Review Form -->
-    <div class="review-card">
-      <h3><i class="fas fa-pen-to-square"></i> Submit your review</h3>
-
-      <form class="review-form" id="reviewForm">
-        <div class="form-row">
-          <div>
-            <label for="reviewName">Name</label>
-            <input id="reviewName" name="name" type="text" placeholder="Your name" required />
-          </div>
-          <div>
-            <label for="reviewEmail">Email (optional)</label>
-            <input id="reviewEmail" name="email" type="email" placeholder="name@email.com" />
-          </div>
+  <!-- Hero (Left + Dashboard Mockups Right) -->
+  <section class="hero">
+    <div class="hero-inner">
+      <!-- LEFT: Copy -->
+      <div>
+        <h1>Smart Asset Intelligence & Predictive Maintenance for UK SMEs</h1>
+        <p>
+          We build a platform that helps businesses <b>track assets</b>, <b>predict failures</b>, and
+          <b>automate preventative maintenance</b> across IT devices and selected equipment—reducing downtime and improving reliability.
+        </p>
+        <div class="sub">
+          Existing break-fix services are available, but our primary focus is a <b>scalable technology platform</b> designed for UK-wide growth.
         </div>
 
-        <div>
-          <label>Rating</label>
-          <div class="star-picker">
-            <div class="stars" id="starRow" aria-label="Select rating out of 5">
-              <span class="star" data-value="1" aria-label="1 star">★</span>
-              <span class="star" data-value="2" aria-label="2 stars">★</span>
-              <span class="star" data-value="3" aria-label="3 stars">★</span>
-              <span class="star" data-value="4" aria-label="4 stars">★</span>
-              <span class="star" data-value="5" aria-label="5 stars">★</span>
-            </div>
-            <span class="review-muted" id="ratingText">No rating selected</span>
-          </div>
-          <div class="small-hint">Tip: click stars to set your rating.</div>
-          <input type="hidden" id="reviewRating" name="rating" value="" required />
+        <div class="hero-badges">
+          <span class="hero-badge"><i class="fas fa-chart-line"></i> Health scoring</span>
+          <span class="hero-badge"><i class="fas fa-bell"></i> Risk alerts</span>
+          <span class="hero-badge"><i class="fas fa-calendar-check"></i> Preventative schedules</span>
+          <span class="hero-badge"><i class="fas fa-file-lines"></i> Analytics reports</span>
         </div>
 
-        <div>
-          <label for="reviewMessage">Your review</label>
-          <textarea id="reviewMessage" name="message" placeholder="Tell us about your experience…" required></textarea>
-        </div>
-
-        <label class="review-muted" style="display:flex; gap:10px; align-items:flex-start;">
-          <input type="checkbox" id="reviewConsent" required style="margin-top:4px;" />
-          I confirm this review is genuine and I’m happy for it to be shown on the website.
-        </label>
-
-        <div class="review-actions">
-          <button type="submit" class="review-btn">
-            <i class="fas fa-paper-plane"></i> Submit Review
-          </button>
-
-          <a class="review-btn" style="text-decoration:none; background:#2ecc71;"
-             href="https://www.google.com/search?q=BPK%20Computer%20Repair%20and%20Services%20reviews"
-             target="_blank" rel="noopener">
-            <i class="fab fa-google"></i> Leave Google Review
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank" rel="noopener">
+            <i class="fas fa-rocket"></i> Join Pilot / Request Demo
+          </a>
+          <a class="btn btn-ghost" href="https://wa.me/447818955500?text=Hi%20BPK%20Technologies%2C%20I%20want%20a%20demo%20of%20your%20asset%20platform%20for%20my%20business." target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> WhatsApp (Platform Demo)
           </a>
         </div>
-
-        <div id="reviewToast" class="review-toast"></div>
-        <div class="review-muted" style="margin-top:8px;">
-          Reviews are moderated for spam. If you submitted and don’t see it immediately, it may still be processing.
-        </div>
-      </form>
-    </div>
-
-    <!-- Right: Recently Submitted Reviews -->
-    <div class="review-card">
-      <h3><i class="fas fa-comments"></i> Recent Website Reviews</h3>
-      <div class="review-muted">
-        These are reviews submitted via this website form.
       </div>
-      <div class="review-list" id="reviewList"></div>
-    </div>
-  </div>
-</section>
 
-<!-- Footer (kept, but updated name) -->
-<footer class="footer">
-  &copy; 2026 BPK Technologies (BPK Computer Services). All rights reserved.
-  <div class="gdpr">We comply with GDPR and handle your data responsibly.</div>
-  <div style="margin-top: 15px;">
-    <strong>📍 Location:</strong> Preston, UK<br />
-    <strong>🕒 Business Hours:</strong> Saturday & Sunday, 10:00 AM – 10:30 PM
-  </div>
-  <div style="margin-top: 15px;">
-    <a href="https://www.facebook.com/share/1ASn3THFMY/?mibextid=wwXIfr" target="_blank" style="color: #fff; margin: 0 10px; font-size: 1.5em;">
-      <i class="fab fa-facebook"></i>
-    </a>
-    <a href="https://wa.me/447818955500" target="_blank" style="color: #25D366; margin: 0 10px; font-size: 1.5em;">
+      <!-- RIGHT: Dashboard mockups -->
+      <div class="hero-media">
+        <div class="mock-grid">
+          <!-- Big dashboard -->
+          <div class="mock big">
+            <div class="mock-top">
+              <div class="mock-title">
+                <strong>Asset Health Dashboard</strong>
+                <span>Fleet overview • risk by site • weekly trends</span>
+              </div>
+              <span class="mock-pill"><i class="fas fa-circle" style="color:#10b981;"></i> Live</span>
+            </div>
+
+            <div class="kpis">
+              <div class="kpi"><div class="k">Assets monitored</div><div class="v">248</div></div>
+              <div class="kpi"><div class="k">At-risk assets</div><div class="v">17</div></div>
+              <div class="kpi"><div class="k">Downtime saved</div><div class="v">23%</div></div>
+            </div>
+
+            <div class="chart" aria-label="Asset risk trend chart">
+              <div class="bar" style="height:35%;"></div>
+              <div class="bar g" style="height:52%;"></div>
+              <div class="bar p" style="height:44%;"></div>
+              <div class="bar" style="height:70%;"></div>
+              <div class="bar g" style="height:62%;"></div>
+              <div class="bar p" style="height:78%;"></div>
+              <div class="bar" style="height:56%;"></div>
+              <div class="bar g" style="height:68%;"></div>
+            </div>
+
+            <div class="label"><i class="fas fa-gauge-high"></i> Dashboard</div>
+          </div>
+
+          <!-- Alerts mock -->
+          <div class="mock">
+            <div class="mock-top">
+              <div class="mock-title">
+                <strong>Risk Alerts</strong>
+                <span>Actionable notifications</span>
+              </div>
+              <span class="mock-pill"><i class="fas fa-bell"></i></span>
+            </div>
+
+            <div class="mini-table">
+              <div class="row"><span>PRN-LT-044 • SSD wear</span><span class="status">High</span></div>
+              <div class="row"><span>WH-DSK-112 • CPU spikes</span><span class="status">Med</span></div>
+              <div class="row"><span>OFF-NW-009 • Packet loss</span><span class="status">Med</span></div>
+            </div>
+
+            <div class="label"><i class="fas fa-bell"></i> Alerts</div>
+          </div>
+
+          <!-- Scheduling mock -->
+          <div class="mock">
+            <div class="mock-top">
+              <div class="mock-title">
+                <strong>Preventative Schedule</strong>
+                <span>Tasks • owners • outcomes</span>
+              </div>
+              <span class="mock-pill"><i class="fas fa-calendar-check"></i></span>
+            </div>
+
+            <div class="mini-table">
+              <div class="row"><span>Patch cycle • Site A</span><span class="status">Fri</span></div>
+              <div class="row"><span>Health check • Laptops</span><span class="status">Mon</span></div>
+              <div class="row"><span>Backup verify</span><span class="status">Wed</span></div>
+            </div>
+
+            <div class="label"><i class="fas fa-calendar-check"></i> Scheduling</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="https://wa.me/447818955500?text=Hi%20BPK%20Technologies%2C%20I%20want%20a%20demo%20of%20your%20asset%20platform%20for%20my%20business."
+      class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
       <i class="fab fa-whatsapp"></i>
     </a>
-    <a href="https://maps.app.goo.gl/MU78urvGdNf8Wwbf6" target="_blank" style="color: #fff; margin: 0 10px; font-size: 1.5em;">
-      <i class="fas fa-map-marker-alt"></i>
-    </a>
+  </section>
+
+  <div class="banner">
+    <marquee>
+      🚀 Pilot programme now open for UK SMEs — Reduce downtime with BPK Smart Asset Intelligence Platform (Preston → UK-wide rollout).
+    </marquee>
   </div>
 
-  <div style="margin-top: 20px;">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2391.7494776583856!2d-2.708851984163432!3d53.75864927995644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487b74f999f4db6f%3A0x21708a0dfab28b1c!2s3%20Murray%20St%2C%20Preston%20PR1%207HY%2C%20UK!5e0!3m2!1sen!2suk!4v1719264879572!5m2!1sen!2suk"
-      width="100%" height="250" style="border:0; border-radius:10px;" allowfullscreen="" loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"></iframe>
+  <!-- Slideshow (kept) -->
+  <div class="slideshow-container">
+    <div class="mySlides fade"><img src="computer_repair_technician.jpg" alt="Slide 1" style="width:100%"></div>
+    <div class="mySlides fade"><img src="difference-computer-repair-and-support-1.jpg" alt="Slide 2" style="width:100%"></div>
+    <div class="mySlides fade"><img src="laptop-repair-box-1.jpg" alt="Slide 3" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Professional-Computer-Repair-Technician.png" alt="Slide 4" style="width:100%"></div>
   </div>
-</footer>
 
-<!-- Combined: Testimonial Slider Script + NEW Review Script -->
-<script>
-  // =========================
-  // Testimonials slider
-  // =========================
-  document.addEventListener('DOMContentLoaded', () => {
-    const track = document.querySelector(".testimonial-track");
-    const prev = document.querySelector(".testimonial-slider .prev");
-    const next = document.querySelector(".testimonial-slider .next");
-    const cards = document.querySelectorAll(".testimonial-card");
+  <!-- PLATFORM -->
+  <section class="services" id="platform">
+    <h2>BPK Platform Modules</h2>
+    <div class="desc">
+      The platform is designed to be scalable and evidence-driven: collect health signals, convert them into risk scores,
+      and automate preventative actions. Implementation support is available to help SMEs adopt quickly.
+    </div>
 
-    if (track && prev && next && cards.length) {
-      let currentIndex = 0;
+    <div class="grid">
+      <div class="card">
+        <i class="fas fa-boxes-stacked"></i>
+        <h3>Asset Inventory</h3>
+        <p>Track laptops, desktops, network devices and equipment. Tag assets by site/team with lifecycle history.</p>
+      </div>
 
-      function getVisibleCardsCount() {
-        return window.innerWidth >= 768 ? 3 : 1;
-      }
+      <div class="card">
+        <i class="fas fa-heart-pulse"></i>
+        <h3>Health Scoring</h3>
+        <p>Rule-based scoring from measurable signals (performance, errors, storage health, battery). ML roadmap as data grows.</p>
+      </div>
 
-      function updateSlider() {
-        const visibleCards = getVisibleCardsCount();
-        const cardWidth = cards[0].offsetWidth + 20;
-        const maxIndex = Math.max(0, cards.length - visibleCards);
+      <div class="card">
+        <i class="fas fa-bell"></i>
+        <h3>Risk Alerts</h3>
+        <p>Early warnings for high-risk assets to prevent disruption and reduce reactive “break-fix” incidents.</p>
+      </div>
 
-        if (currentIndex < 0) currentIndex = 0;
-        if (currentIndex > maxIndex) currentIndex = maxIndex;
+      <div class="card">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Preventative Scheduling</h3>
+        <p>Automated maintenance schedules and task assignments with audit trail and outcomes tracking.</p>
+      </div>
 
-        track.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-      }
+      <div class="card">
+        <i class="fas fa-chart-line"></i>
+        <h3>Analytics & Reporting</h3>
+        <p>Downtime reduction metrics, asset performance trends, and actionable reports for operational decisions.</p>
+      </div>
+    </div>
+  </section>
 
-      prev.addEventListener("click", () => { currentIndex--; updateSlider(); });
-      next.addEventListener("click", () => { currentIndex++; updateSlider(); });
+  <!-- INNOVATION -->
+  <section class="innovation" id="innovation">
+    <h2>Innovation, Viability & Scalability</h2>
+    <div class="desc">
+      SMEs typically rely on reactive support. BPK shifts this to a platform-led model: monitor signals, predict risk,
+      and automate preventative maintenance—built to scale beyond local services.
+    </div>
 
-      window.addEventListener("resize", () => updateSlider());
-      updateSlider();
-    }
-  });
+    <div class="pill-grid">
+      <div class="pill">
+        <h3><i class="fas fa-lightbulb"></i> Innovation</h3>
+        <ul>
+          <li>SME-friendly smart asset intelligence (fast to deploy, affordable)</li>
+          <li>Health scoring + automation from measurable device/equipment signals</li>
+          <li>Roadmap to predictive analytics and anomaly detection as dataset grows</li>
+        </ul>
+      </div>
 
-  // =========================
-  // NEW: Review Form + Stars
-  // =========================
+      <div class="pill">
+        <h3><i class="fas fa-check-circle"></i> Viability</h3>
+        <ul>
+          <li>Founder capability aligned to engineering + reliability mindset</li>
+          <li>Pilot-first approach to validate savings and outcomes</li>
+          <li>Clear operational model: onboarding → monitoring → preventative actions</li>
+        </ul>
+      </div>
 
-  // OPTIONAL: Google Sheets endpoint (Apps Script Web App URL)
-  // Paste your deployed Apps Script URL here:
-  // const REVIEW_ENDPOINT = "https://script.google.com/macros/s/XXXX/exec";
-  const REVIEW_ENDPOINT = "";
+      <div class="pill">
+        <h3><i class="fas fa-globe"></i> Scalability</h3>
+        <ul>
+          <li>Subscription model (SaaS) enabling national rollout</li>
+          <li>Partner delivery model for onboarding and expansion</li>
+          <li>Job creation roadmap: engineering, customer success, sales</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-  const reviewForm = document.getElementById("reviewForm");
-  const reviewList = document.getElementById("reviewList");
-  const reviewToast = document.getElementById("reviewToast");
+  <!-- SUPPORT -->
+  <section class="services" id="support">
+    <h2>Implementation & Support (Secondary)</h2>
+    <div class="desc">
+      These services support adoption of the platform. Traditional repairs remain available, but they are not the core focus
+      of BPK’s scalable innovation model.
+    </div>
 
-  const starRow = document.getElementById("starRow");
-  const ratingText = document.getElementById("ratingText");
-  const ratingInput = document.getElementById("reviewRating");
-
-  function setToast(type, msg) {
-    if (!reviewToast) return;
-    reviewToast.className = "review-toast " + (type === "ok" ? "ok" : "err");
-    reviewToast.textContent = msg;
-  }
-
-  function clearToast() {
-    if (!reviewToast) return;
-    reviewToast.className = "review-toast";
-    reviewToast.textContent = "";
-  }
-
-  function renderStars(value) {
-    if (!starRow) return;
-    const stars = starRow.querySelectorAll(".star");
-    stars.forEach((s) => {
-      const v = Number(s.dataset.value);
-      s.classList.toggle("active", v <= value);
-    });
-  }
-
-  function ratingLabel(value) {
-    const labels = {1:"Poor",2:"Fair",3:"Good",4:"Very Good",5:"Excellent"};
-    return labels[value] || "No rating selected";
-  }
-
-  // Click stars
-  if (starRow) {
-    starRow.addEventListener("click", (e) => {
-      const star = e.target.closest(".star");
-      if (!star) return;
-      const value = Number(star.dataset.value);
-      if (ratingInput) ratingInput.value = String(value);
-      if (ratingText) ratingText.textContent = `${value}/5 — ${ratingLabel(value)}`;
-      renderStars(value);
-      clearToast();
-    });
-  }
-
-  // Local storage reviews (fallback)
-  const LS_KEY = "bpk_site_reviews_v1";
-
-  function loadLocalReviews() {
-    try {
-      const raw = localStorage.getItem(LS_KEY);
-      return raw ? JSON.parse(raw) : [];
-    } catch {
-      return [];
-    }
-  }
-
-  function saveLocalReview(review) {
-    const all = loadLocalReviews();
-    all.unshift(review);
-    localStorage.setItem(LS_KEY, JSON.stringify(all.slice(0, 12))); // keep latest 12
-  }
-
-  function escapeHTML(str) {
-    return String(str)
-      .replaceAll("&", "&amp;")
-      .replaceAll("<", "&lt;")
-      .replaceAll(">", "&gt;")
-      .replaceAll('"', "&quot;")
-      .replaceAll("'", "&#039;");
-  }
-
-  function renderReviewList() {
-    const reviews = loadLocalReviews();
-    if (!reviewList) return;
-
-    if (reviews.length === 0) {
-      reviewList.innerHTML = `
-        <div class="user-review">
-          <div class="meta">No website reviews yet. Be the first to leave one! ⭐</div>
-        </div>
-      `;
-      return;
-    }
-
-    reviewList.innerHTML = reviews.map(r => {
-      const stars = "★★★★★".slice(0, r.rating) + "☆☆☆☆☆".slice(0, 5 - r.rating);
+    <div class="grid">
+      <div class="card"><i class="fas fa-people-arrows"></i><h3>Onboarding</h3><p>Setup, asset discovery and baseline health assessment for your organisation.</p></div>
+      <div class="card"><i class="fas fa-shield-virus"></i><h3>Security Hardening</h3><p>Endpoint protection, malware clean-up, patching policies and user safety guidance.</p></div>
+      <div class="card"><i class="fas fa-screwdriver-wrench"></i><h3>Break-Fix (Optional)</h3><p>Repair and upgrades available as optional support—platform-led maintenance remains primary.</p></div>
+      <div class="card"><i class="fas fa-database"></i><h3>Backup & Recovery</h3><p>Backup strategy and recovery support aligned to business continuity planning.</p></div>
+      <div class="card"><i class="fas fa-network-wired"></i><h3>SME IT Optimisation</h3><p>Network and device optimisation, monitoring, and performance improvements.</p></div>
+    </div>
+  </section>
       return `
         <div class="user-review">
           <div class="top">
