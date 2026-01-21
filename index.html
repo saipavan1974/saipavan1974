@@ -71,9 +71,7 @@
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
     body { background: var(--bg); color: var(--text); }
 
-    /* =========================
-       Header / Nav (Professional)
-       ========================= */
+    /* Header / Nav */
     header{
       background: linear-gradient(180deg, rgba(7,30,46,1) 0%, rgba(11,47,74,0.96) 100%);
       color:#fff;
@@ -150,15 +148,12 @@
     .nav a.primary{
       color:#fff;
       border: 1px solid rgba(255,255,255,0.15);
-      background:
-        linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-purple) 55%, var(--brand-teal) 100%);
+      background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-purple) 55%, var(--brand-teal) 100%);
       box-shadow: 0 12px 26px rgba(14,165,233,0.18);
     }
     .nav a.primary:hover{ filter: brightness(1.03); }
 
-    /* =========================
-       Hero (Left text, Right mockups)
-       ========================= */
+    /* Hero */
     .hero{
       background:
         radial-gradient(900px 500px at 15% 25%, rgba(14,165,233,0.25), transparent 60%),
@@ -206,8 +201,8 @@
       margin: 14px 0 20px;
     }
     .hero-badge{
-      background: var(--chip);
-      border: 1px solid var(--chip-border);
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.18);
       padding: 9px 12px;
       border-radius: 999px;
       font-weight: 800;
@@ -249,7 +244,7 @@
       color:#fff;
     }
 
-    /* Dashboard mockups (no stock photos) */
+    /* Dashboard mockups */
     .hero-media{ display:grid; gap: 12px; }
     .mock-grid{
       display:grid;
@@ -287,7 +282,6 @@
       align-items:center;
     }
 
-    /* Mock UI bits */
     .mock-top{
       display:flex;
       align-items:center;
@@ -343,12 +337,7 @@
       align-items:flex-end;
       gap: 6px;
     }
-    .bar{
-      flex: 1;
-      border-radius: 10px;
-      background: linear-gradient(180deg, rgba(14,165,233,0.95), rgba(124,58,237,0.85));
-      opacity: 0.95;
-    }
+    .bar{ flex: 1; border-radius: 10px; background: linear-gradient(180deg, rgba(14,165,233,0.95), rgba(124,58,237,0.85)); opacity: 0.95; }
     .bar.g{ background: linear-gradient(180deg, rgba(16,185,129,0.95), rgba(14,165,233,0.75)); }
     .bar.p{ background: linear-gradient(180deg, rgba(124,58,237,0.95), rgba(16,185,129,0.72)); }
 
@@ -377,7 +366,6 @@
       background: rgba(255,255,255,0.08);
     }
 
-    /* WhatsApp floating */
     .whatsapp-float{
       position: fixed;
       bottom: 18px;
@@ -397,7 +385,6 @@
     }
     .whatsapp-float:hover{ filter: brightness(0.98); }
 
-    /* Marquee banner */
     .banner{
       background: linear-gradient(90deg, rgba(14,165,233,0.18), rgba(124,58,237,0.18), rgba(16,185,129,0.18));
       border-top: 1px solid rgba(255,255,255,0.10);
@@ -407,9 +394,7 @@
       padding: 10px 0;
     }
 
-    /* =========================
-       Existing sections (kept, polished)
-       ========================= */
+    /* Slideshow */
     .slideshow-container {
       max-width: 900px;
       position: relative;
@@ -424,6 +409,7 @@
     .fade { animation: fadeEffect 1.3s; }
     @keyframes fadeEffect { from {opacity: 0.35} to {opacity: 1} }
 
+    /* Sections */
     .services { padding: 60px 20px; text-align: center; }
     .services h2 { font-size: 2em; margin-bottom: 10px; }
     .services .desc { max-width: 900px; margin: 10px auto 35px; color: var(--muted); line-height: 1.6; }
@@ -435,7 +421,6 @@
       max-width: 1100px;
       margin: 0 auto;
     }
-
     .card {
       background: var(--card);
       padding: 22px;
@@ -450,7 +435,6 @@
     .card p { color: var(--muted); line-height: 1.55; }
     .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 
-    /* Innovation */
     .innovation { padding: 60px 20px; background: #ffffff; text-align: center; }
     .innovation h2 { font-size: 2em; margin-bottom: 12px; }
     .innovation .desc { max-width: 950px; margin: 0 auto 35px; color: var(--muted); line-height: 1.6; }
@@ -472,52 +456,7 @@
     .pill h3 { color: var(--brand-blue); margin-bottom: 8px; }
     .pill ul { margin-left: 18px; color: #374151; line-height: 1.7; }
 
-    /* Testimonials */
-    .testimonials { background: #fff; padding: 60px 20px; text-align: center; }
-    .testimonials h2 { margin-bottom: 30px; }
-
-    .testimonial-slider { position: relative; overflow: hidden; max-width: 1100px; margin: 30px auto 0; }
-    .testimonial-track { display: flex; transition: transform 0.5s ease-in-out; gap: 20px; padding: 4px; }
-    .testimonial-card {
-      background: #ffffff;
-      padding: 20px;
-      border-radius: 16px;
-      box-shadow: var(--shadow-soft);
-      border: 1px solid var(--border);
-      min-width: 300px;
-      max-width: 300px;
-      flex-shrink: 0;
-      text-align: center;
-    }
-    .testimonial-card img { width: 70px; height: 70px; border-radius: 50%; margin-bottom: 10px; }
-    .testimonial-card h3 { font-size: 1em; margin-bottom: 10px; color: var(--brand-blue); }
-    .testimonial-card p { font-style: italic; font-size: 0.95em; margin-bottom: 10px; color: var(--muted); }
-    .testimonial-card .stars { color: #f1c40f; font-size: 1.1em; }
-
-    .testimonial-slider .prev,
-    .testimonial-slider .next {
-      position: absolute;
-      top: 44%;
-      transform: translateY(-50%);
-      background: linear-gradient(135deg, var(--brand-cyan), var(--brand-purple));
-      border: none;
-      color: white;
-      font-size: 2em;
-      padding: 10px 15px;
-      cursor: pointer;
-      z-index: 1;
-      border-radius: 50%;
-      user-select: none;
-      box-shadow: var(--shadow-soft);
-    }
-    .testimonial-slider .prev:hover,
-    .testimonial-slider .next:hover { filter: brightness(1.03); }
-    .testimonial-slider .prev { left: 10px; }
-    .testimonial-slider .next { right: 10px; }
-
-    /* =========================
-       Review Section (kept)
-       ========================= */
+    /* Reviews */
     .reviews { background: #ffffff; padding: 60px 20px; text-align: center; }
     .reviews h2 { margin-bottom: 10px; font-size: 2em; }
     .reviews .desc { max-width: 900px; margin: 0 auto 30px; color: var(--muted); line-height: 1.6; }
@@ -629,7 +568,6 @@
       .kpis{ grid-template-columns: 1fr; }
       .review-wrap{ grid-template-columns: 1fr; }
       .form-row{ grid-template-columns: 1fr; }
-      .testimonial-card{ min-width: 90%; max-width: 90%; }
     }
   </style>
 </head>
@@ -662,10 +600,9 @@
     </div>
   </header>
 
-  <!-- Hero (Left + Dashboard Mockups Right) -->
+  <!-- Hero -->
   <section class="hero">
     <div class="hero-inner">
-      <!-- LEFT: Copy -->
       <div>
         <h1>Smart Asset Intelligence & Predictive Maintenance for UK SMEs</h1>
         <p>
@@ -693,10 +630,8 @@
         </div>
       </div>
 
-      <!-- RIGHT: Dashboard mockups -->
       <div class="hero-media">
         <div class="mock-grid">
-          <!-- Big dashboard -->
           <div class="mock big">
             <div class="mock-top">
               <div class="mock-title">
@@ -726,7 +661,6 @@
             <div class="label"><i class="fas fa-gauge-high"></i> Dashboard</div>
           </div>
 
-          <!-- Alerts mock -->
           <div class="mock">
             <div class="mock-top">
               <div class="mock-title">
@@ -745,7 +679,6 @@
             <div class="label"><i class="fas fa-bell"></i> Alerts</div>
           </div>
 
-          <!-- Scheduling mock -->
           <div class="mock">
             <div class="mock-top">
               <div class="mock-title">
@@ -849,9 +782,9 @@
       <div class="pill">
         <h3><i class="fas fa-check-circle"></i> Viability</h3>
         <ul>
-          <li>Founder capability aligned to engineering + reliability mindset</li>
           <li>Pilot-first approach to validate savings and outcomes</li>
           <li>Clear operational model: onboarding → monitoring → preventative actions</li>
+          <li>Practical SME rollout model</li>
         </ul>
       </div>
 
@@ -882,84 +815,276 @@
       <div class="card"><i class="fas fa-network-wired"></i><h3>SME IT Optimisation</h3><p>Network and device optimisation, monitoring, and performance improvements.</p></div>
     </div>
   </section>
-      return `
-        <div class="user-review">
-          <div class="top">
-            <div class="name">${escapeHTML(r.name)}</div>
-            <div class="meta">${escapeHTML(stars)} • ${escapeHTML(r.date)}</div>
+
+  <!-- REVIEWS -->
+  <section class="reviews" id="reviews">
+    <h2>Leave a Review</h2>
+    <div class="desc">
+      Your feedback helps us improve and helps other customers choose BPK.
+      (If you prefer, you can also leave a Google review using the link below.)
+    </div>
+
+    <div class="review-wrap">
+      <!-- Left: Review Form -->
+      <div class="review-card">
+        <h3><i class="fas fa-pen-to-square"></i> Submit your review</h3>
+
+        <form class="review-form" id="reviewForm">
+          <div class="form-row">
+            <div>
+              <label for="reviewName">Name</label>
+              <input id="reviewName" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div>
+              <label for="reviewEmail">Email (optional)</label>
+              <input id="reviewEmail" name="email" type="email" placeholder="name@email.com" />
+            </div>
           </div>
-          <div class="body">${escapeHTML(r.message)}</div>
-        </div>
-      `;
-    }).join("");
-  }
 
-  async function submitReviewToEndpoint(payload) {
-    const res = await fetch(REVIEW_ENDPOINT, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
-    });
-    if (!res.ok) throw new Error("Network error");
-    return true;
-  }
+          <div>
+            <label>Rating</label>
+            <div class="star-picker">
+              <div class="stars" id="starRow" aria-label="Select rating out of 5">
+                <span class="star" data-value="1" aria-label="1 star">★</span>
+                <span class="star" data-value="2" aria-label="2 stars">★</span>
+                <span class="star" data-value="3" aria-label="3 stars">★</span>
+                <span class="star" data-value="4" aria-label="4 stars">★</span>
+                <span class="star" data-value="5" aria-label="5 stars">★</span>
+              </div>
+              <span class="review-muted" id="ratingText">No rating selected</span>
+            </div>
+            <div class="small-hint">Tip: click stars to set your rating.</div>
+            <input type="hidden" id="reviewRating" name="rating" value="" required />
+          </div>
 
-  if (reviewForm) {
-    reviewForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      clearToast();
+          <div>
+            <label for="reviewMessage">Your review</label>
+            <textarea id="reviewMessage" name="message" placeholder="Tell us about your experience…" required></textarea>
+          </div>
 
-      const name = document.getElementById("reviewName")?.value.trim();
-      const email = document.getElementById("reviewEmail")?.value.trim();
-      const rating = Number(document.getElementById("reviewRating")?.value);
-      const message = document.getElementById("reviewMessage")?.value.trim();
-      const consent = document.getElementById("reviewConsent")?.checked;
+          <label class="review-muted" style="display:flex; gap:10px; align-items:flex-start;">
+            <input type="checkbox" id="reviewConsent" required style="margin-top:4px;" />
+            I confirm this review is genuine and I’m happy for it to be shown on the website.
+          </label>
 
-      if (!name || !message || !consent || !rating || rating < 1 || rating > 5) {
-        setToast("err", "Please fill in your name, rating (stars), review message, and consent.");
+          <div class="review-actions">
+            <button type="submit" class="review-btn primary">
+              <i class="fas fa-paper-plane"></i> Submit Review
+            </button>
+
+            <a class="review-btn google"
+               href="https://www.google.com/search?q=BPK%20Computer%20Repair%20and%20Services%20reviews"
+               target="_blank" rel="noopener">
+              <i class="fab fa-google"></i> Leave Google Review
+            </a>
+          </div>
+
+          <div id="reviewToast" class="review-toast"></div>
+          <div class="review-muted" style="margin-top:8px;">
+            Reviews are moderated for spam. If you submitted and don’t see it immediately, it may still be processing.
+          </div>
+        </form>
+      </div>
+
+      <!-- Right: Recent Reviews -->
+      <div class="review-card">
+        <h3><i class="fas fa-comments"></i> Recent Website Reviews</h3>
+        <div class="review-muted">These are reviews submitted via this website form.</div>
+        <div class="review-list" id="reviewList"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    &copy; 2026 BPK Technologies (BPK Computer Services). All rights reserved.
+    <div class="gdpr">We comply with GDPR and handle your data responsibly.</div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // =========================
+    // Slideshow
+    // =========================
+    let slideIndex = 0;
+    function showSlides() {
+      const slides = document.getElementsByClassName("mySlides");
+      for (let i = 0; i < slides.length; i++) slides[i].style.display = "none";
+      slideIndex++;
+      if (slideIndex > slides.length) slideIndex = 1;
+      if (slides.length) slides[slideIndex - 1].style.display = "block";
+      setTimeout(showSlides, 4000);
+    }
+    document.addEventListener("DOMContentLoaded", showSlides);
+
+    // =========================
+    // Reviews
+    // =========================
+    // OPTIONAL: Google Sheets endpoint (Apps Script Web App URL)
+    // const REVIEW_ENDPOINT = "https://script.google.com/macros/s/XXXX/exec";
+    const REVIEW_ENDPOINT = "";
+
+    const reviewForm = document.getElementById("reviewForm");
+    const reviewList = document.getElementById("reviewList");
+    const reviewToast = document.getElementById("reviewToast");
+
+    const starRow = document.getElementById("starRow");
+    const ratingText = document.getElementById("ratingText");
+    const ratingInput = document.getElementById("reviewRating");
+
+    function setToast(type, msg) {
+      if (!reviewToast) return;
+      reviewToast.className = "review-toast " + (type === "ok" ? "ok" : "err");
+      reviewToast.textContent = msg;
+    }
+    function clearToast() {
+      if (!reviewToast) return;
+      reviewToast.className = "review-toast";
+      reviewToast.textContent = "";
+    }
+
+    function renderStars(value) {
+      if (!starRow) return;
+      const stars = starRow.querySelectorAll(".star");
+      stars.forEach((s) => {
+        const v = Number(s.dataset.value);
+        s.classList.toggle("active", v <= value);
+      });
+    }
+
+    function ratingLabel(value) {
+      const labels = {1:"Poor",2:"Fair",3:"Good",4:"Very Good",5:"Excellent"};
+      return labels[value] || "No rating selected";
+    }
+
+    if (starRow) {
+      starRow.addEventListener("click", (e) => {
+        const star = e.target.closest(".star");
+        if (!star) return;
+        const value = Number(star.dataset.value);
+        if (ratingInput) ratingInput.value = String(value);
+        if (ratingText) ratingText.textContent = `${value}/5 — ${ratingLabel(value)}`;
+        renderStars(value);
+        clearToast();
+      });
+    }
+
+    const LS_KEY = "bpk_site_reviews_v1";
+
+    function loadLocalReviews() {
+      try {
+        const raw = localStorage.getItem(LS_KEY);
+        return raw ? JSON.parse(raw) : [];
+      } catch {
+        return [];
+      }
+    }
+
+    function saveLocalReview(review) {
+      const all = loadLocalReviews();
+      all.unshift(review);
+      localStorage.setItem(LS_KEY, JSON.stringify(all.slice(0, 12)));
+    }
+
+    function escapeHTML(str) {
+      return String(str)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function renderReviewList() {
+      const reviews = loadLocalReviews();
+      if (!reviewList) return;
+
+      if (reviews.length === 0) {
+        reviewList.innerHTML = `
+          <div class="user-review">
+            <div class="meta">No website reviews yet. Be the first to leave one! ⭐</div>
+          </div>
+        `;
         return;
       }
 
-      const payload = {
-        name,
-        email,
-        rating,
-        message,
-        date: new Date().toLocaleDateString("en-GB", { day:"2-digit", month:"short", year:"numeric" }),
-        page: location.pathname || "/",
-        source: "website_form"
-      };
+      reviewList.innerHTML = reviews.map(r => {
+        const stars = "★★★★★".slice(0, r.rating) + "☆☆☆☆☆".slice(0, 5 - r.rating);
+        return `
+          <div class="user-review">
+            <div class="top">
+              <div class="name">${escapeHTML(r.name)}</div>
+              <div class="meta">${escapeHTML(stars)} • ${escapeHTML(r.date)}</div>
+            </div>
+            <div class="body">${escapeHTML(r.message)}</div>
+          </div>
+        `;
+      }).join("");
+    }
 
-      try {
-        // If Apps Script endpoint is set, send there; also save locally for immediate display
-        if (REVIEW_ENDPOINT && REVIEW_ENDPOINT.startsWith("http")) {
-          await submitReviewToEndpoint(payload);
+    async function submitReviewToEndpoint(payload) {
+      const res = await fetch(REVIEW_ENDPOINT, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      if (!res.ok) throw new Error("Network error");
+      return true;
+    }
+
+    if (reviewForm) {
+      reviewForm.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        clearToast();
+
+        const name = document.getElementById("reviewName")?.value.trim();
+        const email = document.getElementById("reviewEmail")?.value.trim();
+        const rating = Number(document.getElementById("reviewRating")?.value);
+        const message = document.getElementById("reviewMessage")?.value.trim();
+        const consent = document.getElementById("reviewConsent")?.checked;
+
+        if (!name || !message || !consent || !rating || rating < 1 || rating > 5) {
+          setToast("err", "Please fill in your name, rating (stars), review message, and consent.");
+          return;
         }
 
-        saveLocalReview(payload);
-        renderReviewList();
+        const payload = {
+          name,
+          email,
+          rating,
+          message,
+          date: new Date().toLocaleDateString("en-GB", { day:"2-digit", month:"short", year:"numeric" }),
+          page: location.pathname || "/",
+          source: "website_form"
+        };
 
-        reviewForm.reset();
-        if (ratingInput) ratingInput.value = "";
-        if (ratingText) ratingText.textContent = "No rating selected";
-        renderStars(0);
+        try {
+          if (REVIEW_ENDPOINT && REVIEW_ENDPOINT.startsWith("http")) {
+            await submitReviewToEndpoint(payload);
+          }
 
-        setToast("ok", "Thank you! Your review has been submitted.");
-      } catch (err) {
-        // Save locally anyway so you don't lose it
-        saveLocalReview(payload);
-        renderReviewList();
-        setToast("ok", "Submitted locally. (To store in Google Sheets, add your Apps Script URL in the code.)");
-      }
+          saveLocalReview(payload);
+          renderReviewList();
+
+          reviewForm.reset();
+          if (ratingInput) ratingInput.value = "";
+          if (ratingText) ratingText.textContent = "No rating selected";
+          renderStars(0);
+
+          setToast("ok", "Thank you! Your review has been submitted.");
+        } catch (err) {
+          saveLocalReview(payload);
+          renderReviewList();
+          setToast("ok", "Submitted locally. (To store in Google Sheets, add your Apps Script URL in the code.)");
+        }
+      });
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderReviewList();
+      renderStars(0);
     });
-  }
-
-  // Initial render
-  document.addEventListener("DOMContentLoaded", () => {
-    renderReviewList();
-    renderStars(0);
-  });
-</script>
+  </script>
 
 </body>
 </html>
