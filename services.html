@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BPK Technologies | Services</title>
+  <meta name="description" content="Implementation & support services that enable adoption of the BPK Smart Asset Platform. Repairs remain optional and secondary." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Inter', sans-serif; }
+    body { background:#f4f7fb; color:#1a1a1a; }
+    header { background:#0a3d62; padding:20px 20px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; color:#fff; }
+    .company-title { display:flex; align-items:center; gap:15px; font-weight:700; font-size:1.25em; }
+    .company-title img { height:70px; border-radius:50%; object-fit:contain; }
+    nav { display:flex; flex-wrap:wrap; gap:10px; margin-top:10px; align-items:center; }
+    nav a { color:#fff; text-decoration:none; font-weight:600; padding:8px 12px; border-radius:8px; transition:.3s; white-space:nowrap; }
+    nav a:hover { background:#2980b9; }
+    .cta { background:#3498db; padding:10px 16px; border-radius:10px; }
+    .cta:hover { background:#2a80b9; }
+
+    .hero { background:#0a3d62; color:#fff; padding:55px 20px; text-align:center; }
+    .hero h1 { font-size:2.3em; margin-bottom:12px; }
+    .hero p { max-width:980px; margin:0 auto; font-size:1.1em; line-height:1.65; opacity:.95; }
+    .hero .mini { margin-top:12px; opacity:.9; font-size:.98em; }
+
+    .container { max-width:1100px; margin:0 auto; padding:55px 20px; }
+    .section-title { text-align:center; font-size:2em; margin-bottom:10px; }
+    .section-desc { text-align:center; color:#4b5563; max-width:950px; margin:0 auto 35px; line-height:1.6; }
+
+    .grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:18px; }
+    .card {
+      background:#fff; border-radius:14px; padding:22px;
+      box-shadow:0 2px 8px rgba(0,0,0,.08);
+      border:1px solid #e5e7eb;
+      transition:transform .25s ease;
+    }
+    .card:hover { transform: translateY(-4px); }
+    .card i { font-size:1.8em; color:#0a3d62; margin-bottom:10px; }
+    .card h3 { margin-bottom:8px; }
+    .card p { color:#374151; line-height:1.6; }
+
+    .callout {
+      margin-top:30px;
+      background:#fff;
+      border-radius:16px;
+      padding:22px;
+      border:1px solid #e5e7eb;
+      box-shadow:0 2px 8px rgba(0,0,0,.08);
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+    }
+    .btn {
+      background:#3498db; color:#fff; text-decoration:none;
+      padding:12px 18px; border-radius:12px; font-weight:800;
+      display:inline-flex; gap:10px; align-items:center;
+    }
+    .btn:hover { background:#2a80b9; }
+
+    footer.footer { background:#0a3d62; color:#fff; padding:20px; text-align:center; font-size:.92em; }
+    footer .gdpr { margin-top:10px; font-size:.82em; color:#ddd; }
+
+    @media (max-width: 768px) {
+      .hero h1 { font-size:1.8em; }
+      .company-title { flex-direction:column; text-align:center; }
+      nav { justify-content:center; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="company-title">
+      <img src="logo.png" alt="BPK Logo" />
+      <div>
+        <strong>BPK</strong> Technologies<br/>
+        <span style="font-weight:600; font-size:0.72em; opacity:.92;">Implementation & Support</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html"><i class="fas fa-house"></i> Home</a>
+      <a href="platform.html"><i class="fas fa-layer-group"></i> Platform</a>
+      <a href="innovation.html"><i class="fas fa-lightbulb"></i> Innovation</a>
+      <a href="scalability.html"><i class="fas fa-globe"></i> Scalability</a>
+      <a href="services.html" style="background:#2980b9;"><i class="fas fa-screwdriver-wrench"></i> Services</a>
+      <a href="pricing.html"><i class="fas fa-tag"></i> Pricing</a>
+      <a class="cta" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank">
+        <i class="fas fa-rocket"></i> Request Demo
+      </a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Services that Enable the Platform</h1>
+    <p>
+      BPK’s primary focus is the <b>Smart Asset Platform</b>. These services help SMEs adopt it quickly and achieve measurable
+      reliability improvements.
+    </p>
+    <div class="mini">
+      Optional “break-fix” repairs are available as secondary support (not the core product).
+    </div>
+  </section>
+
+  <main class="container">
+    <h2 class="section-title">Implementation & Support</h2>
+    <p class="section-desc">
+      Designed for SMEs: fast onboarding, low friction, clear reporting, and preventative maintenance workflows.
+    </p>
+
+    <div class="grid">
+      <div class="card">
+        <i class="fas fa-clipboard-check"></i>
+        <h3>Onboarding & Asset Discovery</h3>
+        <p>Inventory setup, device grouping, naming standards, and baseline health assessment for your organisation.</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-shield-halved"></i>
+        <h3>Security Hardening</h3>
+        <p>Patch policies, endpoint protection guidance, malware clean-up, and security best-practice configuration.</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Preventative Maintenance Setup</h3>
+        <p>Maintenance schedules, automated reminders, task templates, and outcomes tracking to reduce downtime.</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-database"></i>
+        <h3>Backup & Recovery Planning</h3>
+        <p>Backup strategy aligned to business continuity, recovery support, and verification checklist.</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-network-wired"></i>
+        <h3>SME IT Optimisation</h3>
+        <p>Performance optimisation, network baseline checks, and reliability improvements tied to platform metrics.</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-screwdriver-wrench"></i>
+        <h3>Break-Fix (Optional, Secondary)</h3>
+        <p>Device repairs/upgrades can be delivered as a support service, while the platform remains the primary focus.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div>
+        <h3 style="color:#0a3d62; margin-bottom:6px;">Book a Demo or Pilot Call</h3>
+        <p style="color:#4b5563; line-height:1.6; max-width:760px;">
+          We’ll assess your asset environment, define a pilot scope, and show how preventative workflows reduce downtime.
+        </p>
+      </div>
+      <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank">
+        <i class="fas fa-rocket"></i> Request Demo
+      </a>
+    </div>
+  </main>
+
+  <footer class="footer">
+    &copy; 2026 BPK Technologies (BPK Computer Services). All rights reserved.
+    <div class="gdpr">We comply with GDPR and handle your data responsibly.</div>
+  </footer>
+</body>
+</html>
