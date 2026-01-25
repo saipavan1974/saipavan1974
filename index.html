@@ -477,6 +477,24 @@
     .review-toast.ok { display: block; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; }
     .review-toast.err { display: block; background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
 
+    /* ✅ FIX: Mobile-friendly consent row (checkbox + full text width) */
+    .review-consent{
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 10px;
+      align-items: start;
+      max-width: 100%;
+    }
+    .review-consent input{
+      width: 18px;
+      height: 18px;
+      margin-top: 4px;
+      flex: 0 0 auto;
+    }
+    .review-consent span{
+      line-height: 1.5;
+    }
+
     .footer {
       background: linear-gradient(180deg, rgba(11,47,74,1) 0%, rgba(7,30,46,1) 100%);
       color: white;
@@ -740,7 +758,7 @@
     <div class="mySlides fade"><img src="Professional-Computer-Repair-Technician.png" alt="Professional computer repair technician" style="width:100%"></div>
   </div>
 
-  <!-- SERVICES (kept your existing section styling, but this section title stays relevant) -->
+  <!-- SERVICES -->
   <section class="services" id="services">
     <h2>Our Repair Services</h2>
     <div class="desc">
@@ -786,7 +804,7 @@
     </div>
   </section>
 
-  <!-- REVIEWS (your existing review code kept exactly) -->
+  <!-- REVIEWS -->
   <section class="reviews" id="reviews">
     <h2>Leave a Review</h2>
     <div class="desc">
@@ -831,9 +849,10 @@
             <textarea id="reviewMessage" name="message" placeholder="Tell us about your experience…" required></textarea>
           </div>
 
-          <label class="review-muted" style="display:flex; gap:10px; align-items:flex-start;">
-            <input type="checkbox" id="reviewConsent" required style="margin-top:4px;" />
-            I confirm this review is genuine and I’m happy for it to be shown on the website.
+          <!-- ✅ UPDATED CONSENT (mobile-friendly) -->
+          <label class="review-muted review-consent">
+            <input type="checkbox" id="reviewConsent" required />
+            <span>I confirm this review is genuine and I’m happy for it to be shown on the website.</span>
           </label>
 
           <div class="review-actions">
