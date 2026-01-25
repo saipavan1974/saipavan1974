@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Secure Payment | BPK Computer Services</title>
+
+  <meta name="description" content="Secure payment checkout for BPK Computer Services products and upgrades." />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Stripe.js (required for card payments) -->
+  <script src="https://js.stripe.com/v3/"></script>
+
+  <style>
+    :root{
+      --bg: #f6f8fc;
+      --text: #0f172a;
+      --muted: #475569;
+      --brand-navy: #071e2e;
+      --brand-blue: #0b2f4a;
+      --brand-cyan: #0ea5e9;
+      --brand-teal: #10b981;
+      --brand-purple: #7c3aed;
+
+      --card: #ffffff;
+      --border: #e5e7eb;
+      --shadow: 0 12px 30px rgba(2,6,23,0.12);
+      --shadow-soft: 0 8px 20px rgba(2,6,23,0.08);
+      --radius: 18px;
+    }
+
+    *{ margin:0; padding:0; box-sizing:border-box; font-family:"Inter", sans-serif; }
+    body{ background: var(--bg); color: var(--text); }
+
+    header{
+      background: linear-gradient(180deg, rgba(7,30,46,1) 0%, rgba(11,47,74,0.96) 100%);
+      color:#fff;
+      padding: 16px 18px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.10);
+      backdrop-filter: blur(8px);
+    }
+    .topbar{
+      max-width: 1180px;
+      margin: 0 auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 260px;
+    }
+    .brand img{
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      background: #fff;
+      object-fit: contain;
+    }
+    .brand .title{ line-height: 1.15; }
+    .brand .title strong{
+      font-size: 1.15rem;
+      display:block;
+      letter-spacing: 0.2px;
+    }
+    .brand .title span{
+      font-size: 0.86rem;
+      opacity: .9;
+      font-weight: 600;
+    }
+    nav.nav{
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px;
+      align-items:center;
+      justify-content:flex-end;
+      flex: 1;
+    }
+    .nav a{
+      color:#eaf2ff;
+      text-decoration:none;
+      font-weight:800;
+      font-size: 0.95rem;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.16);
+      background: rgba(255,255,255,0.08);
+      display:inline-flex;
+      align-items:center;
+      gap: 8px;
+      transition: transform .15s ease, background .2s ease, border .2s ease;
+      white-space: nowrap;
+    }
+    .nav a:hover{
+      background: rgba(255,255,255,0.14);
+      border-color: rgba(255,255,255,0.26);
+      transform: translateY(-1px);
+    }
+    .nav a.primary{
+      color:#fff;
+      border: 1px solid rgba(255,255,255,0.15);
+      background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-purple) 55%, var(--brand-teal) 100%);
+      box-shadow: 0 12px 26px rgba(14,165,233,0.18);
+    }
+
+    .hero{
+      background:
+        radial-gradient(900px 500px at 15% 25%, rgba(14,165,233,0.25), transparent 60%),
+        radial-gradient(900px 500px at 85% 0%, rgba(124,58,237,0.25), transparent 60%),
+        radial-gradient(900px 500px at 80% 85%, rgba(16,185,129,0.18), transparent 60%),
+        linear-gradient(180deg, rgba(7,30,46,1) 0%, rgba(6,21,32,1) 100%);
+      color:#fff;
+      padding: 46px 20px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      text-align: center;
+    }
+    .hero-inner{ max-width: 1180px; margin: 0 auto; }
+    .hero h1{ font-size: 2.2rem; line-height: 1.12; letter-spacing: -0.6px; margin-bottom: 8px; }
+    .hero p{
+      color: rgba(255,255,255,0.92);
+      font-size: 1.02rem;
+      line-height: 1.7;
+      max-width: 80ch;
+      margin: 0 auto;
+    }
+
+    .container{
+      max-width: 1180px;
+      margin: 0 auto;
+      padding: 28px 20px 64px;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      align-items: start;
+    }
+
+    .card{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: var(--shadow-soft);
+      padding: 18px;
+    }
+
+    .card h2{
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+      color: var(--brand-blue);
+      display:flex;
+      align-items:center;
+      gap: 10px;
+    }
+
+    .row{
+      display:flex;
+      justify-content:space-between;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px dashed #e5e7eb;
+      color: #334155;
+    }
+    .row:last-child{ border-bottom: none; }
+    .muted{ color: var(--muted); font-size: 0.95rem; line-height: 1.6; }
+    .total{
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 1px solid #e5e7eb;
+      font-weight: 900;
+      font-size: 1.05rem;
+      display:flex;
+      justify-content:space-between;
+    }
+
+    .form{
+      display:grid;
+      gap: 12px;
+    }
+    .field{
+      display:grid;
+      gap: 8px;
+    }
+    label{ font-weight: 800; font-size: 0.95rem; color: #111827; }
+    input{
+      width: 100%;
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      outline: none;
+      background: #fff;
+    }
+
+    /* Stripe card element container */
+    #card-element{
+      padding: 12px;
+      border-radius: 12px;
+      border: 1px solid #d1d5db;
+      background: #fff;
+    }
+
+    .btn{
+      border: none;
+      cursor:pointer;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap: 10px;
+      font-weight: 1000;
+      padding: 12px 16px;
+      border-radius: 14px;
+      transition: transform .15s ease, filter .2s ease;
+      white-space: nowrap;
+    }
+    .btn:hover{ transform: translateY(-1px); filter: brightness(1.03); }
+    .btn-primary{
+      color:#fff;
+      width: 100%;
+      background: linear-gradient(135deg, var(--brand-cyan) 0%, var(--brand-purple) 58%, var(--brand-teal) 100%);
+      box-shadow: 0 14px 28px rgba(124,58,237,0.16);
+    }
+
+    .notice{
+      margin-top: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-weight: 700;
+      display:none;
+    }
+    .notice.ok{ display:block; background:#ecfdf5; border:1px solid #a7f3d0; color:#065f46; }
+    .notice.err{ display:block; background:#fef2f2; border:1px solid #fecaca; color:#991b1b; }
+
+    footer{
+      background: linear-gradient(180deg, rgba(11,47,74,1) 0%, rgba(7,30,46,1) 100%);
+      color:#fff;
+      padding: 22px 20px;
+      text-align:center;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 0.92rem;
+    }
+    footer .muted{ color: rgba(255,255,255,0.78); font-size: 0.85rem; margin-top: 8px; }
+
+    @media (max-width: 980px){
+      .grid{ grid-template-columns: 1fr; }
+      nav.nav{ justify-content:flex-start; }
+      .brand{ min-width: unset; }
+    }
+    @media (max-width: 520px){
+      .nav a{ width: 100%; justify-content:center; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="topbar">
+      <div class="brand">
+        <img src="logo.png" alt="BPK Logo" />
+        <div class="title">
+          <strong>BPK Computer Services</strong>
+          <span>Secure Checkout • Preston</span>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html"><i class="fas fa-house"></i> Home</a>
+        <a href="shop.html"><i class="fas fa-cart-shopping"></i> Shop</a>
+        <a href="pricing.html"><i class="fas fa-tag"></i> Pricing</a>
+        <a class="primary"
+           href="https://wa.me/447818955500?text=Hi%20BPK%20Computer%20Services%2C%20I%20need%20help%20with%20checkout%20or%20a%20repair."
+           target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> WhatsApp Help
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Secure Payment</h1>
+      <p>Enter your card details below to complete your purchase. Your payment is processed securely via Stripe.</p>
+    </div>
+  </section>
+
+  <main class="container">
+    <div class="grid">
+
+      <!-- Order Summary -->
+      <section class="card" aria-label="Order summary">
+        <h2><i class="fas fa-receipt"></i> Order Summary</h2>
+
+        <div class="row">
+          <div>
+            <div style="font-weight:900;" id="productName">Product</div>
+            <div class="muted">Quantity: <span id="qty">1</span></div>
+          </div>
+          <div style="font-weight:900;" id="unitPrice">£0.00</div>
+        </div>
+
+        <div class="row">
+          <div class="muted">Subtotal</div>
+          <div id="subtotal">£0.00</div>
+        </div>
+
+        <div class="row">
+          <div class="muted">Delivery</div>
+          <div id="shipping">£0.00</div>
+        </div>
+
+        <div class="total">
+          <div>Total</div>
+          <div id="total">£0.00</div>
+        </div>
+
+        <div class="muted" style="margin-top:12px;">
+          Note: Product pricing in this demo is stored locally in the page. For a real shop, prices should come from your database/server.
+        </div>
+      </section>
+
+      <!-- Payment Form -->
+      <section class="card" aria-label="Payment form">
+        <h2><i class="fas fa-credit-card"></i> Pay by Card</h2>
+
+        <form id="paymentForm" class="form">
+          <div class="field">
+            <label for="customerName">Name</label>
+            <input id="customerName" type="text" placeholder="Your full name" required />
+          </div>
+
+          <div class="field">
+            <label for="customerEmail">Email</label>
+            <input id="customerEmail" type="email" placeholder="name@email.com" required />
+          </div>
+
+          <div class="field">
+            <label>Card details</label>
+            <div id="card-element"></div>
+            <div class="muted">We do not store your card number.</div>
+          </div>
+
+          <button class="btn btn-primary" type="submit" id="payBtn">
+            <i class="fas fa-lock"></i> Pay <span id="payAmount">£0.00</span>
+          </button>
+
+          <div id="msg" class="notice"></div>
+
+          <div class="muted" style="margin-top:6px;">
+            If payment fails or you need help, use the WhatsApp button in the top menu.
+          </div>
+        </form>
+
+        <div class="muted" style="margin-top:12px;">
+          <b>Important:</b> To take real payments you must connect a backend endpoint
+          <code>/create-payment-intent</code>. (Stripe secret key cannot be placed in HTML.)
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2026 BPK Computer Services. All rights reserved.
+    <div class="muted">Secure payments powered by Stripe.</div>
+  </footer>
+
+  <script>
+    // ----------------------------
+    // 1) Read product from URL
+    // ----------------------------
+    const params = new URLSearchParams(window.location.search);
+    const productFromUrl = params.get("product") || "Product";
+    const qtyFromUrl = Math.max(1, parseInt(params.get("qty") || "1", 10));
+
+    // ----------------------------
+    // 2) Local price list (edit these)
+    // IMPORTANT: These are example prices.
+    // In production, DO NOT trust client prices.
+    // You should fetch price from your server/database.
+    // ----------------------------
+    const pricesGBP = {
+      "Wired USB Keyboard & Mouse – HP / Dell / Logitech": 14.99,
+      "Wireless Keyboard & Mouse Combo – HP / Dell / Logitech": 19.99,
+
+      "4GB DDR3 RAM": 10.00,
+      "8GB DDR3 RAM": 16.00,
+      "4GB DDR4 RAM": 11.00,
+      "8GB DDR4 RAM": 18.00,
+      "16GB DDR4 RAM": 29.00,
+
+      "8GB DDR5 RAM": 28.00,
+      "16GB DDR5 RAM": 45.00,
+      "32GB DDR5 RAM": 85.00,
+
+      "256GB Internal SSD": 22.00,
+      "512GB Internal SSD": 32.00,
+      "1TB Internal SSD": 55.00,
+
+      "256GB External SSD": 28.00,
+      "512GB External SSD": 45.00,
+      "1TB External SSD": 75.00,
+
+      "USB Hub": 9.99,
+      "Multi Card Reader USB": 7.99,
+      "Adjustable Laptop Stand": 15.99
+    };
+
+    const shippingGBP = 0.00; // change if you want delivery fee
+
+    const unit = pricesGBP[productFromUrl] ?? 0;
+    const subtotal = unit * qtyFromUrl;
+    const total = subtotal + shippingGBP;
+
+    // Update UI
+    document.getElementById("productName").textContent = productFromUrl;
+    document.getElementById("qty").textContent = String(qtyFromUrl);
+    document.getElementById("unitPrice").textContent = `£${unit.toFixed(2)}`;
+    document.getElementById("subtotal").textContent = `£${subtotal.toFixed(2)}`;
+    document.getElementById("shipping").textContent = `£${shippingGBP.toFixed(2)}`;
+    document.getElementById("total").textContent = `£${total.toFixed(2)}`;
+    document.getElementById("payAmount").textContent = `£${total.toFixed(2)}`;
+
+    // ----------------------------
+    // 3) Stripe setup
+    // ----------------------------
+    // Replace with your Stripe Publishable Key
+    // Example format: pk_live_... OR pk_test_...
+    const STRIPE_PUBLISHABLE_KEY = "REPLACE_WITH_YOUR_PUBLISHABLE_KEY";
+
+    // Basic message helper
+    const msg = document.getElementById("msg");
+    function showMsg(type, text) {
+      msg.className = "notice " + (type === "ok" ? "ok" : "err");
+      msg.textContent = text;
+    }
+    function clearMsg() {
+      msg.className = "notice";
+      msg.textContent = "";
+    }
+
+    // If key not set, show warning and disable pay
+    const payBtn = document.getElementById("payBtn");
+    if (!STRIPE_PUBLISHABLE_KEY || STRIPE_PUBLISHABLE_KEY.includes("REPLACE_WITH")) {
+      payBtn.disabled = true;
+      payBtn.style.opacity = "0.6";
+      payBtn.style.cursor = "not-allowed";
+      showMsg("err", "Stripe is not connected yet. Add your Stripe Publishable Key in payment.html to enable card payments.");
+    }
+
+    const stripe = Stripe(STRIPE_PUBLISHABLE_KEY);
+    const elements = stripe.elements();
+
+    const card = elements.create("card", {
+      hidePostalCode: true
+    });
+    card.mount("#card-element");
+
+    // ----------------------------
+    // 4) Payment submit:
+    // You MUST implement a backend endpoint: /create-payment-intent
+    // This endpoint should:
+    // - validate product & price server-side
+    // - create Stripe PaymentIntent with amount in pence
+    // - return { clientSecret }
+    // ----------------------------
+    async function createPaymentIntentServerSide() {
+      // Amount in pence (GBP)
+      const amountPence = Math.round(total * 100);
+
+      const res = await fetch("/create-payment-intent", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          product: productFromUrl,
+          qty: qtyFromUrl,
+          currency: "gbp",
+          amount: amountPence
+        })
+      });
+
+      if (!res.ok) {
+        const t = await res.text();
+        throw new Error(t || "Failed to create payment intent.");
+      }
+      return res.json(); // expects { clientSecret }
+    }
+
+    document.getElementById("paymentForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      clearMsg();
+
+      if (payBtn.disabled) return;
+
+      const name = document.getElementById("customerName").value.trim();
+      const email = document.getElementById("customerEmail").value.trim();
+      if (!name || !email) {
+        showMsg("err", "Please enter your name and email.");
+        return;
+      }
+
+      payBtn.disabled = true;
+      payBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+
+      try {
+        const { clientSecret } = await createPaymentIntentServerSide();
+
+        const result = await stripe.confirmCardPayment(clientSecret, {
+          payment_method: {
+            card: card,
+            billing_details: { name, email }
+          }
+        });
+
+        if (result.error) {
+          showMsg("err", result.error.message || "Payment failed. Please try again.");
+          payBtn.disabled = false;
+          payBtn.innerHTML = `<i class="fas fa-lock"></i> Pay £${total.toFixed(2)}`;
+          return;
+        }
+
+        if (result.paymentIntent && result.paymentIntent.status === "succeeded") {
+          showMsg("ok", "Payment successful! Thank you. You will receive a confirmation email (if configured).");
+          // Optional: redirect to a success page
+          // window.location.href = "success.html";
+          return;
+        }
+
+        showMsg("err", "Payment was not completed. Please try again.");
+        payBtn.disabled = false;
+        payBtn.innerHTML = `<i class="fas fa-lock"></i> Pay £${total.toFixed(2)}`;
+
+      } catch (err) {
+        showMsg("err", "Payment setup not complete yet. You need a backend endpoint '/create-payment-intent'.");
+        payBtn.disabled = false;
+        payBtn.innerHTML = `<i class="fas fa-lock"></i> Pay £${total.toFixed(2)}`;
+      }
+    });
+  </script>
+</body>
+</html>
