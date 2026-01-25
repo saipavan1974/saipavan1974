@@ -4,10 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- UPDATED SEO for Innovator positioning -->
   <meta name="description" content="Fast, affordable computer and laptop repair in Preston. Free diagnosis, virus removal, SSD/RAM upgrades, screen and charging socket repairs. WhatsApp for a free quote."/>
-  <meta content="asset management platform, predictive maintenance, smart asset intelligence, SME downtime reduction, preventative maintenance software, IT asset tracking UK, analytics dashboard" name="keywords"/>
-  <meta content="BPK Technologies (BPK Computer Services)" name="author"/>
+  <meta name="keywords" content="computer repair Preston, laptop repair Preston, virus removal Preston, SSD upgrade Preston, RAM upgrade Preston, laptop screen replacement Preston, charging socket repair Preston"/>
+  <meta name="author" content="BPK Computer Services"/>
 
   <title>Computer & Laptop Repair Preston | BPK Computer Services</title>
 
@@ -20,35 +19,26 @@
     gtag('config', 'G-7Y0P5TXK2T');
   </script>
 
-  <!-- Fonts / Icons (kept) -->
+  <!-- Fonts / Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Structured Data (kept) -->
+  <!-- Structured Data (updated for repair business) -->
   <script type="application/ld+json">
   {
     "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"BPK Technologies (BPK Computer Services)",
+    "@type":"LocalBusiness",
+    "name":"BPK Computer Services",
     "url":"https://bpkcomputer.org/",
     "address":{"@type":"PostalAddress","addressLocality":"Preston","addressCountry":"GB"},
-    "sameAs":["https://www.facebook.com/share/1ASn3THFMY/?mibextid=wwXIfr"]
-  }
-  </script>
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"SoftwareApplication",
-    "name":"BPK Smart Asset Platform",
-    "applicationCategory":"BusinessApplication",
-    "operatingSystem":"Web",
-    "description":"A smart asset intelligence and preventative maintenance platform for SMEs. Tracks assets, predicts risk, and automates maintenance workflows to reduce downtime."
+    "areaServed":"Preston",
+    "sameAs":["https://www.facebook.com/share/1ASn3THFMY/?mibextid=wwXIfr"],
+    "telephone":"+447818955500"
   }
   </script>
 
   <style>
     :root{
-      /* Brand palette (Blue + Green + Purple) */
       --bg: #f6f8fc;
       --text: #0f172a;
       --muted: #475569;
@@ -71,7 +61,6 @@
     * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
     body { background: var(--bg); color: var(--text); }
 
-    /* Header / Nav */
     header{
       background: linear-gradient(180deg, rgba(7,30,46,1) 0%, rgba(11,47,74,0.96) 100%);
       color:#fff;
@@ -91,7 +80,6 @@
       gap: 14px;
       flex-wrap: wrap;
     }
-
     .brand{
       display:flex;
       align-items:center;
@@ -144,6 +132,10 @@
       background: rgba(255,255,255,0.14);
       border-color: rgba(255,255,255,0.26);
       transform: translateY(-1px);
+    }
+    .nav a.active{
+      background: rgba(255,255,255,0.16);
+      border-color: rgba(255,255,255,0.30);
     }
     .nav a.primary{
       color:#fff;
@@ -244,7 +236,7 @@
       color:#fff;
     }
 
-    /* Dashboard mockups */
+    /* Right panel mockups */
     .hero-media{ display:grid; gap: 12px; }
     .mock-grid{
       display:grid;
@@ -263,7 +255,7 @@
     }
     .mock.big{
       grid-column: 1 / -1;
-      min-height: 220px;
+      min-height: 260px;
       padding: 14px;
     }
     .mock .label{
@@ -303,43 +295,6 @@
       background: rgba(255,255,255,0.08);
       opacity: 0.95;
     }
-    .kpis{
-      display:grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-bottom: 10px;
-    }
-    .kpi{
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 14px;
-      padding: 10px;
-    }
-    .kpi .k{ font-size: 0.74rem; opacity: 0.85; font-weight: 800; }
-    .kpi .v{
-      font-size: 1.1rem;
-      font-weight: 1000;
-      letter-spacing: -0.2px;
-      margin-top: 4px;
-      background: linear-gradient(90deg, var(--brand-cyan), var(--brand-purple), var(--brand-teal));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .chart{
-      background: rgba(255,255,255,0.07);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 14px;
-      padding: 10px;
-      height: 120px;
-      display:flex;
-      align-items:flex-end;
-      gap: 6px;
-    }
-    .bar{ flex: 1; border-radius: 10px; background: linear-gradient(180deg, rgba(14,165,233,0.95), rgba(124,58,237,0.85)); opacity: 0.95; }
-    .bar.g{ background: linear-gradient(180deg, rgba(16,185,129,0.95), rgba(14,165,233,0.75)); }
-    .bar.p{ background: linear-gradient(180deg, rgba(124,58,237,0.95), rgba(16,185,129,0.72)); }
 
     .mini-table{
       background: rgba(255,255,255,0.07);
@@ -347,7 +302,7 @@
       border-radius: 14px;
       padding: 10px;
       display:grid;
-      gap: 8px;
+      gap: 10px;
     }
     .row{
       display:flex;
@@ -435,28 +390,7 @@
     .card p { color: var(--muted); line-height: 1.55; }
     .card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
 
-    .innovation { padding: 60px 20px; background: #ffffff; text-align: center; }
-    .innovation h2 { font-size: 2em; margin-bottom: 12px; }
-    .innovation .desc { max-width: 950px; margin: 0 auto 35px; color: var(--muted); line-height: 1.6; }
-    .pill-grid {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-    .pill {
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      padding: 18px;
-      text-align: left;
-      box-shadow: var(--shadow-soft);
-    }
-    .pill h3 { color: var(--brand-blue); margin-bottom: 8px; }
-    .pill ul { margin-left: 18px; color: #374151; line-height: 1.7; }
-
-    /* Reviews */
+    /* Reviews (kept) */
     .reviews { background: #ffffff; padding: 60px 20px; text-align: center; }
     .reviews h2 { margin-bottom: 10px; font-size: 2em; }
     .reviews .desc { max-width: 900px; margin: 0 auto 30px; color: var(--muted); line-height: 1.6; }
@@ -543,7 +477,6 @@
     .review-toast.ok { display: block; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; }
     .review-toast.err { display: block; background: #fef2f2; border: 1px solid #fecaca; color: #991b1b; }
 
-    /* Footer */
     .footer {
       background: linear-gradient(180deg, rgba(11,47,74,1) 0%, rgba(7,30,46,1) 100%);
       color: white;
@@ -554,7 +487,6 @@
     }
     .footer .gdpr { margin-top: 10px; font-size: 0.85em; color: rgba(255,255,255,0.78); }
 
-    /* Responsive */
     @media (max-width: 980px){
       .hero-inner{ grid-template-columns: 1fr; }
       .hero h1{ font-size: 2.15rem; max-width: 100%; }
@@ -565,11 +497,10 @@
       .nav a{ width: 100%; justify-content:center; }
       .hero-actions .btn{ width: 100%; justify-content:center; }
       .mock-grid{ grid-template-columns: 1fr; }
-      .kpis{ grid-template-columns: 1fr; }
       .review-wrap{ grid-template-columns: 1fr; }
       .form-row{ grid-template-columns: 1fr; }
     }
-  
+
     /* Trust strip */
     .trust-strip{
       padding: 16px 0 6px;
@@ -624,7 +555,6 @@
     @media (max-width: 520px){
       .trust-inner{ grid-template-columns: 1fr; }
     }
-
   </style>
 </head>
 
@@ -641,19 +571,17 @@
         </div>
       </div>
 
+      <!-- UPDATED NAV (matches your present repair website) -->
       <nav class="nav">
-        <a href="index.html"><i class="fas fa-house"></i> Home</a>
-        <a href="platform.html"><i class="fas fa-layer-group"></i> Platform</a>
-        <a href="innovation.html"><i class="fas fa-lightbulb"></i> Innovation</a>
+        <a class="active" href="index.html"><i class="fas fa-house"></i> Home</a>
         <a href="support.html"><i class="fas fa-screwdriver-wrench"></i> Support</a>
-        <a href="#reviews"><i class="fas fa-star"></i> Reviews</a>
         <a href="pricing.html"><i class="fas fa-tag"></i> Pricing</a>
         <a href="shop.html"><i class="fas fa-cart-shopping"></i> Shop</a>
-        <a class="primary" href="#contact-cta">
-          <i class="fas fa-calendar-check"></i> Book Repair
-        </a>
-        <a class="primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank" rel="noopener">
-          <i class="fas fa-paper-plane"></i> Request Demo
+        <a href="#reviews"><i class="fas fa-star"></i> Reviews</a>
+        <a class="primary"
+           href="https://wa.me/447818955500?text=Hi%20BPK%20Computer%20Services%2C%20I%20want%20to%20book%20a%20repair.%20Device%3A%20____%20Issue%3A%20____%20Location%3A%20Preston"
+           target="_blank" rel="noopener">
+          <i class="fab fa-whatsapp"></i> Book Repair
         </a>
       </nav>
     </div>
@@ -698,8 +626,9 @@
         </div>
       </div>
 
+      <!-- FIXED HERO RIGHT COLUMN (your original had missing closing tags) -->
       <div class="hero-media">
-        <div class="mock big" style="min-height:260px;">
+        <div class="mock big">
           <div class="mock-top">
             <div class="mock-title">
               <strong>Popular Repairs</strong>
@@ -708,7 +637,7 @@
             <span class="mock-pill"><i class="fas fa-screwdriver-wrench"></i> Repair</span>
           </div>
 
-          <div class="mini-table" style="gap:10px;">
+          <div class="mini-table">
             <div class="row"><span><b>Laptop Screen Replacement</b></span><span class="status">From £99</span></div>
             <div class="row"><span><b>Charging Socket Repair</b></span><span class="status">From £72</span></div>
             <div class="row"><span><b>SSD / RAM Upgrades</b></span><span class="status">From £107</span></div>
@@ -719,8 +648,41 @@
           <div class="label"><i class="fas fa-wrench"></i> Local Repairs</div>
         </div>
 
-        
+        <div class="mock-grid">
+          <div class="mock">
+            <div class="mock-top">
+              <div class="mock-title">
+                <strong>Free Diagnosis</strong>
+                <span>No-obligation quote</span>
+              </div>
+              <span class="mock-pill"><i class="fas fa-stethoscope"></i> Check</span>
+            </div>
+            <div class="mini-table" style="gap:8px;">
+              <div class="row"><span>Hardware check</span><span class="status">✔</span></div>
+              <div class="row"><span>Software check</span><span class="status">✔</span></div>
+              <div class="row"><span>Clear next steps</span><span class="status">✔</span></div>
+            </div>
+            <div class="label"><i class="fas fa-stethoscope"></i> Diagnose</div>
+          </div>
 
+          <div class="mock">
+            <div class="mock-top">
+              <div class="mock-title">
+                <strong>Pickup & Drop-off</strong>
+                <span>Preston & nearby</span>
+              </div>
+              <span class="mock-pill"><i class="fas fa-truck"></i> Local</span>
+            </div>
+            <div class="mini-table" style="gap:8px;">
+              <div class="row"><span>Convenient service</span><span class="status">✔</span></div>
+              <div class="row"><span>Fast turnaround</span><span class="status">✔</span></div>
+              <div class="row"><span>Secure handling</span><span class="status">✔</span></div>
+            </div>
+            <div class="label"><i class="fas fa-truck"></i> Pickup</div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <a href="https://wa.me/447818955500?text=Hi%20BPK%20Computer%20Services%2C%20I%20need%20help%20with%20my%20device."
        class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
@@ -770,111 +732,61 @@
     </marquee>
   </div>
 
-  <!-- Slideshow (kept) -->
+  <!-- Slideshow -->
   <div class="slideshow-container">
-    <div class="mySlides fade"><img src="computer_repair_technician.jpg" alt="Slide 1" style="width:100%"></div>
-    <div class="mySlides fade"><img src="difference-computer-repair-and-support-1.jpg" alt="Slide 2" style="width:100%"></div>
-    <div class="mySlides fade"><img src="laptop-repair-box-1.jpg" alt="Slide 3" style="width:100%"></div>
-    <div class="mySlides fade"><img src="Professional-Computer-Repair-Technician.png" alt="Slide 4" style="width:100%"></div>
+    <div class="mySlides fade"><img src="computer_repair_technician.jpg" alt="Computer repair technician" style="width:100%"></div>
+    <div class="mySlides fade"><img src="difference-computer-repair-and-support-1.jpg" alt="Computer repair and support" style="width:100%"></div>
+    <div class="mySlides fade"><img src="laptop-repair-box-1.jpg" alt="Laptop repair" style="width:100%"></div>
+    <div class="mySlides fade"><img src="Professional-Computer-Repair-Technician.png" alt="Professional computer repair technician" style="width:100%"></div>
   </div>
 
-  <!-- PLATFORM -->
-  <section class="services" id="platform">
-    <h2>BPK Platform Modules</h2>
+  <!-- SERVICES (kept your existing section styling, but this section title stays relevant) -->
+  <section class="services" id="services">
+    <h2>Our Repair Services</h2>
     <div class="desc">
-      The platform is designed to be scalable and evidence-driven: collect health signals, convert them into risk scores,
-      and automate preventative actions. Implementation support is available to help SMEs adopt quickly.
+      Fast laptop and PC repairs in Preston. Message us on WhatsApp for a quick quote and availability.
     </div>
 
     <div class="grid">
       <div class="card">
-        <i class="fas fa-boxes-stacked"></i>
-        <h3>Asset Inventory</h3>
-        <p>Track laptops, desktops, network devices and equipment. Tag assets by site/team with lifecycle history.</p>
+        <i class="fas fa-screwdriver-wrench"></i>
+        <h3>Diagnostics & Troubleshooting</h3>
+        <p>Free diagnosis and clear advice — software issues, hardware faults, and performance problems.</p>
       </div>
 
       <div class="card">
-        <i class="fas fa-heart-pulse"></i>
-        <h3>Health Scoring</h3>
-        <p>Rule-based scoring from measurable signals (performance, errors, storage health, battery). ML roadmap as data grows.</p>
+        <i class="fab fa-windows"></i>
+        <h3>Windows Installation</h3>
+        <p>Windows 10/11 install, drivers, updates, and setup for smooth and stable performance.</p>
       </div>
 
       <div class="card">
-        <i class="fas fa-bell"></i>
-        <h3>Risk Alerts</h3>
-        <p>Early warnings for high-risk assets to prevent disruption and reduce reactive “break-fix” incidents.</p>
+        <i class="fas fa-shield-virus"></i>
+        <h3>Virus Removal</h3>
+        <p>Malware clean-up, browser reset, and practical security guidance to prevent reinfection.</p>
       </div>
 
       <div class="card">
-        <i class="fas fa-calendar-check"></i>
-        <h3>Preventative Scheduling</h3>
-        <p>Automated maintenance schedules and task assignments with audit trail and outcomes tracking.</p>
+        <i class="fas fa-memory"></i>
+        <h3>RAM Upgrade</h3>
+        <p>Improve multitasking and speed. We confirm compatibility and install safely.</p>
       </div>
 
       <div class="card">
-        <i class="fas fa-chart-line"></i>
-        <h3>Analytics & Reporting</h3>
-        <p>Downtime reduction metrics, asset performance trends, and actionable reports for operational decisions.</p>
+        <i class="fas fa-hard-drive"></i>
+        <h3>SSD Upgrade</h3>
+        <p>Big performance boost. Optional cloning or fresh install depending on your needs.</p>
+      </div>
+
+      <div class="card">
+        <i class="fas fa-laptop"></i>
+        <h3>Screen / Charging Repairs</h3>
+        <p>Screen replacement and charging socket repairs (subject to model/parts availability).</p>
       </div>
     </div>
   </section>
 
-  <!-- INNOVATION -->
-  <section class="innovation" id="innovation">
-    <h2>Innovation, Viability & Scalability</h2>
-    <div class="desc">
-      SMEs typically rely on reactive support. BPK shifts this to a platform-led model: monitor signals, predict risk,
-      and automate preventative maintenance—built to scale beyond local services.
-    </div>
-
-    <div class="pill-grid">
-      <div class="pill">
-        <h3><i class="fas fa-lightbulb"></i> Innovation</h3>
-        <ul>
-          <li>SME-friendly smart asset intelligence (fast to deploy, affordable)</li>
-          <li>Health scoring + automation from measurable device/equipment signals</li>
-          <li>Roadmap to predictive analytics and anomaly detection as dataset grows</li>
-        </ul>
-      </div>
-
-      <div class="pill">
-        <h3><i class="fas fa-check-circle"></i> Viability</h3>
-        <ul>
-          <li>Pilot-first approach to validate savings and outcomes</li>
-          <li>Clear operational model: onboarding → monitoring → preventative actions</li>
-          <li>Practical SME rollout model</li>
-        </ul>
-      </div>
-
-      <div class="pill">
-        <h3><i class="fas fa-globe"></i> Scalability</h3>
-        <ul>
-          <li>Subscription model (SaaS) enabling national rollout</li>
-          <li>Partner delivery model for onboarding and expansion</li>
-          <li>Job creation roadmap: engineering, customer success, sales</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- SUPPORT -->
-  <section class="services" id="support">
-    <h2>Implementation & Support (Secondary)</h2>
-    <div class="desc">
-      These services support adoption of the platform. Traditional repairs remain available, but they are not the core focus
-      of BPK’s scalable innovation model.
-    </div>
-
-    <div class="grid">
-      <div class="card"><i class="fas fa-people-arrows"></i><h3>Onboarding</h3><p>Setup, asset discovery and baseline health assessment for your organisation.</p></div>
-      <div class="card"><i class="fas fa-shield-virus"></i><h3>Security Hardening</h3><p>Endpoint protection, malware clean-up, patching policies and user safety guidance.</p></div>
-      <div class="card"><i class="fas fa-screwdriver-wrench"></i><h3>Break-Fix (Optional)</h3><p>Repair and upgrades available as optional support—platform-led maintenance remains primary.</p></div>
-      <div class="card"><i class="fas fa-database"></i><h3>Backup & Recovery</h3><p>Backup strategy and recovery support aligned to business continuity planning.</p></div>
-      <div class="card"><i class="fas fa-network-wired"></i><h3>SME IT Optimisation</h3><p>Network and device optimisation, monitoring, and performance improvements.</p></div>
-    </div>
-  </section>
-
-  <!-- REVIEWS -->
+  <!-- REVIEWS (your existing review code kept exactly) -->
   <section class="reviews" id="reviews">
     <h2>Leave a Review</h2>
     <div class="desc">
@@ -883,7 +795,6 @@
     </div>
 
     <div class="review-wrap">
-      <!-- Left: Review Form -->
       <div class="review-card">
         <h3><i class="fas fa-pen-to-square"></i> Submit your review</h3>
 
@@ -944,7 +855,6 @@
         </form>
       </div>
 
-      <!-- Right: Recent Reviews -->
       <div class="review-card">
         <h3><i class="fas fa-comments"></i> Recent Website Reviews</h3>
         <div class="review-muted">These are reviews submitted via this website form.</div>
@@ -953,17 +863,13 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer class="footer">
-    &copy; 2026 BPK Technologies (BPK Computer Services). All rights reserved.
+    &copy; 2026 BPK Computer Services. All rights reserved.
     <div class="gdpr">We comply with GDPR and handle your data responsibly.</div>
   </footer>
 
-  <!-- Scripts -->
   <script>
-    // =========================
     // Slideshow
-    // =========================
     let slideIndex = 0;
     function showSlides() {
       const slides = document.getElementsByClassName("mySlides");
@@ -975,13 +881,8 @@
     }
     document.addEventListener("DOMContentLoaded", showSlides);
 
-    // =========================
-    // Reviews
-    // =========================
-    // OPTIONAL: Google Sheets endpoint (Apps Script Web App URL)
-    // const REVIEW_ENDPOINT = "https://script.google.com/macros/s/XXXX/exec";
+    // Reviews (kept)
     const REVIEW_ENDPOINT = "";
-
     const reviewForm = document.getElementById("reviewForm");
     const reviewList = document.getElementById("reviewList");
     const reviewToast = document.getElementById("reviewToast");
