@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- UPDATED SEO for Innovator positioning -->
-  <meta content="BPK Technologies builds a smart asset intelligence and preventative maintenance platform for SMEs in the UK—tracking assets, predicting failures, and reducing downtime with data-driven insights." name="description"/>
+  <meta name="description" content="Fast, affordable computer and laptop repair in Preston. Free diagnosis, virus removal, SSD/RAM upgrades, screen and charging socket repairs. WhatsApp for a free quote."/>
   <meta content="asset management platform, predictive maintenance, smart asset intelligence, SME downtime reduction, preventative maintenance software, IT asset tracking UK, analytics dashboard" name="keywords"/>
   <meta content="BPK Technologies (BPK Computer Services)" name="author"/>
 
-  <title>BPK Technologies | Smart Asset Intelligence & Predictive Maintenance</title>
+  <title>Computer & Laptop Repair Preston | BPK Computer Services</title>
 
   <!-- Google Analytics (kept) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-7Y0P5TXK2T"></script>
@@ -569,6 +569,62 @@
       .review-wrap{ grid-template-columns: 1fr; }
       .form-row{ grid-template-columns: 1fr; }
     }
+  
+    /* Trust strip */
+    .trust-strip{
+      padding: 16px 0 6px;
+      margin-top: -10px;
+    }
+    .trust-inner{
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .trust-item{
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 14px 14px;
+      box-shadow: var(--shadow-soft);
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      text-decoration: none;
+      color: var(--text);
+      min-height: 66px;
+    }
+    .trust-item i{
+      font-size: 18px;
+      width: 36px;
+      height: 36px;
+      display: grid;
+      place-items: center;
+      border-radius: 12px;
+      background: rgba(14,165,233,0.12);
+      border: 1px solid rgba(14,165,233,0.20);
+      color: var(--brand-blue);
+      flex: 0 0 auto;
+    }
+    .trust-item strong{
+      display:block;
+      font-size: 14px;
+      line-height: 1.15;
+      margin-bottom: 2px;
+    }
+    .trust-item span{
+      display:block;
+      font-size: 12px;
+      color: var(--muted);
+    }
+    @media (max-width: 900px){
+      .trust-inner{ grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 520px){
+      .trust-inner{ grid-template-columns: 1fr; }
+    }
+
   </style>
 </head>
 
@@ -580,8 +636,8 @@
       <div class="brand">
         <img src="logo.png" alt="BPK Logo" />
         <div class="title">
-          <strong>BPK Technologies</strong>
-          <span>Smart Asset Intelligence (Platform-led)</span>
+          <strong>BPK Computer Services</strong>
+          <span>Computer &amp; Laptop Repair • Preston</span>
         </div>
       </div>
 
@@ -593,6 +649,9 @@
         <a href="#reviews"><i class="fas fa-star"></i> Reviews</a>
         <a href="pricing.html"><i class="fas fa-tag"></i> Pricing</a>
         <a href="shop.html"><i class="fas fa-cart-shopping"></i> Shop</a>
+        <a class="primary" href="#contact-cta">
+          <i class="fas fa-calendar-check"></i> Book Repair
+        </a>
         <a class="primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank" rel="noopener">
           <i class="fas fa-paper-plane"></i> Request Demo
         </a>
@@ -601,114 +660,148 @@
   </header>
 
   <!-- Hero -->
-  <section class="hero">
+  <section class="hero" id="contact-cta">
     <div class="hero-inner">
       <div>
-        <h1>Smart Asset Intelligence & Predictive Maintenance for UK SMEs</h1>
+        <h1>Computer &amp; Laptop Repair in Preston — Fast, Affordable, Trusted</h1>
+
         <p>
-          We build a platform that helps businesses <b>track assets</b>, <b>predict failures</b>, and
-          <b>automate preventative maintenance</b> across IT devices and selected equipment—reducing downtime and improving reliability.
+          BPK Computer Services helps you fix laptops and PCs quickly — from <b>screen and charging issues</b> to
+          <b>slow performance</b>, <b>virus removal</b>, <b>SSD/RAM upgrades</b>, and <b>Windows reinstall</b>.
         </p>
+
         <div class="sub">
-          Existing break-fix services are available, but our primary focus is a <b>scalable technology platform</b> designed for UK-wide growth.
+          ✔ Free diagnosis • ✔ Same/next-day repairs (where possible) • ✔ Pickup &amp; drop-off available (Preston &amp; nearby)
         </div>
 
         <div class="hero-badges">
-          <span class="hero-badge"><i class="fas fa-chart-line"></i> Health scoring</span>
-          <span class="hero-badge"><i class="fas fa-bell"></i> Risk alerts</span>
-          <span class="hero-badge"><i class="fas fa-calendar-check"></i> Preventative schedules</span>
-          <span class="hero-badge"><i class="fas fa-file-lines"></i> Analytics reports</span>
+          <span class="hero-badge"><i class="fas fa-bolt"></i> Fast turnaround</span>
+          <span class="hero-badge"><i class="fas fa-pound-sign"></i> Transparent pricing</span>
+          <span class="hero-badge"><i class="fas fa-shield-halved"></i> Secure handling</span>
+          <span class="hero-badge"><i class="fas fa-location-dot"></i> Local Preston service</span>
         </div>
 
         <div class="hero-actions">
-          <a class="btn btn-primary" href="https://docs.google.com/forms/d/e/1FAIpQLScvumeVkE4N7ekexRfM8I2mFqOVju0AdkAEdTnH0RyyWDeHow/viewform" target="_blank" rel="noopener">
-            <i class="fas fa-rocket"></i> Join Pilot / Request Demo
+          <a class="btn btn-primary"
+             href="https://wa.me/447818955500?text=Hi%20BPK%20Computer%20Services%2C%20I%20need%20help%20with%20my%20device.%20Device%3A%20____%20Issue%3A%20____%20Location%3A%20Preston"
+             target="_blank" rel="noopener">
+            <i class="fab fa-whatsapp"></i> WhatsApp for Free Quote
           </a>
-          <a class="btn btn-ghost" href="https://wa.me/447818955500?text=Hi%20BPK%20Technologies%2C%20I%20want%20a%20demo%20of%20your%20asset%20platform%20for%20my%20business." target="_blank" rel="noopener">
-            <i class="fab fa-whatsapp"></i> WhatsApp (Platform Demo)
+
+          <a class="btn btn-ghost" href="tel:+447818955500">
+            <i class="fas fa-phone"></i> Call 07818 955 500
+          </a>
+
+          <a class="btn btn-ghost" href="#reviews">
+            <i class="fas fa-star"></i> See Reviews
           </a>
         </div>
       </div>
 
       <div class="hero-media">
-        <div class="mock-grid">
-          <div class="mock big">
-            <div class="mock-top">
-              <div class="mock-title">
-                <strong>Asset Health Dashboard</strong>
-                <span>Fleet overview • risk by site • weekly trends</span>
-              </div>
-              <span class="mock-pill"><i class="fas fa-circle" style="color:#10b981;"></i> Live</span>
+        <div class="mock big" style="min-height:260px;">
+          <div class="mock-top">
+            <div class="mock-title">
+              <strong>Popular Repairs</strong>
+              <span>What we fix most often</span>
             </div>
-
-            <div class="kpis">
-              <div class="kpi"><div class="k">Assets monitored</div><div class="v">248</div></div>
-              <div class="kpi"><div class="k">At-risk assets</div><div class="v">17</div></div>
-              <div class="kpi"><div class="k">Downtime saved</div><div class="v">23%</div></div>
-            </div>
-
-            <div class="chart" aria-label="Asset risk trend chart">
-              <div class="bar" style="height:35%;"></div>
-              <div class="bar g" style="height:52%;"></div>
-              <div class="bar p" style="height:44%;"></div>
-              <div class="bar" style="height:70%;"></div>
-              <div class="bar g" style="height:62%;"></div>
-              <div class="bar p" style="height:78%;"></div>
-              <div class="bar" style="height:56%;"></div>
-              <div class="bar g" style="height:68%;"></div>
-            </div>
-
-            <div class="label"><i class="fas fa-gauge-high"></i> Dashboard</div>
+            <span class="mock-pill"><i class="fas fa-screwdriver-wrench"></i> Repair</span>
           </div>
 
-          <div class="mock">
-            <div class="mock-top">
-              <div class="mock-title">
-                <strong>Risk Alerts</strong>
-                <span>Actionable notifications</span>
-              </div>
-              <span class="mock-pill"><i class="fas fa-bell"></i></span>
-            </div>
-
-            <div class="mini-table">
-              <div class="row"><span>PRN-LT-044 • SSD wear</span><span class="status">High</span></div>
-              <div class="row"><span>WH-DSK-112 • CPU spikes</span><span class="status">Med</span></div>
-              <div class="row"><span>OFF-NW-009 • Packet loss</span><span class="status">Med</span></div>
-            </div>
-
-            <div class="label"><i class="fas fa-bell"></i> Alerts</div>
+          <div class="mini-table" style="gap:10px;">
+            <div class="row"><span><b>Laptop Screen Replacement</b></span><span class="status">From £</span></div>
+            <div class="row"><span><b>Charging Socket Repair</b></span><span class="status">From £</span></div>
+            <div class="row"><span><b>SSD / RAM Upgrades</b></span><span class="status">From £</span></div>
+            <div class="row"><span><b>Virus Removal</b></span><span class="status">Same day</span></div>
+            <div class="row"><span><b>Windows Install + Setup</b></span><span class="status">Fast</span></div>
           </div>
 
-          <div class="mock">
-            <div class="mock-top">
-              <div class="mock-title">
-                <strong>Preventative Schedule</strong>
-                <span>Tasks • owners • outcomes</span>
-              </div>
-              <span class="mock-pill"><i class="fas fa-calendar-check"></i></span>
-            </div>
+          <div class="label"><i class="fas fa-wrench"></i> Local Repairs</div>
+        </div>
 
-            <div class="mini-table">
-              <div class="row"><span>Patch cycle • Site A</span><span class="status">Fri</span></div>
-              <div class="row"><span>Health check • Laptops</span><span class="status">Mon</span></div>
-              <div class="row"><span>Backup verify</span><span class="status">Wed</span></div>
+        <div class="mock">
+          <div class="mock-top">
+            <div class="mock-title">
+              <strong>Business IT Support</strong>
+              <span>Maintenance • Security • Backups</span>
             </div>
-
-            <div class="label"><i class="fas fa-calendar-check"></i> Scheduling</div>
+            <span class="mock-pill"><i class="fas fa-briefcase"></i></span>
           </div>
+
+          <div class="mini-table">
+            <div class="row"><span>PC &amp; device support</span><span class="status">SME</span></div>
+            <div class="row"><span>Network help</span><span class="status">On-site</span></div>
+            <div class="row"><span>Backup &amp; recovery</span><span class="status">Safe</span></div>
+          </div>
+
+          <div class="label"><i class="fas fa-briefcase"></i> IT Support</div>
+        </div>
+
+        <div class="mock">
+          <div class="mock-top">
+            <div class="mock-title">
+              <strong>Book a Repair</strong>
+              <span>Message us the issue</span>
+            </div>
+            <span class="mock-pill"><i class="fas fa-calendar-check"></i></span>
+          </div>
+
+          <div class="mini-table">
+            <div class="row"><span>1) Device model</span><span class="status">Step 1</span></div>
+            <div class="row"><span>2) Problem details</span><span class="status">Step 2</span></div>
+            <div class="row"><span>3) Get quote</span><span class="status">Step 3</span></div>
+          </div>
+
+          <div class="label"><i class="fas fa-calendar-check"></i> Booking</div>
         </div>
       </div>
     </div>
 
-    <a href="https://wa.me/447818955500?text=Hi%20BPK%20Technologies%2C%20I%20want%20a%20demo%20of%20your%20asset%20platform%20for%20my%20business."
-      class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/447818955500?text=Hi%20BPK%20Computer%20Services%2C%20I%20need%20help%20with%20my%20device."
+       class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
       <i class="fab fa-whatsapp"></i>
     </a>
   </section>
 
+  <section class="trust-strip" aria-label="Trust indicators">
+    <div class="trust-inner">
+      <a class="trust-item" href="#reviews">
+        <i class="fas fa-star"></i>
+        <div>
+          <strong>Google &amp; Website Reviews</strong>
+          <span>See what customers say</span>
+        </div>
+      </a>
+
+      <div class="trust-item">
+        <i class="fas fa-stethoscope"></i>
+        <div>
+          <strong>Free Diagnosis</strong>
+          <span>No-obligation quote</span>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <i class="fas fa-shield"></i>
+        <div>
+          <strong>Warranty Provided</strong>
+          <span>Terms apply (parts/labour)</span>
+        </div>
+      </div>
+
+      <div class="trust-item">
+        <i class="fas fa-truck"></i>
+        <div>
+          <strong>Pickup &amp; Drop-off</strong>
+          <span>Preston &amp; nearby areas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <div class="banner">
     <marquee>
-      🚀 Pilot programme now open for UK SMEs — Reduce downtime with BPK Smart Asset Intelligence Platform (Preston → UK-wide rollout).
+      💻 Same/next-day repairs (where possible) • Free diagnosis • Pickup &amp; drop-off available in Preston &amp; nearby
     </marquee>
   </div>
 
